@@ -84,6 +84,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Default.aspx" />
+    <Content Include="DetalleProducto.aspx" />
     <Content Include="ElegirProducto.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\StyleSheet1.css" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleProducto.aspx.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleProducto.aspx.designer.cs">
+      <DependentUpon>DetalleProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="ElegirProducto.aspx.cs">
       <DependentUpon>ElegirProducto.aspx</DependentUpon>
