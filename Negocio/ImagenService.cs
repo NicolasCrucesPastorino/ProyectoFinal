@@ -82,7 +82,7 @@ namespace Negocio
 
                 try
                 {
-                    datos.setearConsulta("Select * FROM IMAGENES WHERE IDArticulo=@id_articulo");
+                    datos.setearConsulta(" Select Id,IdArticulo,ImagenUrl FROM IMAGENES WHERE IDArticulo=@id_articulo");
                     datos.setearParametro("@id_articulo", id);
                     datos.ejecutarLectura();
 

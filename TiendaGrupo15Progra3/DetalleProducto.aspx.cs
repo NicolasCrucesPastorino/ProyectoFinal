@@ -17,10 +17,13 @@ namespace TiendaGrupo15Progra3
         {
             
             ArticuloService articuloService = new ArticuloService();
+            ImagenService imagenService = new ImagenService();
 
             int idArticulo = int.Parse( Request.QueryString["idDetalle"]);
 
             articuloDetalle = articuloService.listarXid(idArticulo);
+
+            articuloDetalle.Imagenes = imagenService.listarPorIdArticulo(idArticulo);
 
             
 
