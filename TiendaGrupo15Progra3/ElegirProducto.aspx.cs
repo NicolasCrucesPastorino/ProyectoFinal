@@ -14,17 +14,35 @@ namespace TiendaGrupo15Progra3
     {
         public List<Articulo> Productos;
         ArticuloService articuloService = new ArticuloService();
+        bool FiltradoAvanzado = false;
+        
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {       
+            CategoriaService categoriaService = new CategoriaService();
+            MarcaService marcaService = new MarcaService();
+            List<Categoria> DropDownListCategoriaGlobal = new List<Categoria>();
+            List<Marca> DropDownListMarca = new List<Marca>();
+
+            DropDownListCategoriaGlobal = categoriaService.getCategorias();
+            DropDownListFiltroAvanzadoCategoria.DataSource = DropDownListCategoriaGlobal;
+            DropDownListFiltroAvanzadoCategoria.DataBind();
+            DropDownListMarca = marcaService.getMarcas();
+            DropDownListFiltroAvanzadoMarca.DataSource = DropDownListMarca;
+            DropDownListFiltroAvanzadoMarca.DataBind();
+            if(CheckBoxElijeTuProductoBuscar.Checked == true)
+            {
+                FiltradoAvanzado=true;
+            }
+            else
+            {
+                FiltradoAvanzado = false;
+            }
+
             
-                string codigoVoucher = Request.QueryString["CodigoVoucher"];
                 
-                if (!string.IsNullOrEmpty(codigoVoucher))
-                {
-                    // Guardar el código del voucher en una variable de sesión o un control oculto para su uso posterior
-                    Session["CodigoVoucher"] = codigoVoucher;
-                }
+            
+            
             
 
             Productos=articuloService.GetArticulos();
@@ -35,6 +53,12 @@ namespace TiendaGrupo15Progra3
         {
            // Response.Redirect("/ElijeTuPremio.aspx?articulo=" + );
             //Session["Articulo"] = 
+        }
+
+        protected void CheckBoxElijeTuProductoBuscar_CheckedChanged(object sender, EventArgs e)
+        {
+            FiltradoAvanzado = !FiltradoAvanzado;
+            TextElijeTuProductoBuscar.Enabled = FiltradoAvanzado;
         }
     }
 }

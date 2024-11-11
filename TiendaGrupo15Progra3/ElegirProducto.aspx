@@ -19,7 +19,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="bg-custom"></div>
         <div class="container"> </div>
-    <h2 class="text-center mb-4">Elige tu premio</h2>
+    <h2 class="text-center mb-4">PRODUCTOS</h2>
+    <asp:Label ID="labelElijeTuProductoBuscar" runat="server" Text="Buscar por nombre de producto"></asp:Label>
+    <asp:TextBox ID="TextElijeTuProductoBuscar" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
+    <div>
+    <asp:Label ID="labelElijeTuProductoBuscarLabelCheckBox" runat="server" Text="Filtro Avanzado"></asp:Label>
+    <asp:CheckBox ID="CheckBoxElijeTuProductoBuscar" runat="server" AutoPostBack="true" Checked="false" OnCheckedChanged="CheckBoxElijeTuProductoBuscar_CheckedChanged" />
+    </div>
+    <div>
+        <asp:TextBox ID="TextFiltroAvanzadoNombre" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextFiltroAvanzadoPrecio" placeholder="Ingrese Precio" runat="server" textmode="Number"></asp:TextBox>
+        <asp:Label ID="labelFiltroAvanzadoCategoria" runat="server" Text="Elija Categoria:"></asp:Label>
+        <asp:DropDownList ID="DropDownListFiltroAvanzadoCategoria" runat="server" AppendDataBoundItems="true"></asp:DropDownList>
+        <asp:Label ID="labelFiltroAvanzadoMarca" runat="server" Text="Elija Marca:"></asp:Label>
+        <asp:DropDownList ID="DropDownListFiltroAvanzadoMarca" runat="server" AppendDataBoundItems="true"></asp:DropDownList>
+    </div>
 
     <div class="row">
         <% foreach (var articulo in Productos)
@@ -28,6 +42,7 @@
             <div class="card h-100">
                 <div class="card-body text-center">
                     <h5 class="card-title"><%= articulo.Nombre %></h5>
+                    <h5><%=Math.Round( articulo.Precio,2) %>$</h5>
 
                     <!-- Carousel -->
                     <div id="carousel<%= articulo.Id %>" class="carousel slide mb-3" data-bs-ride="carousel">

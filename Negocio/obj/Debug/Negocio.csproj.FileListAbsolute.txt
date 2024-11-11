@@ -52,3 +52,12 @@ C:\Users\Nico\Downloads\ProyectoFinalSolo Sabado\ProyectoFinal\Negocio\obj\Debug
 C:\Users\Nico\Downloads\ProyectoFinalSolo Sabado\ProyectoFinal\Negocio\obj\Debug\Negocio.csproj.Up2Date
 C:\Users\Nico\Downloads\ProyectoFinalSolo Sabado\ProyectoFinal\Negocio\obj\Debug\Negocio.dll
 C:\Users\Nico\Downloads\ProyectoFinalSolo Sabado\ProyectoFinal\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\bin\Debug\Negocio.dll
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\bin\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\obj\Debug\Negocio.dll
+C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Negocio\obj\Debug\Negocio.pdb
