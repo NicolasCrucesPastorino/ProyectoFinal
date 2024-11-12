@@ -11,7 +11,26 @@ namespace TiendaGrupo15Progra3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+          
+        }
 
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+         
+            string usuario = LoginTextUsuario.Text;
+            string contrasenia = LoginTextContrasenia.Text;
+
+         
+            if (usuario == "admin" && contrasenia == "1234")
+            {
+          
+                Response.Redirect("Home.aspx"); 
+            }
+            else
+            {
+               
+                Response.Write("<script>alert('Usuario o contraseña incorrectos');</script>");
+            }
         }
     }
 }
