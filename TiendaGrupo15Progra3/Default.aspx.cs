@@ -16,7 +16,7 @@ namespace TiendaGrupo15Progra3
 
         protected void btnParticipa_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/WebForm1.aspx");
+            Response.Redirect("/ElegirProducto.aspx");
         }
     }
 }

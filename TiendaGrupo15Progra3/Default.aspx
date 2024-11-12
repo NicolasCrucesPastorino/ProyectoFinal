@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .bg-custom {
-            background-image: url('images/IMGbtnParticipar.png');
+            background-image: url('images/Pglog.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -17,7 +17,7 @@
 
         .button-container {
             position: fixed;
-            bottom: 20%;
+            top: 50%;
             right: 20%;
         }
 
@@ -52,7 +52,8 @@
     <div class="container">
      
         <div class="button-container">
-            <asp:Button ID="btnParticipa" runat="server" Text="Participa" OnClick="btnParticipa_Click" CssClass="btn btn-custom" />
+          
+            <asp:Button ID="btnVerProductos" runat="server" Text="Ver productos" OnClick="btnParticipa_Click" CssClass="btn btn-secondary btn-lg" />
         </div>
     </div>
 </asp:Content>

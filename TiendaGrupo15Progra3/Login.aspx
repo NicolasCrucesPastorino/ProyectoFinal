@@ -4,7 +4,7 @@
     <style>
         /* Fondo personalizado */
         .bg-custom {
-            background-image: url('images/IMGgracias.png');
+            background-image: url('images/Pglog.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;

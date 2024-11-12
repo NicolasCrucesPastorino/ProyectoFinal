@@ -9,6 +9,8 @@ namespace TiendaGrupo15Progra3
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        int RolTraido {  get; set; }    
+
         protected void Page_Load(object sender, EventArgs e)
         {
           
@@ -20,17 +22,21 @@ namespace TiendaGrupo15Progra3
             string usuario = LoginTextUsuario.Text;
             string contrasenia = LoginTextContrasenia.Text;
 
-         
+
             if (usuario == "admin" && contrasenia == "1234")
             {
-          
-                Response.Redirect("Home.aspx"); 
+                Session["Rol"]=2;
+                Response.Redirect("Default.aspx");
+                
+               
             }
             else
             {
-               
+
                 Response.Write("<script>alert('Usuario o contraseña incorrectos');</script>");
             }
+
+
         }
     }
 }

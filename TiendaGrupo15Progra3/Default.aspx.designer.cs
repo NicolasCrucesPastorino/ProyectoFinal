@@ -15,12 +15,12 @@ namespace TiendaGrupo15Progra3
     {
 
         /// <summary>
-        /// Control btnParticipa.
+        /// Control btnVerProductos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnParticipa;
+        protected global::System.Web.UI.WebControls.Button btnVerProductos;
     }
 }

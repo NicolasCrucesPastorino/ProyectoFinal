@@ -34,3 +34,9 @@ C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Domini
 C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 C:\Users\Nico\Downloads\ProyectoFinalSoloAgusRindiendoLunes\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+D:\HP\Escritorio\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+D:\HP\Escritorio\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
