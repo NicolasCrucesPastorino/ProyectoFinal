@@ -128,7 +128,7 @@ namespace TiendaGrupo15Progra3
             }
         }
 
-        private void MostrarAlerta(string mensaje)
+        public void MostrarAlerta(string mensaje)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", $"alert('{mensaje}');", true);
         }

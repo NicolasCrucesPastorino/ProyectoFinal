@@ -11,52 +11,70 @@ namespace TiendaGrupo15Progra3
 {
 
 
-    public partial class WebForm2
+    public partial class RegistrarseLogin
     {
 
         /// <summary>
-        /// LoginLabelUsuario control.
+        /// LabelUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LoginLabelUsuario;
+        protected global::System.Web.UI.WebControls.Label LabelUsuario;
 
         /// <summary>
-        /// LoginTextUsuario control.
+        /// TextBoxUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LoginTextUsuario;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
 
         /// <summary>
-        /// LoginLabelContrasenia control.
+        /// LabelPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LoginLabelContrasenia;
+        protected global::System.Web.UI.WebControls.Label LabelPassword;
 
         /// <summary>
-        /// LoginTextContrasenia control.
+        /// TextBoxPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LoginTextContrasenia;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
 
         /// <summary>
-        /// LoginButton control.
+        /// LabelConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginButton;
+        protected global::System.Web.UI.WebControls.Label LabelConfirmPassword;
+
+        /// <summary>
+        /// TextBoxConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxConfirmPassword;
+
+        /// <summary>
+        /// ButtonRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonRegister;
     }
 }

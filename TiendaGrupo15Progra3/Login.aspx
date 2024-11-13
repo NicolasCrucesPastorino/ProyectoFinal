@@ -73,13 +73,15 @@
         }
 
         /* Estilo para el enlace de recu de contra */
-        .forgot-password {
+        .forgot-password, .register-link {
             color: #007BFF;
             text-decoration: none;
             font-size: 0.9rem;
+            display: block;
+            margin-top: 10px;
         }
 
-        .forgot-password:hover {
+        .forgot-password:hover, .register-link:hover {
             text-decoration: underline;
         }
     </style>
@@ -91,19 +93,20 @@
         <div class="form-container">
             <h1 class="header-custom">Inicio de Sesión</h1>
 
-     
             <asp:Label ID="LoginLabelUsuario" runat="server" Text="Ingrese Usuario:" AssociatedControlID="LoginTextUsuario"></asp:Label>
             <asp:TextBox id="LoginTextUsuario" runat="server" placeholder="XXXUsuarioXXX" CssClass="form-control"></asp:TextBox>
 
-    
             <asp:Label ID="LoginLabelContrasenia" runat="server" Text="Ingrese Contraseña:" AssociatedControlID="LoginTextContrasenia"></asp:Label>
             <asp:TextBox id="LoginTextContrasenia" runat="server" placeholder="XXX*******XXX" CssClass="form-control" TextMode="Password"></asp:TextBox>
 
-            <!-- btn para iniciar sesión -->
+            <!-- Botón para iniciar sesión -->
             <asp:Button ID="LoginButton" runat="server" Text="Iniciar sesión" OnClick="LoginButton_Click" CssClass="btn btn-custom" />
 
-            <!-- enlace para recuperar contraseña -->
+            <!-- Enlace para recuperar contraseña -->
             <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+            <!-- Enlace para registrarse -->
+            <a href="RegistrarseLogin.aspx" class="register-link">¿No tienes cuenta? Regístrate aquí</a>
         </div>
     </div>
 </asp:Content>

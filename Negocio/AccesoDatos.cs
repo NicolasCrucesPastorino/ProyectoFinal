@@ -1,4 +1,6 @@
 ﻿using System;
+using System.CodeDom;
+using System.ComponentModel.Design;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -92,9 +94,6 @@ namespace Negocio
             conexion.Close();
 
         }
-
-
-
 
     }
 }

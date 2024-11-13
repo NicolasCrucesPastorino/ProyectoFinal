@@ -40,3 +40,9 @@ D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReferenc
 D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 D:\HP\Escritorio\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
