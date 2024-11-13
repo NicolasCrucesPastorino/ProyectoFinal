@@ -46,3 +46,9 @@ C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.
 C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 C:\Users\windows\Desktop\Proyecto Final\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoAspNetFinalPruebadespuesdeerrorenbasededatosagus\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoAspNetFinalPruebadespuesdeerrorenbasededatosagus\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoAspNetFinalPruebadespuesdeerrorenbasededatosagus\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nico\Downloads\ProyectoAspNetFinalPruebadespuesdeerrorenbasededatosagus\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Downloads\ProyectoAspNetFinalPruebadespuesdeerrorenbasededatosagus\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoAspNetFinalPruebadespuesdeerrorenbasededatosagus\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb

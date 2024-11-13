@@ -11,6 +11,7 @@ namespace TiendaGrupo15Progra3
     public partial class Default : System.Web.UI.Page
     {
         public int RolDefault;
+        public string UsuarioDefault;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,10 +25,18 @@ namespace TiendaGrupo15Progra3
                 {
                     RolDefault = 0;
                 }
+                if (Session["Usuario"] != null) 
+                {
+                    UsuarioDefault = Session["Usuario"].ToString();
+                } else
+                {
+                    UsuarioDefault = "Anonimo";
+                }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                fGlobales.MostrarAlerta(this, "ERROR IFELSE");
+                fGlobales.MostrarAlerta(this, "Error de Sesion");
             }
             
         }

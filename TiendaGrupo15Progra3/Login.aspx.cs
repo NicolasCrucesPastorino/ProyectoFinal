@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,19 +22,26 @@ namespace TiendaGrupo15Progra3
          
             string usuario = LoginTextUsuario.Text;
             string contrasenia = LoginTextContrasenia.Text;
+            UsuarioService usuarioService = new UsuarioService();
 
-
-            if (usuario == "admin" && contrasenia == "1234")
+            if (usuarioService.LoginSoloUsuarioYcontrasenia(usuario,contrasenia)==2)
             {
                 Session["Rol"]=2;
+                Session["Usuario"] = usuario;
                 Response.Redirect("Default.aspx");
                 
                
             }
+            else if(usuarioService.LoginSoloUsuarioYcontrasenia(usuario,contrasenia)==1)
+            {
+                Session["Rol"] = 1;
+                Session["Usuario"] = usuario;
+                Response.Redirect("Default.aspx");
+                
+            }
             else
             {
-
-                Response.Write("<script>alert('Usuario o contraseña incorrectos');</script>");
+                fGlobales.MostrarAlerta(this, "El Usuario no existe");
             }
 
 

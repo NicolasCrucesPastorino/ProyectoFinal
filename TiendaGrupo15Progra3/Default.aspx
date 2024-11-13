@@ -20,6 +20,11 @@
             top: 50%;
             right: 5%;
         }
+        .button-container2 {
+            position: fixed;
+            top: 50%;
+            left: 5%;
+        }
 
         .btn-custom {
             padding: 30px 40px;
@@ -54,14 +59,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-custom"></div>
     <div class="main-content container">
-        <h2>Bienvenido <%=RolDefault %></h2>     
-        <div class="button-container">
+        <h2>Bienvenido <%=UsuarioDefault%></h2>     
+       
           
-            <asp:Button ID="btnVerProductos" runat="server" Text="Ver productos" OnClick="btnParticipa_Click" CssClass="btn btn-secondary btn-lg" />
+            
         </div>
 
-
+    <div class="button-container">
+        <asp:Button ID="btnVerProductos" runat="server" Text="Ver productos" OnClick="btnParticipa_Click" CssClass="btn btn-secondary btn-lg" />
     </div>
+    
+    <div>       
+    <%if (RolDefault!=0){%>
+                     <div class="button-container2">
+                                <asp:Button ID="BtnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="btn btn-secondary btn-lg bg-danger" />
+                      </div>
+               <% } %>
+          
+    </div>
+    
 </asp:Content>
 
 

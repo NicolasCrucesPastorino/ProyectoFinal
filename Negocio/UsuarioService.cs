@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Dominio;
 
+using Negocio;
+
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
 namespace Negocio
 {
     public class UsuarioService
@@ -39,6 +45,37 @@ namespace Negocio
             finally {
                 datos.cerrarConexion();
             } 
+        }
+        public int LoginSoloUsuarioYcontrasenia(string usuario,string contrasenia)
+        {
+            int rol = 0;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT Rol from USUARIOS WHERE Nombre = @nombre AND Contrasenia=@contrasenia");
+                datos.setearParametro("@nombre", usuario);
+                datos.setearParametro("@contrasenia", contrasenia);
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    rol = int.Parse( datos.Lector["Rol"].ToString());
+
+
+                }
+                
+                return rol;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
         public bool ExisteUsuario(string usuarioEntrante)
