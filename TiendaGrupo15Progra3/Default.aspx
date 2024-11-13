@@ -18,7 +18,7 @@
         .button-container {
             position: fixed;
             top: 50%;
-            right: 20%;
+            right: 5%;
         }
 
         .btn-custom {
@@ -44,17 +44,23 @@
         .header-custom {
             color: blue;
         }
+        .main-content { 
+            margin-top: 70px; /* Ajusta este valor según la altura de tu navbar */
+
+        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-custom"></div>
-    <div class="container">
-     
+    <div class="main-content container">
+        <h2>Bienvenido <%=RolDefault %></h2>     
         <div class="button-container">
           
             <asp:Button ID="btnVerProductos" runat="server" Text="Ver productos" OnClick="btnParticipa_Click" CssClass="btn btn-secondary btn-lg" />
         </div>
+
+
     </div>
 </asp:Content>
 

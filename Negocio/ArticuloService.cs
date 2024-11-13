@@ -29,7 +29,7 @@ namespace Negocio
                                      "INNER JOIN CATEGORIAS CAT ON ART.IdCategoria = CAT.Id " +
                                      "INNER JOIN MARCAS MAR ON ART.IdMarca = MAR.Id");
                 datos.ejecutarLectura();
-
+             
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();

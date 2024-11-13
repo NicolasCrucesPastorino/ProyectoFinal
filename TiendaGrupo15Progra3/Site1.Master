@@ -4,7 +4,7 @@
 <head runat="server">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperPremios</title>
+    <title>Transforma Tienda</title>
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 
     <!-- Enlaces a Bootstrap y FontAwesome -->
@@ -54,68 +54,76 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Barra de navegación personalizada -->
-        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">SuperPremios</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorías
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!-- Repeater para mostrar categorías dinámicamente -->
-                                <asp:Repeater ID="CategoryRepeater" runat="server">
-                                    <ItemTemplate>
-                                        <li><a class="dropdown-item" href="#"> <%# Eval("Descripcion") %> </a></li>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Marcas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/ElegirProducto.aspx">Productos</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Ofertas
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Descuentos</a></li>
-                                <li><a class="dropdown-item" href="#">Ofertas del día</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Login.aspx">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link cart-icon" href="/Carrito.aspx">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span class="cart-badge">3</span> <!-- Este número puede cambiar dinámicamente -->
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <input type="text" class="search-bar" placeholder="Buscar productos..." />
-                        </li>
-                    </ul>
+        <!-- Encabezado del Sitio -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Transforma Tienda</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categorías
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <asp:Repeater ID="CategoryRepeater" runat="server">
+                                        <ItemTemplate>
+                                            <li><a class="dropdown-item" href="#"> <%# Eval("Descripcion") %> </a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Marcas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/ElegirProducto.aspx">Productos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Ofertas
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Descuentos</a></li>
+                                    <li><a class="dropdown-item" href="#">Ofertas del día</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Login.aspx">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link cart-icon" href="/Carrito.aspx">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="cart-badge">3</span> <!-- Este número puede cambiar dinámicamente -->
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <input type="text" class="search-bar" placeholder="Buscar productos..." />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
 
-        <!-- Contenido principal de la página -->
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        <!-- Contenido Principal -->
+        <main>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server"></asp:ContentPlaceHolder>
+        </main>
+
+        <!-- Pie de Página -->
+        <footer class="text-center">
+            <p>&copy; 2024 Transforma Tienda. Todos los derechos reservados.</p>
+        </footer>
     </form>
 
     <!-- Scripts de Bootstrap -->

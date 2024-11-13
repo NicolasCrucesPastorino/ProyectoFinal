@@ -65,9 +65,9 @@ namespace Negocio
             
             try
             {
-                datos.setearConsulta (@"Insert into usuarios(ID_usuario, Nombre, Contrasenia, Rol) VALUES
-                                        ('@id_usuario', ' @Nombre', ' @Contrasenia', '@Rol')");
-                datos.setearParametro("@id_usuario", usuario.idUsuario);
+                datos.setearConsulta (@"Insert into usuarios(Nombre, Contrasenia, Rol) VALUES
+                                        (@Nombre,  @Contrasenia, @Rol)");
+
                 datos.setearParametro("@Nombre", usuario.nombre);
                 datos.setearParametro("@Contrasenia", usuario.contrasenia);
                 datos.setearParametro("@Rol", usuario.rol);
