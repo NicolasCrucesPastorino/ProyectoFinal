@@ -30,7 +30,7 @@ namespace TiendaGrupo15Progra3
                     UsuarioDefault = Session["Usuario"].ToString();
                 } else
                 {
-                    UsuarioDefault = "Anonimo";
+                    UsuarioDefault = "Anónimo";
                 }
 
             }
@@ -44,6 +44,15 @@ namespace TiendaGrupo15Progra3
         protected void btnParticipa_Click(object sender, EventArgs e)
         {
             Response.Redirect("/ElegirProducto.aspx");
+        }
+
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["Rol"] = null;
+            Session["Usuario"] = null;
+            RolDefault = 0;
+            UsuarioDefault = "Anónimo";
+            fGlobales.MostrarAlerta(this, "Ha cerrado sesión.");
         }
     }
 }

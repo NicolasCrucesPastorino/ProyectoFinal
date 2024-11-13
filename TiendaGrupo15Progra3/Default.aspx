@@ -72,7 +72,7 @@
     <div>       
     <%if (RolDefault!=0){%>
                      <div class="button-container2">
-                                <asp:Button ID="BtnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="btn btn-secondary btn-lg bg-danger" />
+                                <asp:Button ID="BtnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="btn btn-secondary btn-lg bg-danger" OnClick="BtnCerrarSesion_Click" />
                       </div>
                <% } %>
           
