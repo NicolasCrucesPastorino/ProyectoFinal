@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ArticuloService.cs" />
+    <Compile Include="CarritoService.cs" />
     <Compile Include="CategoriaService.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="fGlobales.cs" />

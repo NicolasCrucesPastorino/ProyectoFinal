@@ -166,6 +166,28 @@ namespace Negocio
                 accesoDatos.cerrarConexion();
 
             }
+
+           
+        }
+        
+        public void ModificarArticulo (int IdArticulo, string Modificacion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS set Descripcion=@Modificacion where Id=@IdArticulo");
+                datos.setearParametro("@Modificacion", Modificacion);
+                datos.setearParametro("@IdArticulos", IdArticulo);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+               throw new Exception("Error al modificar producto: " + ex.Message);
+            }
+          
         }
     }
 }

@@ -17,14 +17,21 @@ namespace Dominio
         public string nombre { get; set; }
         public string contrasenia { get; set; }
         public int rol { get; set; }
-        public TipoUsuario TipoUsuario{ get; set;}
+        public string correo {get;set;}
+        public string telefono{get;set;}
+        public string urlFoto {get;set;}
+        public string nombreFoto {get;set;}
+        public bool esActivo {get;set;}
+        public DateTime fechaRegistro { get; set; }
 
-        public Usuario(string nombreEntrante,string contraseniaEntrante)
-        { 
+        public Usuario(string nombreEntrante, string contraseniaEntrante)
+        {
+
             nombre = nombreEntrante;
             contrasenia = contraseniaEntrante;
-        }
 
+        } 
+        
         public Usuario() { }
     }
 }
