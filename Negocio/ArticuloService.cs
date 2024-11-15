@@ -24,7 +24,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT ART.Id, ART.Nombre, ART.Codigo, ART.Descripcion, ART.Precio, MAR.Descripcion AS MarcaDescripcion, CAT.Descripcion AS CategoriaDescripcion " +
+                datos.setearConsulta("SELECT ART.Id, ART.Nombre, ART.Codigo, ART.Descripcion, ART.Precio,ART.Stock,ART.IdUsuario, MAR.Descripcion AS MarcaDescripcion, CAT.Descripcion AS CategoriaDescripcion " +
                                      "FROM ARTICULOS ART " +
                                      "INNER JOIN CATEGORIAS CAT ON ART.IdCategoria = CAT.Id " +
                                      "INNER JOIN MARCAS MAR ON ART.IdMarca = MAR.Id");

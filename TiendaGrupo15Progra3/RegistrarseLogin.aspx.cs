@@ -17,10 +17,11 @@ namespace TiendaGrupo15Progra3
         {
 
         }
-
+        //Revisada: Ok. Se agregael mail para evitar conflictos de nombres iguales
         protected void ButtonRegister_Click(object sender, EventArgs e)
         {
-            string usuario =TextBoxUsuario.Text.Trim();
+            string Nombreusuario =TextBoxUsuario.Text.Trim();
+            string email = TxtMail.Text.Trim();
             string contrasenia = TextBoxPassword.Text.Trim();
             string confirmarContrasenia = TextBoxConfirmPassword.Text.Trim();
             UsuarioService usuarioService = new UsuarioService();
@@ -35,12 +36,13 @@ namespace TiendaGrupo15Progra3
                 {
                     confirmarContraseniaBool = true;
                 }
-                existeUsuario = usuarioService.ExisteUsuario(usuario);
+                existeUsuario = usuarioService.ExisteUsuario(email);
                 
                 if (existeUsuario == false && confirmarContraseniaBool == true)
                 {
-                    nuevoUsuario.nombre = usuario;
-                    nuevoUsuario.contrasenia = contrasenia;
+                    nuevoUsuario.nombre = Nombreusuario;
+                    nuevoUsuario.clave = contrasenia;
+                    nuevoUsuario.correo = email;
                     nuevoUsuario.rol = 1;
 
                     usuarioService.RegistrarUsuario(nuevoUsuario);
@@ -63,7 +65,7 @@ namespace TiendaGrupo15Progra3
             catch (Exception ex)
             {
 
-                throw new Exception("Error Registrar Cliente Back " + ex.Message);
+                throw new Exception("Error Registrar Cliente (RegistrarseLogin) Linea 68 " + ex.Message);
             }
           
            

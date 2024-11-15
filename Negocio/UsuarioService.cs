@@ -17,7 +17,8 @@ using System.Web.UI.WebControls;
 namespace Negocio
 {
     public class UsuarioService
-    {
+    {    
+        //Revisada: Okey
         public int Login(Usuario usuario)
         {
             int rol = 0;
@@ -26,13 +27,13 @@ namespace Negocio
             {
                 datos.setearConsulta("SELECT Rol from USUARIOS WHERE Nombre = @nombre AND Contrasenia = @contrasenia");
                 datos.setearParametro("@nombre", usuario.nombre);
-                datos.setearParametro("@contrasenia", usuario.contrasenia);
+                datos.setearParametro("@contrasenia", usuario.clave);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                   
-                   rol = (int)datos.Lector["Rol"];
+                   rol = (int)datos.Lector["idRol"];
                    
                    
                 }
@@ -46,13 +47,14 @@ namespace Negocio
                 datos.cerrarConexion();
             } 
         }
+        //Revisada: Okey
         public int LoginSoloUsuarioYcontrasenia(string usuario,string contrasenia)
         {
             int rol = 0;
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT Rol from USUARIOS WHERE Nombre = @nombre AND Contrasenia=@contrasenia");
+                datos.setearConsulta("SELECT idRol from USUARIO WHERE Nombre = @nombre AND Clave=@contrasenia");
                 datos.setearParametro("@nombre", usuario);
                 datos.setearParametro("@contrasenia", contrasenia);
 
@@ -61,7 +63,7 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
 
-                    rol = int.Parse( datos.Lector["Rol"].ToString());
+                    rol = int.Parse( datos.Lector["idRol"].ToString());
 
 
                 }
@@ -77,12 +79,18 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-
-        public bool ExisteUsuario(string usuarioEntrante)
+       
+        public bool ExisteUsuario(string UsuarioEmail)
         {
-            AccesoDatos datos = new AccesoDatos();
-            datos.setearConsulta("select Nombre from USUARIOS where Nombre=@usuario");
-            datos.setearParametro("@usuario",usuarioEntrante);
+           AccesoDatos datos = new AccesoDatos();
+
+           try
+            {
+
+
+            datos.setearConsulta("select FechaRegistro,Correo,EsActivo from USUARIO where Correo=@mail and EsActivo=@Inactivo and (FechaRegistro IS NULL OR FechaRegistro ='')");
+            datos.setearParametro("@mail", UsuarioEmail);
+            datos.setearParametro("@Inactivo", 0);
             datos.ejecutarLectura();
             while (datos.Lector.Read())
             {
@@ -92,22 +100,37 @@ namespace Negocio
 
             }
 
-            return false;
+                return false;
+
+            }
+            catch (Exception ex)
+            {
+
+               throw new Exception("Error en Existe Cliente (UsuarioService) Linea 108: " + ex.Message); ;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
           
         }
 
         public void RegistrarUsuario (Usuario usuario)
         { 
             AccesoDatos datos = new AccesoDatos ();
-            
+            DateTime dateTime = DateTime.Now;
+
             try
             {
-                datos.setearConsulta (@"Insert into usuarios(Nombre, Contrasenia, Rol) VALUES
-                                        (@Nombre,  @Contrasenia, @Rol)");
+                datos.setearConsulta (@"Insert into USUARIO(nombre,correo, clave, idRol,esActivo,fechaRegistro) VALUES
+                                        (@Nombre,@Correo,@Contrasenia, @idRol,@esActivo,@FechaRegistro)");
 
                 datos.setearParametro("@Nombre", usuario.nombre);
-                datos.setearParametro("@Contrasenia", usuario.contrasenia);
-                datos.setearParametro("@Rol", usuario.rol);
+                datos.setearParametro("Correo",usuario.correo);
+                datos.setearParametro("@Contrasenia", usuario.clave);
+                datos.setearParametro("@idRol", usuario.rol);
+                datos.setearParametro("@esActivo", 1);
+                datos.setearParametro("@fechaRegistro", dateTime);
 
                 datos.ejecutarAccion(); 
 

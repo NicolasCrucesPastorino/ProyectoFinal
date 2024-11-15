@@ -22,6 +22,9 @@
             <asp:Label ID="LabelUsuario" runat="server" Text="Usuario" CssClass="form-label"></asp:Label>
             <asp:TextBox ID="TextBoxUsuario" runat="server" CssClass="form-control" placeholder="Ingresa tu usuario"></asp:TextBox>
 
+             <asp:Label ID="LblEmail" runat="server" Text="Mail" CssClass="form-label"></asp:Label>
+             <asp:TextBox ID="TxtMail" runat="server" CssClass="form-control" placeholder="Ingresa tu mail"></asp:TextBox>
+
             <asp:Label ID="LabelPassword" runat="server" Text="Contraseña" CssClass="form-label mt-3"></asp:Label>
             <asp:TextBox ID="TextBoxPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Ingresa tu contraseña"></asp:TextBox>
 

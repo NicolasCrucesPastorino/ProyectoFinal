@@ -24,6 +24,8 @@ namespace Dominio
         public decimal Precio { get; set; }
         [DisplayName("Stock")]
         public int Stock { get; set; }
+        [DisplayName("IdUsuario")]
+        public int IdUsuario { get; set; }
         [DisplayName("Imagenes")]
         public List<Imagen> Imagenes { get; set; }
         public Articulo()
