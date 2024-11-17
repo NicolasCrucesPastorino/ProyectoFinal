@@ -25,7 +25,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();          
             try
             {
-                datos.setearConsulta("SELECT Rol from USUARIOS WHERE Nombre = @nombre AND Contrasenia = @contrasenia");
+                datos.setearConsulta("SELECT idRol from USUARIOS WHERE nombre = @nombre AND clave = @contrasenia");
                 datos.setearParametro("@nombre", usuario.nombre);
                 datos.setearParametro("@contrasenia", usuario.clave);
                 datos.ejecutarLectura();

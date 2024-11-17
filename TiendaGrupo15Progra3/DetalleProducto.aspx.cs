@@ -27,9 +27,13 @@ namespace TiendaGrupo15Progra3
 
             articuloDetalle.Imagenes = imagenService.listarPorIdArticulo(idArticulo);
 
-
+            if (Session["Rol"] != null)
+            {
             string rolString = Session["Rol"].ToString();
             Rol = int.Parse(rolString);
+            }
+            
+            
 
         }
     }

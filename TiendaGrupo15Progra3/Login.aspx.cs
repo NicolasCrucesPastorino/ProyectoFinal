@@ -41,7 +41,7 @@ namespace TiendaGrupo15Progra3
             }
             else
             {
-                fGlobales.MostrarAlerta(this, "El Usuario no existe");
+                fGlobales.MostrarAlerta(this, "Los Datos ingresados no son correctos.");
             }
 
 

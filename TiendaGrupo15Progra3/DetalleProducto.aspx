@@ -28,7 +28,7 @@
         </button>
     </div>
     <p><%= articuloDetalle.Descripcion %></p>
-    <h3>Precio : <%= articuloDetalle.Precio %></h3>
+    <h3>Precio : <%= Math.Round(articuloDetalle.Precio,2) %></h3>
     <p>Marca: <%= articuloDetalle.Marca.ToString() %></p>
     <p>Categoria: <%= articuloDetalle.Categoria %></p>
      <%if(Rol == 2)
