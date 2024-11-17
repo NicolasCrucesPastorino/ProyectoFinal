@@ -37,6 +37,7 @@ namespace Negocio
 
 
         }
+<<<<<<< HEAD
 
         public List<Carrito> BuscarEnCarritoporIdCarrito(int idCarritoEntrante)
         {
@@ -71,6 +72,8 @@ namespace Negocio
 
 
         }
+=======
+>>>>>>> f4cec800b38fc5f924974182803b486b2495be9d
     }
 }
 

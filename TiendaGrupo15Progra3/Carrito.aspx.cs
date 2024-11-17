@@ -25,7 +25,11 @@ namespace TiendaGrupo15Progra3
             Usuario usuario = (Usuario)Session["Usuario"];
             CarritoService carritoService = new CarritoService();
 
+<<<<<<< HEAD
             CarritoProductos = carritoService.BuscarEnCarritoporIdCarrito(usuario.idUsuario);
+=======
+            CarritoProductos =  ;
+>>>>>>> f4cec800b38fc5f924974182803b486b2495be9d
 
             if (CarritoProductos == null)
             {
