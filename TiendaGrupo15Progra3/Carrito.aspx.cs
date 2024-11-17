@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
+using Dominio;
 
 namespace TiendaGrupo15Progra3
 {
@@ -22,7 +24,7 @@ namespace TiendaGrupo15Progra3
         private void CargarCarrito()
         {
 
-            CarritoProductos = Session["Carrito"] as List<ProductoCarrito>;
+            CarritoProductos =  ;
 
             if (CarritoProductos == null)
             {

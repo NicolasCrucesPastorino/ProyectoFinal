@@ -79,7 +79,45 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-       
+        public Usuario LoginUsuarioYcontraseniaDevuelveUsuario(string usuario, string contrasenia)
+        {
+            Usuario usuarioObjeto = new Usuario();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,urlFoto,nombreFoto,clave,esActivo from USUARIO WHERE Nombre = @nombre AND Clave=@contrasenia");
+                datos.setearParametro("@nombre", usuario);
+                datos.setearParametro("@contrasenia", contrasenia);
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    usuarioObjeto.idUsuario = int.Parse(datos.Lector["idUsuario"].ToString());
+                    usuarioObjeto.nombre = datos.Lector["nombre"].ToString();
+                    usuarioObjeto.correo = datos.Lector["correo"].ToString();
+                    usuarioObjeto.telefono = datos.Lector["telefono"].ToString();
+                    usuarioObjeto.rol = int.Parse(datos.Lector["idRol"].ToString());
+                    usuarioObjeto.urlFoto = datos.Lector["urlFoto"].ToString();
+                    usuarioObjeto.nombreFoto = datos.Lector["nombreFoto"].ToString();
+                    usuarioObjeto.clave = datos.Lector["clave"].ToString();
+                    usuarioObjeto.esActivo = (bool)datos.Lector["esActivo"];
+
+
+                }
+
+                return usuarioObjeto;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public bool ExisteUsuario(string UsuarioEmail)
         {
            AccesoDatos datos = new AccesoDatos();

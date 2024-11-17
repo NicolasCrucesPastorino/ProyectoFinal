@@ -122,7 +122,7 @@ namespace Negocio
 
             try
             {
-                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion Nombre_Marca,C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.id=@idArticulo");
+                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion Nombre_Marca,C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio,A.Stock FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.id=@idArticulo");
                 accesoDatos.setearParametro("@idArticulo",ArticuloID);
                 accesoDatos.ejecutarLectura();
                 Articulo articulo = new Articulo();
@@ -146,8 +146,8 @@ namespace Negocio
                     articulo.Categoria.Id = (int)accesoDatos.Lector["IdCategoria"];
 
                     articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
+                    articulo.Stock = (int)accesoDatos.Lector["Stock"];
 
-                    
                 }
 
                 foreach (var a in lista)

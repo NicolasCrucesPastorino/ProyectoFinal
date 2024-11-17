@@ -24,6 +24,15 @@ namespace TiendaGrupo15Progra3
         protected global::System.Web.UI.WebControls.Button BtnEliminarProdAdmin;
 
         /// <summary>
+        /// DropDownListAgregarCarrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListAgregarCarrito;
+
+        /// <summary>
         /// BtnAgregarAlCarrito control.
         /// </summary>
         /// <remarks>
