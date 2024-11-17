@@ -31,13 +31,27 @@
     <h3>Precio : <%= Math.Round(articuloDetalle.Precio,2) %></h3>
     <p>Marca: <%= articuloDetalle.Marca.ToString() %></p>
     <p>Categoria: <%= articuloDetalle.Categoria %></p>
-     <%if(Rol == 2)
+     <%if(Rol == 1)
      {  %>
  <div>
- <asp:Button ID="BtnEliminarProdAdmin" runat="server" Text="Eliminar Producto" />
+ <asp:Button ID="BtnEliminarProdAdmin" runat="server" Text="Eliminar Producto" OnClick="BtnEliminarProdAdmin_Click" />
 
  </div>
  <%} %>
+ <%if(Rol == 2)
+    {  %>
+<div>
+<asp:Button ID="BtnAgregarAlCarrito" runat="server" Text="Agregar Producto al Carrito" />
+
+</div>
+<%} %>
+       <%if(Rol == 0)
+    {  %>
+<div>
+<asp:Button ID="BtnLoguearseDesdeDetalleProducto" runat="server" Text="No esta logueado,logueese aqui" OnClick="BtnLoguearseDesdeDetalleProducto_Click" />
+
+</div>
+<%} %>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

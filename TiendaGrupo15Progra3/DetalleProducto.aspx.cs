@@ -36,5 +36,24 @@ namespace TiendaGrupo15Progra3
             
 
         }
+
+        protected void BtnLoguearseDesdeDetalleProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void BtnEliminarProdAdmin_Click(object sender, EventArgs e)
+        {
+            ImagenService imagenService = new ImagenService();
+            ArticuloService articuloService = new ArticuloService();
+            int idArticulo = int.Parse(Request.QueryString["idDetalle"]);
+
+            imagenService.EliminarPorIdImagen(idArticulo);
+            articuloService.EliminarArticuloPorId(idArticulo);
+
+            fGlobales.MostrarAlerta(this, "Se ha eliminado el articulo del mercado.");
+            Response.Redirect("ElegirProducto.aspx");
+
+        }
     }
     }

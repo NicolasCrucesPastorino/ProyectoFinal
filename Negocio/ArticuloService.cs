@@ -189,5 +189,26 @@ namespace Negocio
             }
           
         }
+        public void EliminarArticuloPorId(int IdArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("DELETE from ARTICULOS where Id=@IdArticulo");
+                datos.setearParametro("@IdArticulo", IdArticulo);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al modificar producto: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
