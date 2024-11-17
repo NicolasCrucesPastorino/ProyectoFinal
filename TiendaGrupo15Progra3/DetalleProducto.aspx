@@ -29,6 +29,7 @@
     </div>
     <p><%= articuloDetalle.Descripcion %></p>
     <h3>Precio : <%= Math.Round(articuloDetalle.Precio,2) %></h3>
+    <h3>Cantidad en Stock : <%= articuloDetalle.Stock %></h3>
     <p>Marca: <%= articuloDetalle.Marca.ToString() %></p>
     <p>Categoria: <%= articuloDetalle.Categoria %></p>
      <%if(Rol == 1)
@@ -41,8 +42,10 @@
  <%if(Rol == 2)
     {  %>
 <div>
-<asp:Button ID="BtnAgregarAlCarrito" runat="server" Text="Agregar Producto al Carrito" />
+ <asp:DropDownList ID="DropDownListAgregarCarrito" runat="server"></asp:DropDownList>
+<asp:Button ID="BtnAgregarAlCarrito" runat="server" Text="Agregar Producto al Carrito" OnClick="BtnAgregarAlCarrito_Click" />
 
+    
 </div>
 <%} %>
        <%if(Rol == 0)

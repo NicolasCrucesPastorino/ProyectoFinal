@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace TiendaGrupo15Progra3
     public partial class Default : System.Web.UI.Page
     {
         public int RolDefault;
-        public string UsuarioDefault;
+        public Usuario UsuarioDefault= new Usuario();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,11 +27,12 @@ namespace TiendaGrupo15Progra3
                     RolDefault = 0;
                 }
                 if (Session["Usuario"] != null) 
-                {
-                    UsuarioDefault = Session["Usuario"].ToString();
+                {   
+
+                    UsuarioDefault =(Usuario)Session["Usuario"];
                 } else
                 {
-                    UsuarioDefault = "Anónimo";
+                    UsuarioDefault.nombre = "Anónimo";
                 }
 
             }
@@ -51,7 +53,7 @@ namespace TiendaGrupo15Progra3
             Session["Rol"] = null;
             Session["Usuario"] = null;
             RolDefault = 0;
-            UsuarioDefault = "Anónimo";
+            UsuarioDefault.nombre = "Anónimo";
             fGlobales.MostrarAlerta(this, "Ha cerrado sesión.");
         }
     }

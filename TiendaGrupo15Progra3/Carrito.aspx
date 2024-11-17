@@ -71,15 +71,13 @@
                 <asp:Repeater ID="RepeaterCarrito" runat="server">
                     <ItemTemplate>
                         <tr>
-                            <td><%# Eval("NombreProducto") %></td>
-                            <td><%# Eval("PrecioUnitario", "{0:C}") %></td>
+                            <td><%# Eval("IdCarrito") %></td>
+                            <td><%# Eval("IdProducto") %></td>
                             <td>
-                                <asp:TextBox ID="txtCantidad" runat="server" Text='<%# Eval("Cantidad") %>' CssClass="form-control" OnTextChanged="CantidadChanged" AutoPostBack="true" />
+                                <asp:TextBox ID="txtCantidad" runat="server" Text='<%# Eval("Cantidad") %>' CssClass="form-control" AutoPostBack="true" />
                             </td>
-                            <td><%# Eval("TotalProducto", "{0:C}") %></td>
-                            <td>
-                                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn-remove" CommandArgument='<%# Eval("IDProducto") %>' OnClick="EliminarProducto" />
-                            </td>
+                            <td><%# Eval("Cantidad") %></td>
+                            
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>

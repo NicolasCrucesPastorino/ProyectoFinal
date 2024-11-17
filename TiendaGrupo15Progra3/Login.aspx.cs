@@ -27,7 +27,7 @@ namespace TiendaGrupo15Progra3
             if (usuarioService.LoginSoloUsuarioYcontrasenia(usuario,contrasenia)==2)
             {
                 Session["Rol"]=2;
-                Session["Usuario"] = usuario;
+                Session["Usuario"] = usuarioService.LoginUsuarioYcontraseniaDevuelveUsuario(usuario,contrasenia);
                 Response.Redirect("Default.aspx");
                 
                
@@ -35,7 +35,7 @@ namespace TiendaGrupo15Progra3
             else if(usuarioService.LoginSoloUsuarioYcontrasenia(usuario,contrasenia)==1)
             {
                 Session["Rol"] = 1;
-                Session["Usuario"] = usuario;
+                Session["Usuario"] = usuarioService.LoginUsuarioYcontraseniaDevuelveUsuario(usuario, contrasenia);
                 Response.Redirect("Default.aspx");
                 
             }
