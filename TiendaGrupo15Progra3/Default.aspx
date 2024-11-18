@@ -59,10 +59,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-custom"></div>
     <div class="main-content container">
-        <h2>Bienvenido <%=UsuarioDefault.nombre%></h2>     
-       
-          
-            
+        <h2>Bienvenido <%=UsuarioDefault.nombre%> <%=UsuarioDefault.apellido%></h2>                               
         </div>
 
     <div class="button-container">

@@ -25,8 +25,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();          
             try
             {
-                datos.setearConsulta("SELECT idRol from USUARIOS WHERE nombre = @nombre AND clave = @contrasenia");
-                datos.setearParametro("@nombre", usuario.nombre);
+                datos.setearConsulta("SELECT idRol from USUARIOS WHERE nombreUsuario = @nombreUsuario AND clave = @contrasenia");
+                datos.setearParametro("@nombreUsuario", usuario.nombre);
                 datos.setearParametro("@contrasenia", usuario.clave);
                 datos.ejecutarLectura();
 
@@ -54,8 +54,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT idRol from USUARIO WHERE Nombre = @nombre AND Clave=@contrasenia");
-                datos.setearParametro("@nombre", usuario);
+                datos.setearConsulta("SELECT idRol from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia");
+                datos.setearParametro("@nombreUsuario", usuario);
                 datos.setearParametro("@contrasenia", contrasenia);
 
                 datos.ejecutarLectura();
@@ -85,8 +85,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,urlFoto,nombreFoto,clave,esActivo from USUARIO WHERE Nombre = @nombre AND Clave=@contrasenia");
-                datos.setearParametro("@nombre", usuario);
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,urlFoto,nombreFoto,clave,esActivo,apellido,nombreUsuario from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia");
+                datos.setearParametro("@nombreUsuario", usuario);
                 datos.setearParametro("@contrasenia", contrasenia);
 
                 datos.ejecutarLectura();
@@ -102,6 +102,8 @@ namespace Negocio
                     usuarioObjeto.nombreFoto = datos.Lector["nombreFoto"].ToString();
                     usuarioObjeto.clave = datos.Lector["clave"].ToString();
                     usuarioObjeto.esActivo = (bool)datos.Lector["esActivo"];
+                    usuarioObjeto.apellido = datos.Lector["apellido"].ToString();
+                    usuarioObjeto.nombreUsuario = datos.Lector["nombreUsuario"].ToString();
 
 
                 }

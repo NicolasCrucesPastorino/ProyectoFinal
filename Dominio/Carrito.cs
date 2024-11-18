@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 namespace Dominio
 {
     public class Carrito 
-    { public int IdCarrito { get; set; } 
-        [DisplayName("Id Producto")] 
+    { public int Id { get; set; } 
+        [DisplayName("Id Carrito")] 
         public int IdProducto { get; set; } 
-        [DisplayName("Cantidad")]
+        [DisplayName("Id Producto")]
+        public int IdUsuario { get; set; }
+        [DisplayName("Id Usuario")]
+
         public int Cantidad { get; set; }
     }
 }

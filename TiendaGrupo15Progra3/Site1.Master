@@ -98,7 +98,7 @@
                                 <a class="nav-link" href="/Login.aspx">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link cart-icon" href="/Carrito.aspx">
+                                <a class="nav-link cart-icon" href="/CarritoWebForm.aspx">
                                     <i class="fas fa-shopping-cart"></i>
                                     <span class="cart-badge">3</span> <!-- Este número puede cambiar dinámicamente -->
                                 </a>

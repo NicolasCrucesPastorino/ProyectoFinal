@@ -11,17 +11,18 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml;
 
+
 namespace Negocio
 {
     public class CarritoService
     {
-        public void GuardarEnCarritoArticulo(int idCarritoEntrante, int idArticuloEntrante, int cantidad)
+        public void GuardarEnCarritoArticulo(int idUsuarioEntrante, int idArticuloEntrante, int cantidad)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into Carrito(idCarrito,idProducto,Cantidad) values(@idCarrito,@idArticulo,@Cantidad)");
-                datos.setearParametro("@idCarrito", idCarritoEntrante);
+                datos.setearConsulta("insert into Carrito(idUsuario,idProducto,Cantidad) values(@idUsuario,@idArticulo,@Cantidad)");
+                datos.setearParametro("@idUsuario", idUsuarioEntrante);
                 datos.setearParametro("@idArticulo", idArticuloEntrante);
                 datos.setearParametro("@Cantidad", cantidad);
                 datos.ejecutarAccion();
@@ -37,23 +38,23 @@ namespace Negocio
 
 
         }
-<<<<<<< HEAD
 
-        public List<Carrito> BuscarEnCarritoporIdCarrito(int idCarritoEntrante)
+        public List<Carrito> BuscarEnCarritoporIdUsuario(int idUsuarioEntrante)
         {
             AccesoDatos datos = new AccesoDatos();
-            List<Carrito> listaCarrito = new List<Carrito>();
+            List<Dominio.Carrito> listaCarrito = new List<Dominio.Carrito>();
             
             try
             {
-                datos.setearConsulta("SELECT idCarrito,idProducto,Cantidad from Carrito where idCarrito=@idCarrito");
-                datos.setearParametro("@idCarrito", idCarritoEntrante);
+                datos.setearConsulta("SELECT id,idUsuario,idProducto,Cantidad from Carrito where idUsuario=@idUsuario");
+                datos.setearParametro("@idUsuario", idUsuarioEntrante);
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
 
                     Carrito carrito = new Carrito();
-                    carrito.IdCarrito = (int)datos.Lector["idCarrito"];
+                    carrito.Id = (int)datos.Lector["id"];
+                    carrito.IdUsuario = (int)datos.Lector["idUsuario"];
                     carrito.IdProducto = (int)datos.Lector["idProducto"];
                     carrito.Cantidad = (int)datos.Lector["Cantidad"];
                     listaCarrito.Add(carrito);
@@ -72,8 +73,6 @@ namespace Negocio
 
 
         }
-=======
->>>>>>> f4cec800b38fc5f924974182803b486b2495be9d
     }
 }
 

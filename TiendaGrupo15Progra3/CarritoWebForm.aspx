@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Carrito de Compras" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="TiendaGrupo15Progra3.Carrito" %>
+﻿<%@ Page Title="Carrito de Compras" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="CarritoWebForm.aspx.cs" Inherits="TiendaGrupo15Progra3.Carrito" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -62,7 +62,7 @@
                     <th>Producto</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
-                    <th>Total</th>
+                    <th>SubTotal</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -71,12 +71,10 @@
                 <asp:Repeater ID="RepeaterCarrito" runat="server">
                     <ItemTemplate>
                         <tr>
-                            <td><%# Eval("IdCarrito") %></td>
-                            <td><%# Eval("IdProducto") %></td>
-                            <td>
-                                <asp:TextBox ID="txtCantidad" runat="server" Text='<%# Eval("Cantidad") %>' CssClass="form-control" AutoPostBack="true" />
-                            </td>
+                            <td><%# Eval("Nombre")   %></td>
+                            <td><%# Eval("Precio") %></td>                            
                             <td><%# Eval("Cantidad") %></td>
+                            <td><%# Eval("Total") %></td>
                             
                         </tr>
                     </ItemTemplate>
@@ -85,7 +83,7 @@
         </table>
 
         <div class="cart-total">
-            <strong>Total:</strong> <span id="totalCarrito">0.00</span>
+            <strong>Total:</strong> <span id="totalCarrito"><%=TotalCarritoGlobal %></span>
         </div>
 
         <div class="text-center">

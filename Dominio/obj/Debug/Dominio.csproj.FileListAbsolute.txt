@@ -58,3 +58,9 @@ C:\Users\Nico\Downloads\PruebaProyectoFialDomigo\ProyectoFinal\Dominio\obj\Debug
 C:\Users\Nico\Downloads\PruebaProyectoFialDomigo\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Downloads\PruebaProyectoFialDomigo\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 C:\Users\Nico\Downloads\PruebaProyectoFialDomigo\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalErrordeSubidaDomingo\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalErrordeSubidaDomingo\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalErrordeSubidaDomingo\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nico\Downloads\ProyectoFinalErrordeSubidaDomingo\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Downloads\ProyectoFinalErrordeSubidaDomingo\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalErrordeSubidaDomingo\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
