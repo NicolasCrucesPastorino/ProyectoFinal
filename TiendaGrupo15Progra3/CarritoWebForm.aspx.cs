@@ -12,6 +12,11 @@ namespace TiendaGrupo15Progra3
         protected List<Dominio.Carrito> CarritoProductos = new List<Dominio.Carrito>();
         protected List<CarritoSubMenu> carritoSubMenusGlobal = new List<CarritoSubMenu>();
         protected decimal TotalCarritoGlobal = new Decimal(0);
+        protected string mensajesAlerta=null;
+
+
+        public void AgregarMensajeAlerta(string mensaje) { mensajesAlerta += mensaje + "\\n"; }
+        public void MostrarAlertas() { ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + mensajesAlerta + "');", true); }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,8 +64,64 @@ namespace TiendaGrupo15Progra3
         }
 
         protected void ProcederPago(object sender, EventArgs e)
-        {
-            Response.Redirect("Checkout.aspx");
+        {   
+            bool HayStockdeTodo=true;
+            List<int> articulosConSobraDeStock=new List<int>();
+            List<CarritoSubMenu> listaCarrito = new List<CarritoSubMenu>();
+
+            if (carritoSubMenusGlobal.Count == 0) 
+            {
+                fGlobales.MostrarAlerta(this, "El carrito se encuentra vacio. NO SE PUEDE COMPRAR NADA.");
+                return;
+            }
+
+            foreach(CarritoSubMenu carritoItem in carritoSubMenusGlobal)
+            {
+                Articulo articulo = new Articulo();
+                ArticuloService articuloService = new ArticuloService();
+                articulo=articuloService.listarXid(carritoItem.IdProducto);
+                if (articulo.Stock < carritoItem.Cantidad)
+                {
+                    HayStockdeTodo = false;
+                    articulosConSobraDeStock.Add(carritoItem.IdProducto);
+                    listaCarrito.Add(carritoItem);
+                }
+
+            }
+
+            if (HayStockdeTodo == true)
+            {
+
+            } else
+            {
+                
+                AgregarMensajeAlerta("Contiene uno o más articulos en su carrito con una cantidad que supera el stock actual del producto. ESOS PRODUCTOS HAN BAJADO SU CANTIDAD HASTA EL MAXIMO DISPONIBLE EN STOCK.");
+                foreach(int idProductoLista in  articulosConSobraDeStock)
+                {
+                    ArticuloService articuloService = new ArticuloService();
+                    Articulo articulo = new Articulo();
+                    articulo = articuloService.listarXid(idProductoLista);
+                    AgregarMensajeAlerta(articulo.Nombre.ToString());
+                }
+                
+                foreach(CarritoSubMenu carritoItem in listaCarrito)
+                {
+                    CarritoService carritoService = new CarritoService();
+                    ArticuloService articuloService = new ArticuloService();
+                    Articulo articulo = new Articulo();
+                    articulo = articuloService.listarXid(carritoItem.IdProducto);
+                    carritoService.CarritoCambiarCantidad(carritoItem.IdCarrito, articulo.Stock);
+                }
+                AgregarMensajeAlerta("Aprete de vuelta para proceeder con la compra.");
+            }
+            if(mensajesAlerta!=null)
+            {
+                MostrarAlertas();
+            }
+            CargarCarrito();
+            
+            //Response.Redirect("Checkout.aspx");
+            
         }
     }
 }

@@ -73,6 +73,33 @@ namespace Negocio
 
 
         }
+
+        public void CarritoCambiarCantidad(int idCarritoEntrante,int cantidadEntrante)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            
+
+            try
+            {
+                datos.setearConsulta("UPDATE Carrito SET Cantidad = @Cantidad WHERE id=@id;");
+                datos.setearParametro("@Cantidad", cantidadEntrante);
+                datos.setearParametro("@id", idCarritoEntrante);
+                datos.ejecutarAccion();
+                
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+
     }
 }
 
