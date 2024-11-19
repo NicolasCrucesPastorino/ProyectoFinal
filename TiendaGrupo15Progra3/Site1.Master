@@ -100,7 +100,9 @@
                             <li class="nav-item">
                                 <a class="nav-link cart-icon" href="/CarritoWebForm.aspx">
                                     <i class="fas fa-shopping-cart"></i>
-                                    <span class="cart-badge">3</span> <!-- Este número puede cambiar dinámicamente -->
+                                    <span class="cart-badge">
+                                        <%=cantidadCarrito%>
+                                    </span> <!-- Este número puede cambiar dinámicamente -->
                                 </a>
                             </li>
                             <li class="nav-item">

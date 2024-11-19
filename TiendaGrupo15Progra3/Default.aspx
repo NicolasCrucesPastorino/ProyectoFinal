@@ -59,7 +59,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-custom"></div>
     <div class="main-content container">
-        <h2>Bienvenido <%=UsuarioDefault.nombre%> <%=UsuarioDefault.apellido%></h2>                               
+        
+  
+            
+
+              <h2>Bienvenido <%=char.ToUpper(UsuarioDefault.nombre[0]) + UsuarioDefault.nombre.Substring(1)%> <%=char.ToUpper(UsuarioDefault.apellido[0]) + UsuarioDefault.apellido.Substring(1)%>
+</h2>
+                           
         </div>
 
     <div class="button-container">

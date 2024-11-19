@@ -33,7 +33,9 @@ namespace TiendaGrupo15Progra3
                 } else
                 {
                     UsuarioDefault.nombre = "Anónimo";
+                    UsuarioDefault.apellido = "   ";
                 }
+
 
             }
             catch (Exception ex)

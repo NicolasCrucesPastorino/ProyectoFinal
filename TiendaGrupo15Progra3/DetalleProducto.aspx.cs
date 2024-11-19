@@ -86,8 +86,8 @@ namespace TiendaGrupo15Progra3
 
 
             carritoService.GuardarEnCarritoArticulo(usuario.idUsuario, idProductoParaCarrito, cantidadParaCarrito);
+            Response.Redirect("CarritoWebForm.aspx");
 
-           
         }
     }
     }

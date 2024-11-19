@@ -11,11 +11,38 @@ namespace TiendaGrupo15Progra3
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
-        protected void btnParticipa_Click(object sender, EventArgs e)
+        protected List<Dominio.Carrito> CarritoProductos = new List<Dominio.Carrito>();
+        public int cantidadCarrito = 0;
+        protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("/WebForm1.aspx");
-        }
+            if (Session["Usuario"] != null)
+            {
+                Usuario usuario = (Usuario)Session["Usuario"];
+                CarritoService carritoService = new CarritoService();
+                List<Dominio.Carrito> listaCarrito = carritoService.BuscarEnCarritoporIdUsuario(usuario.idUsuario);
+                List<CarritoSubMenu> listaSubMenu = new List<CarritoSubMenu>();
 
-    
+                if (listaCarrito != null)
+                {
+                    CarritoProductos = listaCarrito;
+                }
+
+                foreach (Dominio.Carrito carrito in CarritoProductos)
+                {
+                    CarritoSubMenu carritoSubMenu = new CarritoSubMenu();
+                    ArticuloService articuloService = new ArticuloService();
+                    carritoSubMenu.IdCarrito = carrito.Id;
+                    carritoSubMenu.IdProducto = carrito.IdProducto;
+                    carritoSubMenu.Nombre = articuloService.listarXid(carrito.IdProducto).Nombre;
+                    carritoSubMenu.Precio = Math.Round(articuloService.listarXid(carrito.IdProducto).Precio, 2);
+                    carritoSubMenu.Cantidad = carrito.Cantidad;
+                    carritoSubMenu.Total = Math.Round(carrito.Cantidad * articuloService.listarXid(carrito.IdProducto).Precio, 2);
+                    listaSubMenu.Add(carritoSubMenu);
+
+                }
+                cantidadCarrito = listaSubMenu.Count;
+            }
+            
+        }
     }
 }
