@@ -46,7 +46,7 @@ namespace TiendaGrupo15Progra3
             }
             catch (Exception ex)
             {
-                fGlobales.MostrarAlerta(this, "Error de Sesion");
+               throw new Exception("Error de Sesion" + ex.Message);
             }
             
         }

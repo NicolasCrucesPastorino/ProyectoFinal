@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarNuevoArticulo.aspx" />
     <Content Include="CarritoWebForm.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -99,11 +100,19 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="UsuarioRegistrado.aspx" />
+    <Content Include="VenderProductos.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarNuevoArticulo.aspx.cs">
+      <DependentUpon>AgregarNuevoArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarNuevoArticulo.aspx.designer.cs">
+      <DependentUpon>AgregarNuevoArticulo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CarritoWebForm.aspx.cs">
       <DependentUpon>CarritoWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -170,6 +179,13 @@
     </Compile>
     <Compile Include="UsuarioRegistrado.aspx.designer.cs">
       <DependentUpon>UsuarioRegistrado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VenderProductos.aspx.cs">
+      <DependentUpon>VenderProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VenderProductos.aspx.designer.cs">
+      <DependentUpon>VenderProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

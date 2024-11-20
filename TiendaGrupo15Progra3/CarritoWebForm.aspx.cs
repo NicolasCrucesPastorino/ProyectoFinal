@@ -28,6 +28,13 @@ namespace TiendaGrupo15Progra3
 
         private void CargarCarrito()
         {
+            if (Session["Usuario"] == null)
+            {
+                fGlobales.MostrarAlerta(this, "NO esta logueado, no puede acceder al carrito");
+                Response.Redirect("/Default.aspx");
+            }
+
+
             Usuario usuario = (Usuario)Session["Usuario"];
             CarritoService carritoService = new CarritoService();
             List<Dominio.Carrito> listaCarrito = carritoService.BuscarEnCarritoporIdUsuario(usuario.idUsuario);

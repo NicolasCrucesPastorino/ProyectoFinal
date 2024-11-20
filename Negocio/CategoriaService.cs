@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 using Dominio;
 
 namespace Negocio
@@ -10,8 +11,9 @@ namespace Negocio
     public class CategoriaService
     {
         public List<Categoria> getCategorias()
-        {   List<Categoria> ListaCategorias = new List<Categoria>();
-            
+        {
+            List<Categoria> ListaCategorias = new List<Categoria>();
+
             AccesoDatos datos = new AccesoDatos();
             try
             {
@@ -19,8 +21,8 @@ namespace Negocio
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
-                {   
-                    Categoria categoria = new Categoria(); 
+                {
+                    Categoria categoria = new Categoria();
                     categoria.Descripcion = Convert.ToString(datos.Lector["Descripcion"]);
                     ListaCategorias.Add(categoria);
                 }
@@ -29,17 +31,82 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Error al listar categorias: " + ex.Message);
             }
             finally
             {
                 datos.cerrarConexion();
             }
 
+        }
+        public int BuscarCategoria(string Descripcion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int categoriaId = 0;
+            try
+            {
+                datos.setearConsulta("SELECT Id,Descripcion from CATEGORIAS where Descripcion=@Descripcion");
+                datos.setearParametro("@Descripcion", Descripcion);
+                datos.ejecutarLectura();
 
-            
+                while (datos.Lector.Read())
+                {
+                    categoriaId = int.Parse(datos.Lector["Id"].ToString());
+                    return categoriaId;
+
+                }
+
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar categoria: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
+        public void AgregarCategoriaNueva(string Descripcion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Categoria categoria = new Categoria();
+            try
+            {
+                datos.setearConsulta("Insert into Categorias (Descripcion) VALUES(@Descripcion)");
+                datos.setearParametro("@Descripcion", Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al agregar nueva categoria: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
 
+        }
+        public void ModificarCategoria(string Descripcion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Categoria categoria = new Categoria();
+            try
+            {
+                datos.setearConsulta("UPDATE Categorias SET Descripcion=@Descripcion) where Descripcion=@Descripcion");
+                datos.setearParametro("@Descripcion", Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar categoria: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }

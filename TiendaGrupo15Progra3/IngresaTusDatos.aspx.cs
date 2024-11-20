@@ -48,6 +48,16 @@ namespace TiendaGrupo15Progra3
 
             try
             {
+                if (Session["Usuario"] == null)
+                {
+
+                    string script = "alert('No se encuentra logueado debe loguearse para actualizar perfil.'); window.location='Login.aspx';"; 
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true); 
+                    return; 
+
+                }
+
+
                 Usuario usuario = new Usuario();
                 Usuario usuarioTraidoSession = new Usuario();
                 UsuarioService usuarioService = new UsuarioService();

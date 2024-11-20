@@ -169,6 +169,34 @@ namespace Negocio
 
            
         }
+
+        public void AgregarArticulo (Articulo nuevoArticulo)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+
+            try
+            {
+                accesoDatos.setearConsulta(@"INSERT INTO Articulos (Codigo, Nombre, Descripcion,IdMarca,IdCategoria,Precio, Stock, IdUsuario)
+                VALUES (@codigo,@nombre,@descripcion,@IdMarca,@IdCategoria,@precio,@stock,@IdUsuario)");
+
+                accesoDatos.setearParametro("@codigo", nuevoArticulo.CodigoArticulo);
+                accesoDatos.setearParametro("@nombre", nuevoArticulo.Nombre);
+                accesoDatos.setearParametro("@descripcion", nuevoArticulo.Descripcion);
+                accesoDatos.setearParametro("@IdMarca", nuevoArticulo.Marca.Id);
+                accesoDatos.setearParametro("@IdCategoria", nuevoArticulo.Categoria.Id);
+                accesoDatos.setearParametro("@precio", nuevoArticulo.Precio);
+                accesoDatos.setearParametro("@stock", nuevoArticulo.Stock);
+                accesoDatos.setearParametro("@IdUsuario", nuevoArticulo.IdUsuario);
+                accesoDatos.ejecutarAccion(); 
+    
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al agregar nuevo producto: " + ex.Message);
+            }
+            finally { accesoDatos.cerrarConexion();}
+        }
         
         public void ModificarArticulo (int IdArticulo, string Modificacion)
         {

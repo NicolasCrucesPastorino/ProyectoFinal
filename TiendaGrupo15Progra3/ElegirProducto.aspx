@@ -69,7 +69,7 @@
                         </button>
                     </div>
 
-                    <a href="DetalleProducto.aspx?idDetalle=<%= articulo.Id %>" class="btn btn-primary">Lo Quiero YA</a>
+                    <a href="DetalleProducto.aspx?idDetalle=<%= articulo.Id %>" class="btn btn-primary">Lo Quiero</a>
 
                     
                      

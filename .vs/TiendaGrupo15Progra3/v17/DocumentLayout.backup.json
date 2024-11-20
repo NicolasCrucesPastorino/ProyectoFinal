@@ -1,66 +1,70 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\HP\\Escritorio\\ProyectoFinal\\",
+  "WorkspaceRootPath": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\tiendagrupo15progra3\\site1.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\site1.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\tiendagrupo15progra3\\agregarnuevoarticulo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\agregarnuevoarticulo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal\\tiendagrupo15progra3\\ingresatusdatos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\ingresatusdatos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\negocio\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|solutionrelative:negocio\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\negocio\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|solutionrelative:negocio\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal\\tiendagrupo15progra3\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\tiendagrupo15progra3\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal\\tiendagrupo15progra3\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\tiendagrupo15progra3\\site1.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\site1.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal\\tiendagrupo15progra3\\ingresatusdatos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{7A853E68-88BB-4B23-9922-05429EFD6861}|Dominio\\Dominio.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\dominio\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A853E68-88BB-4B23-9922-05429EFD6861}|Dominio\\Dominio.csproj|solutionrelative:dominio\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\negocio\\marcaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|solutionrelative:negocio\\marcaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\negocio\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|solutionrelative:negocio\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal para rompe\\tiendagrupo15progra3\\agregarnuevoarticulo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\agregarnuevoarticulo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal para rompe\\tiendagrupo15progra3\\ingresatusdatos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\ingresatusdatos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\tiendagrupo15progra3\\ingresatusdatos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\ingresatusdatos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\tiendagrupo15progra3\\site1.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\site1.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal\\tiendagrupo15progra3\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\tiendagrupo15progra3\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\tiendagrupo15progra3\\registrarselogin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\registrarselogin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal para rompe\\tiendagrupo15progra3\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal\\tiendagrupo15progra3\\registrarselogin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\registrarselogin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal para rompe\\tiendagrupo15progra3\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\tiendagrupo15progra3\\carritowebform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal para rompe\\tiendagrupo15progra3\\carritowebform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\carritowebform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|d:\\hp\\escritorio\\proyectofinal\\tiendagrupo15progra3\\elegirproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\elegirproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\tiendagrupo15progra3\\venderproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\venderproductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A853E68-88BB-4B23-9922-05429EFD6861}|Dominio\\Dominio.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\dominio\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A853E68-88BB-4B23-9922-05429EFD6861}|Dominio\\Dominio.csproj|solutionrelative:dominio\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\tiendagrupo15progra3\\productosabml.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\productosabml.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal\\tiendagrupo15progra3\\productosabml.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\productosabml.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|D:\\HP\\Escritorio\\ProyectoFinal para rompe\\tiendagrupo15progra3\\venderproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\venderproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,15 +74,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Default.aspx",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Default.aspx",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Default.aspx",
               "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Default.aspx",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Default.aspx",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Default.aspx",
               "RelativeToolTip": "TiendaGrupo15Progra3\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
@@ -96,184 +100,196 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CarritoWebForm.aspx.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAGwAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:54:09.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Site1.Master.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Site1.Master.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Site1.Master.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Site1.Master.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\Site1.Master.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswC0AAAAIAAAAAAAAAA==",
+              "Title": "CategoriaService.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Negocio\\CategoriaService.cs",
+              "RelativeDocumentMoniker": "Negocio\\CategoriaService.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Negocio\\CategoriaService.cs",
+              "RelativeToolTip": "Negocio\\CategoriaService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAmwDUAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T21:06:30.582Z",
+              "WhenOpened": "2024-11-20T05:16:47.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IngresaTusDatos.aspx.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAswFoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T20:57:40.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.aspx.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Login.aspx.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Login.aspx.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Login.aspx.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\Login.aspx.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwB8AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T22:48:17.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RegistrarseLogin.aspx",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\RegistrarseLogin.aspx",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\RegistrarseLogin.aspx",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\RegistrarseLogin.aspx",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\RegistrarseLogin.aspx",
+              "DocumentIndex": 3,
+              "Title": "Site1.Master",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Site1.Master",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Site1.Master",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Site1.Master",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\Site1.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-15T20:53:41.722Z",
+              "WhenOpened": "2024-11-20T15:24:22.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Site1.Master",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Site1.Master",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Site1.Master",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Site1.Master",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\Site1.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-18T19:23:35.71Z",
+              "Title": "AgregarNuevoArticulo.aspx.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx.cs",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx.cs",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAnwF4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T04:21:58.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\Negocio\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "Negocio\\UsuarioService.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\Negocio\\UsuarioService.cs",
-              "RelativeToolTip": "Negocio\\UsuarioService.cs",
-              "ViewState": "AgIAANYAAAAAAAAAAAAswOYAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Default.aspx.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Default.aspx.cs",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\Default.aspx.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwA4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T22:27:07.405Z",
+              "WhenOpened": "2024-11-20T04:17:26.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArticuloService.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Negocio\\ArticuloService.cs",
+              "RelativeDocumentMoniker": "Negocio\\ArticuloService.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Negocio\\ArticuloService.cs",
+              "RelativeToolTip": "Negocio\\ArticuloService.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAnwK0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T04:12:02.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IngresaTusDatos.aspx",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-20T00:46:26.181Z",
+              "Title": "MarcaService.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Negocio\\MarcaService.cs",
+              "RelativeDocumentMoniker": "Negocio\\MarcaService.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Negocio\\MarcaService.cs",
+              "RelativeToolTip": "Negocio\\MarcaService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T06:01:18.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Articulo.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Dominio\\Articulo.cs",
+              "RelativeDocumentMoniker": "Dominio\\Articulo.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\Dominio\\Articulo.cs",
+              "RelativeToolTip": "Dominio\\Articulo.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T04:25:23.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Default.aspx.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Default.aspx.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Default.aspx.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\Default.aspx.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\Default.aspx.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAswDMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T23:30:59.467Z",
+              "Title": "AgregarNuevoArticulo.aspx",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-20T04:16:15.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "RegistrarseLogin.aspx.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\RegistrarseLogin.aspx.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\RegistrarseLogin.aspx.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\RegistrarseLogin.aspx.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\RegistrarseLogin.aspx.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T23:17:41.82Z",
+              "Title": "IngresaTusDatos.aspx",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-20T04:02:16.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ElegirProducto.aspx.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "IngresaTusDatos.aspx.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAnwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T23:43:41.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Carrito.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\Dominio\\Carrito.cs",
-              "RelativeDocumentMoniker": "Dominio\\Carrito.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\Dominio\\Carrito.cs",
-              "RelativeToolTip": "Dominio\\Carrito.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T21:04:53.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProductosABML.aspx.cs",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\ProductosABML.aspx.cs",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\ProductosABML.aspx.cs",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\ProductosABML.aspx.cs",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\ProductosABML.aspx.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T00:27:47.29Z",
+              "WhenOpened": "2024-11-20T16:43:59.349Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "ProductosABML.aspx",
-              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\ProductosABML.aspx",
-              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\ProductosABML.aspx",
-              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal\\TiendaGrupo15Progra3\\ProductosABML.aspx",
-              "RelativeToolTip": "TiendaGrupo15Progra3\\ProductosABML.aspx",
+              "Title": "CarritoWebForm.aspx.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAnwCEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T16:32:45.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Login.aspx",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Login.aspx",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Login.aspx",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\Login.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-14T00:08:38.6Z",
+              "WhenOpened": "2024-11-20T16:49:13.118Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Login.aspx.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\Login.aspx.cs",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\Login.aspx.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T16:49:18.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "VenderProductos.aspx.cs",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\VenderProductos.aspx.cs",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\VenderProductos.aspx.cs",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\VenderProductos.aspx.cs",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\VenderProductos.aspx.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwBsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T02:09:42.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "VenderProductos.aspx",
+              "DocumentMoniker": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\VenderProductos.aspx",
+              "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\VenderProductos.aspx",
+              "ToolTip": "D:\\HP\\Escritorio\\ProyectoFinal para rompe\\TiendaGrupo15Progra3\\VenderProductos.aspx",
+              "RelativeToolTip": "TiendaGrupo15Progra3\\VenderProductos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-20T04:05:57.993Z"
             }
           ]
         }

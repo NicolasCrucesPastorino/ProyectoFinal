@@ -56,7 +56,7 @@
             align-items: center;
         }
         .main-content { 
-                        margin-top: 600px; /* Ajusta este valor según la altura de tu navbar */
+                        margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
 
         }
     </style>
