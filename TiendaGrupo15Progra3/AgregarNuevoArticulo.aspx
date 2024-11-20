@@ -102,6 +102,8 @@
                     <div class="col">
                         <label for="ImagenText" class="form-label">Agregar Imagen:</label>
                         <asp:TextBox ID="TxtAgregarImg" CssClass="form-control" placeholder="Agregar Img" runat="server"></asp:TextBox>
+                        <asp:Label ID="LabelCantidadImagenesVender" runat="server" Text="Cantidad Imagenes"><%=listaImagenesGlobal.Count() %></asp:Label>
+                        <asp:Button  ID="btnAgregarImagenUrl" CssClass="btn btn-secondary" runat="server" Text="Agregar Url de Imagen" Onclick="AgregarImagenUrl_Click" />
                     </div>
                 </div>
 

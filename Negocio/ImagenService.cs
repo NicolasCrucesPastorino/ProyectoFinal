@@ -73,9 +73,36 @@ namespace Negocio
                     datos.cerrarConexion();
                 }
             }
+        public void AgregarImagenesUrlporId(int id,string ImagenRecibida)
+        {
+            
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {   
+                datos.setearConsulta("INSERT into IMAGENES(IdArticulo,ImagenUrl) values (@id,@imagenUrl)");
+                datos.setearParametro("@id", id);
+                datos.setearParametro("@imagenUrl", ImagenRecibida);
+
+                datos.ejecutarLectura();
+
+                
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                datos.cerrarConexion();
+            }
+        }
 
 
-            public List<Imagen> listarPorIdArticulo(int id)
+        public List<Imagen> listarPorIdArticulo(int id)
             {
                 List<Imagen> lista = new List<Imagen>();
                 AccesoDatos datos = new AccesoDatos();

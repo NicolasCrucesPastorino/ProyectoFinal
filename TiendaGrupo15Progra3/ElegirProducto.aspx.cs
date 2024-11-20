@@ -38,13 +38,6 @@ namespace TiendaGrupo15Progra3
             {
                 FiltradoAvanzado = false;
             }
-
-            
-                
-            
-            
-            
-
             Productos=articuloService.GetArticulos();
 
         }

@@ -24,10 +24,11 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT ART.Id, ART.Nombre, ART.Codigo, ART.Descripcion, ART.Precio,ART.Stock,ART.IdUsuario, MAR.Descripcion AS MarcaDescripcion, CAT.Descripcion AS CategoriaDescripcion " +
-                                     "FROM ARTICULOS ART " +
-                                     "INNER JOIN CATEGORIAS CAT ON ART.IdCategoria = CAT.Id " +
-                                     "INNER JOIN MARCAS MAR ON ART.IdMarca = MAR.Id");
+                datos.setearConsulta(@"SELECT ART.Id, ART.Nombre, ART.Codigo, ART.Descripcion, ART.Precio,ART.Stock,ART.IdUsuario,
+                                        MAR.Descripcion AS MarcaDescripcion, CAT.Descripcion AS CategoriaDescripcion 
+                                     FROM ARTICULOS ART 
+                                     INNER JOIN CATEGORIAS CAT ON ART.IdCategoria = CAT.Id 
+                                     INNER JOIN MARCAS MAR ON ART.IdMarca = MAR.Id");
                 datos.ejecutarLectura();
              
                 while (datos.Lector.Read())
@@ -38,10 +39,11 @@ namespace Negocio
                     aux.CodigoArticulo = Convert.ToString(datos.Lector["Codigo"]);
                     aux.Descripcion = Convert.ToString(datos.Lector["Descripcion"]);
                     aux.Precio = (decimal)(datos.Lector["Precio"]);
+                    aux.Stock = (int)(datos.Lector["Stock"]);
+                    aux.IdUsuario = (int)(datos.Lector["IdUsuario"]);
                     Maraux.Descripcion = Convert.ToString(datos.Lector["MarcaDescripcion"]);
                     CatAux.Descripcion = Convert.ToString(datos.Lector["CategoriaDescripcion"]);
-                    aux.Marca = Maraux;
-                    aux.Categoria = CatAux;
+                   
 
                     ArticulosFinal.Add(aux);
                 }
@@ -197,7 +199,32 @@ namespace Negocio
             }
             finally { accesoDatos.cerrarConexion();}
         }
-        
+        public int TraerArticuloId(Articulo nuevoArticulo)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            int IdDeArticulo;
+            try
+            {
+                accesoDatos.setearConsulta(@"select Id from ARTICULOS where Nombre=@nombre AND codigo=@codigo And idUsuario=@idUsuario");                
+                accesoDatos.setearParametro("@nombre", nuevoArticulo.Nombre);
+                accesoDatos.setearParametro("@codigo", nuevoArticulo.CodigoArticulo);
+                accesoDatos.setearParametro("@IdUsuario", nuevoArticulo.IdUsuario);
+                accesoDatos.ejecutarLectura();
+                while (accesoDatos.Lector.Read())
+                {
+                    IdDeArticulo = (int)accesoDatos.Lector["Id"]; 
+                    return IdDeArticulo;
+                }
+
+                return -1;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al agregar nuevo producto: " + ex.Message);
+            }
+            finally { accesoDatos.cerrarConexion(); }
+        }
         public void ModificarArticulo (int IdArticulo, string Modificacion)
         {
             AccesoDatos datos = new AccesoDatos();

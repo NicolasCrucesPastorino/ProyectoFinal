@@ -10,9 +10,11 @@ using System.Web.UI.WebControls;
 namespace TiendaGrupo15Progra3
 {
     public partial class AgregarNuevoArticulo : System.Web.UI.Page
-    {   
+    {
         public Usuario usuarioAgregarProducto = new Usuario();
-
+        public List<Imagen> listaImagenesGlobal = new List<Imagen>();
+        
+        
         public void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] != null)
@@ -25,6 +27,10 @@ namespace TiendaGrupo15Progra3
             {
                 usuarioAgregarProducto.nombre = "No se encuentra";
                 usuarioAgregarProducto.apellido = "Registrado";
+            }
+            if (Session["listaImagenes"] != null)
+            {
+                 listaImagenesGlobal = (List<Imagen>)Session["ListaImagenes"];
             }
 
         }
@@ -48,6 +54,7 @@ namespace TiendaGrupo15Progra3
                 MarcaService marcaService =new MarcaService();  
                 Categoria categoria = new Categoria();
                 CategoriaService categoriaService = new CategoriaService();
+                ImagenService imagenService =new ImagenService();
                 Articulo nuevoArticulo = new Articulo
                 {
                     Categoria = new Categoria(), // Inicializa la propiedad
@@ -71,28 +78,45 @@ namespace TiendaGrupo15Progra3
 
                 if (CategoriaId != 0)
                 {
-                    categoriaService.AgregarCategoriaNueva(categoria.Descripcion);
+                    
                     
                     nuevoArticulo.Categoria.Id = categoriaService.BuscarCategoria(categoria.Descripcion);
                    
                 } 
                 else
                 {
-                    nuevoArticulo.Categoria.Id = CategoriaId;
+                    categoriaService.AgregarCategoriaNueva(categoria.Descripcion);
+                    nuevoArticulo.Categoria.Id = categoriaService.BuscarCategoria(categoria.Descripcion);
                 }
                 if (MarcaId != 0)
                 {
-                    marcaService.AgregarMarcaNueva(marca.Descripcion);
-
+                    
                     nuevoArticulo.Marca.Id = marcaService.BuscarMarca(marca.Descripcion);
 
                 }
                 else
                 {
-                    nuevoArticulo.Marca.Id = MarcaId;
+                    marcaService.AgregarMarcaNueva(marca.Descripcion);
+
+                    nuevoArticulo.Marca.Id = marcaService.BuscarMarca(marca.Descripcion);
+                }
+                
+                articuloService.AgregarArticulo(nuevoArticulo);
+                int idArticuloRecienSubido=articuloService.TraerArticuloId(nuevoArticulo);
+                List<Imagen> imagenLista=new List<Imagen>();
+                if (Session["ListaImagenes"] != null)
+                {
+                    imagenLista = (List<Imagen>)Session["ListaImagenes"];
+                }
+                
+
+                foreach (var imagen in imagenLista)
+                {
+                    imagenService.AgregarImagenesUrlporId(idArticuloRecienSubido, imagen.UrlImagen);
                 }
 
-                articuloService.AgregarArticulo(nuevoArticulo);
+
+
                 fGlobales.MostrarAlerta(this, "Articulo con nombre " + nuevoArticulo.Nombre + " agregado con exito.");
 
 
@@ -103,6 +127,28 @@ namespace TiendaGrupo15Progra3
 
                 throw new Exception("Error al agregar un nuevo producto:"+ ex.Message);
             }
+        }
+
+        protected void AgregarImagenUrl_Click(object sender, EventArgs e)
+        {   
+            List<Imagen> listaImagenes = new List<Imagen>();
+            if (Session["ListaImagenes"] != null)
+            {
+                listaImagenes = (List<Imagen>)Session["ListaImagenes"];
+            }
+            else
+            {
+                listaImagenes = new List<Imagen>();
+            }
+            Imagen imagen = new Imagen();
+             imagen.UrlImagen = TxtAgregarImg.Text.Trim();
+            listaImagenes.Add(imagen);
+
+            Session["ListaImagenes"] = listaImagenes;
+
+
+
+            
         }
     }
 }

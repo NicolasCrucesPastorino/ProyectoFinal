@@ -56,7 +56,7 @@ namespace Negocio
 
                 }
 
-                return 0;
+                return categoriaId;
             }
             catch (Exception ex)
             {

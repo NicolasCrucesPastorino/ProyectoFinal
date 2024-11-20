@@ -54,7 +54,7 @@ namespace Negocio
 
                 }
 
-                return 0;
+                return marcaId;
             }
             catch (Exception ex)
             {

@@ -62,6 +62,8 @@ namespace TiendaGrupo15Progra3
             Session["Usuario"] = null;
             RolDefault = 0;
             UsuarioDefault.nombre = "Anónimo";
+            UsuarioDefault.apellido = " Usuario no logueado";
+            Session["Usuario"] = null;
             fGlobales.MostrarAlerta(this, "Ha cerrado sesión.");
         }
     }
