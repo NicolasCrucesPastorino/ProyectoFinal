@@ -124,7 +124,7 @@ namespace Negocio
 
             try
             {
-                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion Nombre_Marca,C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio,A.Stock FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.id=@idArticulo");
+                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre,IdUsuario,A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion Nombre_Marca,C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio,A.Stock FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.id=@idArticulo");
                 accesoDatos.setearParametro("@idArticulo",ArticuloID);
                 accesoDatos.ejecutarLectura();
                 Articulo articulo = new Articulo();
@@ -135,6 +135,7 @@ namespace Negocio
                     articulo.Id = (int)accesoDatos.Lector["Id"];
                     articulo.CodigoArticulo = (string)accesoDatos.Lector["Codigo"];
                     articulo.Nombre = (string)accesoDatos.Lector["Nombre"];
+                    articulo.IdUsuario = (int)accesoDatos.Lector["IdUsuario"];
                     articulo.Descripcion = (string)accesoDatos.Lector["Descripcion"];
 
                     //Creacion de Marca y relacion en datagrid
@@ -259,6 +260,26 @@ namespace Negocio
             {
 
                 throw new Exception("Error al modificar producto: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void CambiarStockArticuloPorId(int IdArticulo,int cantidadEntrante)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET stock=@stock where Id=@Id");
+                datos.setearParametro("@stock", cantidadEntrante);
+                datos.setearParametro("@Id", IdArticulo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar categoria: " + ex.Message);
             }
             finally
             {

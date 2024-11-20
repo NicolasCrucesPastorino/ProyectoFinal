@@ -38,6 +38,27 @@ namespace Negocio
 
 
         }
+        public void EliminarArticulosEnCarritoPorId(int idProducto,int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DElete Carrito where idProducto=@IdProducto AND IdUsuario=@IdUsuario");
+                datos.setearParametro("@IdProducto", idProducto);
+                datos.setearParametro("@IdUsuario", IdUsuario);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
 
         public List<Carrito> BuscarEnCarritoporIdUsuario(int idUsuarioEntrante)
         {

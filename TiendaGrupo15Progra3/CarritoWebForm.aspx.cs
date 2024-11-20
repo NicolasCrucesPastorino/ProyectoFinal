@@ -30,8 +30,9 @@ namespace TiendaGrupo15Progra3
         {
             if (Session["Usuario"] == null)
             {
-                fGlobales.MostrarAlerta(this, "NO esta logueado, no puede acceder al carrito");
-                Response.Redirect("/Default.aspx");
+                string script = "alert('No se encuentra logueado debe loguearse para ver su carrito.'); window.location='Login.aspx';";
+                ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true);
+                return;
             }
 
 
@@ -75,6 +76,10 @@ namespace TiendaGrupo15Progra3
             bool HayStockdeTodo=true;
             List<int> articulosConSobraDeStock=new List<int>();
             List<CarritoSubMenu> listaCarrito = new List<CarritoSubMenu>();
+            Venta nuevaVenta = new Venta();
+            DetalleVenta nuevoDetalle = new DetalleVenta();
+            VentaService ventaService = new VentaService(); 
+            DetalleVentaService detalleVentaService = new DetalleVentaService();
 
             if (carritoSubMenusGlobal.Count == 0) 
             {
@@ -98,7 +103,31 @@ namespace TiendaGrupo15Progra3
 
             if (HayStockdeTodo == true)
             {
+                foreach (CarritoSubMenu carritoItem in carritoSubMenusGlobal)
+                {
+                    int StockNuevo;
+                    Usuario usuario = new Usuario();
+                    usuario = (Usuario)Session["Usuario"];
+                    ArticuloService articuloService= new ArticuloService();
+                    Articulo articulo = new Articulo();
+                    CarritoService carritoService = new CarritoService();
+                    articulo = articuloService.listarXid(carritoItem.IdProducto);
+                    nuevaVenta.nombreCliente = usuario.nombre;
+                    nuevaVenta.Id_cliente = usuario.idUsuario;
+                    nuevaVenta.idUsuario = articulo.IdUsuario;
+                    nuevaVenta.fechaRegistro = DateTime.Now;
+                    nuevaVenta.subTotal =(decimal) articulo.Precio;
+                    nuevaVenta.Total = nuevaVenta.subTotal * carritoItem.Cantidad;
+                    StockNuevo = articulo.Stock - carritoItem.Cantidad;
+                    articuloService.CambiarStockArticuloPorId(articulo.Id, StockNuevo);
+                    ventaService.CargarVenta(nuevaVenta);
+                    carritoService.EliminarArticulosEnCarritoPorId(articulo.Id,usuario.idUsuario);
 
+
+
+                }
+                
+                
             } else
             {
                 
@@ -113,11 +142,15 @@ namespace TiendaGrupo15Progra3
                 
                 foreach(CarritoSubMenu carritoItem in listaCarrito)
                 {
+                   
                     CarritoService carritoService = new CarritoService();
                     ArticuloService articuloService = new ArticuloService();
                     Articulo articulo = new Articulo();
                     articulo = articuloService.listarXid(carritoItem.IdProducto);
                     carritoService.CarritoCambiarCantidad(carritoItem.IdCarrito, articulo.Stock);
+                    
+
+
                 }
                 AgregarMensajeAlerta("Aprete de vuelta para proceeder con la compra.");
             }
