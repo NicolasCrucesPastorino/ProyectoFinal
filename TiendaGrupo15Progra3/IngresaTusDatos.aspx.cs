@@ -14,162 +14,88 @@ namespace TiendaGrupo15Progra3
 {
     public partial class IngresaTusDatos : System.Web.UI.Page
     {
-        string CodigoVoucherTraido { get; set; }
-        string ArticuloId { get; set; }
-        int IdCliente {  get; set; }
-        //bool validarDNIcontraDB;
+
+        public string ArticuloId { get; set; }
+        public Usuario UsuarioIngresaTusDatos = new Usuario();
+ 
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-            
-                if (Session["CodigoVoucher"] != null)
-                {
-                   
-                    string codigoVoucher = Session["CodigoVoucher"].ToString();
-                    CodigoVoucherTraido = codigoVoucher; 
-                }
-            if (Request.QueryString["option"] != null)
+            if (Session["Usuario"] != null)
             {
-                string premioId = Request.QueryString["option"];
-                ArticuloId = premioId;
-            }
+
+                UsuarioIngresaTusDatos = (Usuario)Session["Usuario"];
                 
-                if (!IsPostBack) 
-                {
-                    // Inicializa la variable global en false
-                    Session["validarDNIcontraDB"] = false;
-                }
-          
+            }
+            else
+            {
+                UsuarioIngresaTusDatos.nombre = "No se encuentra";
+                UsuarioIngresaTusDatos.apellido = "Registrado";
+            }
+
         }
 
-        public void ParticiparButton_Click(object sender, EventArgs e)
+        public void AceptarButton_Click(object sender, EventArgs e)
         {
-            
+
 
             if (!terminosCheckBox.Checked)
             {
-                MostrarAlerta("Por favor, acepte los términos y condiciones.");
+                fGlobales.MostrarAlerta(this, "Por favor, acepte los términos y condiciones.");
                 return;
             }
 
             try
             {
-                string numeroDNI = DNInumero.Text.Trim();
-                string nombre = nombreText.Text.Trim();
-                string apellido = apellidoText.Text.Trim();
-                string email = EmailInput.Text.Trim();
-                string direccion = direccionText.Text.Trim();
-                string ciudad = ciudadText.Text.Trim();
+                Usuario usuario = new Usuario();
+                Usuario usuarioTraidoSession = new Usuario();
+                UsuarioService usuarioService = new UsuarioService();
 
-                if (string.IsNullOrEmpty(codigoPostalText.Text.Trim()))
-                {
-                    MostrarAlerta("El código postal es obligatorio.");
-                    return;
-                }
+                usuarioTraidoSession = (Usuario)Session["Usuario"];
+         
 
-                if (string.IsNullOrEmpty(numeroDNI) ||
-                    string.IsNullOrEmpty(nombre) ||
-                    string.IsNullOrEmpty(apellido) ||
-                    string.IsNullOrEmpty(email) ||
-                    string.IsNullOrEmpty(direccion) ||
-                    string.IsNullOrEmpty(ciudad))
-                {
-                    MostrarAlerta("Todos los campos son obligatorios. Por favor, complete todos los campos.");
-                    return;
-                }
+                usuario.nombre = nombreText.Text.Trim();
+                usuario.apellido = apellidoText.Text.Trim();
+                usuario.nombreUsuario = TextNombreUsuario.Text.Trim();
+                usuario.clave = TxtClave.Text.Trim();
+                usuario.correo = EmailInput.Text.Trim();
+                usuario.urlFoto = txtFotoPerfil.Text.Trim();
+                usuario.nombreFoto = TxtDescripcionFoto.Text.Trim();
+                usuario.idUsuario = usuarioTraidoSession.idUsuario;
+                usuario.rol = 1;
+                usuario.telefono = TxtTelefono.Text.Trim();
 
-                if (!int.TryParse(codigoPostalText.Text.Trim(), out int codigoPostal))
-                {
-                    MostrarAlerta("El código postal debe ser un número válido.");
-                    return;
-                }
+
+
+                usuarioService.ActualizarPerfil(usuario, UsuarioIngresaTusDatos.idUsuario);
+
+                UsuarioIngresaTusDatos = usuario;
+               
 
                 
-                if (codigoPostal < 0)
-                {
-                    MostrarAlerta("El código postal no puede ser un número negativo.");
-                    return;
-                }
-                ClienteService clienteService = new ClienteService();
-                ClienteService existe = new ClienteService();
 
-                //Si no existe//
-                if ((!existe.dniExiste(numeroDNI)) && (bool)Session["validarDNIcontraDB"])
+                    fGlobales.MostrarAlerta(this, "Perfil actualizado con exito");
 
-                {
-                    clienteService.insertarCliente(numeroDNI, nombre, apellido, email, direccion, ciudad, codigoPostal);
+                    Session["Usuario"] = usuarioService.LoginUsuarioYcontraseniaDevuelveUsuario(usuario.nombreUsuario, usuario.clave);
 
-                    IdCliente = clienteService.ObtenerIdCliente(numeroDNI);
-                    VoucherService CanjeVoucherNuevoCliente = new VoucherService();
-                    CanjeVoucherNuevoCliente.UpgradeVoucher(CodigoVoucherTraido, IdCliente, int.Parse(ArticuloId));
-                    Response.Redirect("/UsuarioRegistrado.aspx");
-                }
-                else
-                {
-                    if ((bool)Session["validarDNIcontraDB"])
-                    {
-                        IdCliente = clienteService.ObtenerIdCliente(numeroDNI);
-                        VoucherService CanjeVoucherClienteExistente = new VoucherService();
-                        CanjeVoucherClienteExistente.UpgradeVoucher(CodigoVoucherTraido, IdCliente, int.Parse(ArticuloId));
-                        Response.Redirect("/UsuarioRegistrado.aspx");
-                    }
-                    else 
-                    { 
-                        MostrarAlerta($"Debe validar su DNI apretando el boton");
-                        return;
-                    }
-                }
+                    //Response.Redirect("/Default.aspx");
+                
             }
+
             catch (Exception ex)
             {
-                MostrarAlerta($"Ocurrió un error: {ex.Message}");
+                new Exception("Error al modificar producto:" + ex.Message);
+
             }
         }
-
-        public void MostrarAlerta(string mensaje)
+    
+        
+        protected void CancelarClickButton_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", $"alert('{mensaje}');", true);
-        }
-
-        protected void ValidarClickButton_Click(object sender, EventArgs e)
-        {
-            ClienteService clienteService = new ClienteService();
-            ClienteService llenarCampos = new ClienteService();
-            Cliente existente = new Cliente();
             
-            try
-            {
-                string numeroDNI = DNInumero.Text.Trim();
-
-                if (clienteService.dniExiste(numeroDNI))
-                {
-                    existente=llenarCampos.PrellenarDatos(numeroDNI);
-
-                    DNInumero.Text = existente.dni.ToString();
-                    nombreText.Text = existente.nombre;
-                    apellidoText.Text = existente.apellido;
-                    EmailInput.Text = existente.email;
-                    direccionText.Text = existente.direccion;
-                    ciudadText.Text = existente.ciudad;
-                    codigoPostalText.Text = existente.cp.ToString();
-
-                        Session["validarDNIcontraDB"] = true;
-
-                    }
-                else
-                {
-                    MostrarAlerta("El dni no se encuentra registrado complete el formulario .");
-                    Session["validarDNIcontraDB"] = true;
-                } 
-
-            }
-            catch (Exception ex)
-            {
-
-                MostrarAlerta($"Ocurrió un error: {ex.Message}");
-            }
+               
+           
             
         }
     }

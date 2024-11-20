@@ -55,19 +55,20 @@
             display: flex;
             align-items: center;
         }
+        .main-content { 
+                        margin-top: 600px; /* Ajusta este valor según la altura de tu navbar */
+
+        }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="bg-custom"></div>
+    <div class="main-content"></div>
     <div class="center-container">
         <div class="form-container">
+            <h2><%=UsuarioIngresaTusDatos.nombre %> <%=UsuarioIngresaTusDatos.apellido %></h2>
             <h1 class="header-custom">Ingresa tus Datos</h1>
-            <div class="form-group">
-                <label for="DNInumero" class="form-label">DNI:</label>
-                <asp:TextBox ID="DNInumero" textmode="Number" CssClass="form-control" placeholder="12345678" runat="server"></asp:TextBox>
-                <asp:Button ID="Button2" CssClass="btn btn-custom" runat="server" Text="Validar DNI" OnClick="ValidarClickButton_Click" />
-            </div>
+           
             <div class="form-group">
                 <label for="nombreText" class="form-label">Nombre:</label>
                 <asp:TextBox ID="nombreText" CssClass="form-control" placeholder="Nombre" runat="server"></asp:TextBox>
@@ -76,36 +77,48 @@
                 <label for="apellidoText" class="form-label">Apellido:</label>
                 <asp:TextBox ID="apellidoText" CssClass="form-control" placeholder="Apellido" runat="server"></asp:TextBox>
             </div>
+             <div class="form-group">
+                    <label for="DNInumero" class="form-label">DNI:</label>
+                    <asp:TextBox ID="DNInumero" textmode="Number" CssClass="form-control" placeholder="12345678" runat="server"></asp:TextBox>
+            </div>
             <div class="form-group">
-                <label for="EmailInput" class="form-label">Email:</label>
+                <label for="nombreUsuarioText" class="form-label">Nombre de Usuario:</label>
+                <asp:TextBox ID="TextNombreUsuario" CssClass="form-control" placeholder="NombreUsuario" runat="server"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <label for="PaswordText" class="form-label">Clave:</label>
+                <asp:TextBox ID="TxtClave" TextMode="Password" CssClass="form-control" placeholder="Password" runat="server"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <label for="Emailtxt" class="form-label">Email:</label>
                 <asp:TextBox ID="EmailInput" textmode="Email" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
             </div>
             <div class="form-group">
-                <label for="direccionText" class="form-label">Dirección:</label>
-                <asp:TextBox ID="direccionText" CssClass="form-control" placeholder="Dirección" runat="server"></asp:TextBox>
+                <label for="IMGperfil" class="form-label">Imagen perfil:</label>
+                <asp:TextBox ID="txtFotoPerfil" TextMode="Url" CssClass="form-control" placeholder="FotoPerfil" runat="server"></asp:TextBox>
             </div>
             <div class="form-group">
-                <label for="ciudadText" class="form-label">Ciudad:</label>
-                <asp:TextBox ID="ciudadText" CssClass="form-control" placeholder="Ciudad" runat="server"></asp:TextBox>
+                <label for="FotoText" class="form-label">Descripcion Imagen:</label>
+                <asp:TextBox ID="TxtDescripcionFoto" CssClass="form-control" placeholder="Nombre Foto" runat="server"></asp:TextBox>
             </div>
-        <!-- Código Postal -->
-        <div class="form-group">
-            <label for="codigoPostalText" class="form-label">Código Postal:</label>
-            <asp:TextBox ID="codigoPostalText" CssClass="form-control" placeholder="Código Postal" runat="server" textmode="Number"></asp:TextBox>
+         <div class="form-group">
+            <label for="telefonoTxt" class="form-label">Telefono:</label>
+            <asp:TextBox ID="TxtTelefono" CssClass="form-control" placeholder="Telefono" runat="server"></asp:TextBox>
         </div>
-        <!-- Aceptar términos -->
+        <!-- Checkbox -->
         <div class="form-group">
             <div class="form-check">
                 <asp:CheckBox ID="terminosCheckBox" CssClass="form-check-input" runat="server" />
                 <label for="terminosCheckBox" class="form-check-label">Acepto los términos y condiciones</label>
             </div>
         </div>
-        <!-- Botón de envío -->
+        <!-- Actualizar o cancelar cambios btn -->
         <div class="form-group">
-            <asp:Button type="submit" ID="ParticiparButton" CssClass="btn btn-custom" runat="server" Text="Participar" OnClick="ParticiparButton_Click" />
+            <asp:Button type="submit" ID="Aceptar" CssClass="btn btn-custom" runat="server" Text="Aceptar" OnClick="AceptarButton_Click" />
+            <asp:Button ID="btnCancelarCambios" CssClass="btn btn-custom" runat="server" Text="Cancelar" OnClick="CancelarClickButton_Click" />
         </div>
       </div>
     </div>
-  </div>
+
 </asp:Content>
 

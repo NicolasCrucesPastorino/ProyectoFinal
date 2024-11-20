@@ -37,17 +37,19 @@ namespace TiendaGrupo15Progra3
                     confirmarContraseniaBool = true;
                 }
                 existeUsuario = usuarioService.ExisteUsuario(email);
-                
+
                 if (existeUsuario == false && confirmarContraseniaBool == true)
                 {
-                    nuevoUsuario.nombre = Nombreusuario;
+                    nuevoUsuario.nombreUsuario = Nombreusuario;
                     nuevoUsuario.clave = contrasenia;
                     nuevoUsuario.correo = email;
                     nuevoUsuario.rol = 1;
 
                     usuarioService.RegistrarUsuario(nuevoUsuario);
                     Session["Rol"] = 1;
-                    fGlobales.MostrarAlerta(this, "Se ha creado con exito el ususario. Y desde ahora se encuentra logueado.");
+                    fGlobales.MostrarAlerta(this, "Se ha creado con exito el usuario. Y desde ahora se encuentra logueado. BIENVENIDO!!!");
+                    Session["Usuario"] = usuarioService.LoginUsuarioYcontraseniaDevuelveUsuario(nuevoUsuario.nombreUsuario, nuevoUsuario.clave);
+                    
                    // 
                     Response.Redirect("/Default.aspx",false);
                     //Context.ApplicationInstance.CompleteRequest();

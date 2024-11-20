@@ -35,8 +35,14 @@ namespace TiendaGrupo15Progra3
                     UsuarioDefault.nombre = "Anónimo";
                     UsuarioDefault.apellido = "   ";
                 }
-
-
+                if (UsuarioDefault.nombre == null)
+                {
+                    UsuarioDefault.nombre = "Usuario";
+                }
+                if (UsuarioDefault.apellido == null)
+                {
+                    UsuarioDefault.apellido = "Sin Registro Completo, porfavor complete la solapa mi perfil.";
+                }
             }
             catch (Exception ex)
             {

@@ -14,11 +14,15 @@
         height: 100%;
         z-index: -1;
     }
+      .main-content { 
+      margin-top: 70px; /* Ajusta este valor según la altura de tu navbar */
+
+  }
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="bg-custom"></div>
-        <div class="container"> </div>
+    
     <h2 class="text-center mb-4">PRODUCTOS</h2>
     <asp:Label ID="labelElijeTuProductoBuscar" runat="server" Text="Buscar por nombre de producto"></asp:Label>
     <asp:TextBox ID="TextElijeTuProductoBuscar" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>

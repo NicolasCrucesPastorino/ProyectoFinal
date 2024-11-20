@@ -13,6 +13,7 @@ using Negocio;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Security.Claims;
 
 namespace Negocio
 {
@@ -162,11 +163,12 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta (@"Insert into USUARIO(nombre,correo, clave, idRol,esActivo,fechaRegistro) VALUES
-                                        (@Nombre,@Correo,@Contrasenia, @idRol,@esActivo,@FechaRegistro)");
+                datos.setearConsulta (@"Insert into USUARIO(nombreUsuario,correo, clave, idRol,esActivo,fechaRegistro) VALUES
+                                        (@nombreUsuario,@Correo,@Contrasenia, @idRol,@esActivo,@FechaRegistro)");
 
-                datos.setearParametro("@Nombre", usuario.nombre);
-                datos.setearParametro("Correo",usuario.correo);
+
+                datos.setearParametro("@nombreUsuario", usuario.nombreUsuario);
+                datos.setearParametro("@Correo",usuario.correo);
                 datos.setearParametro("@Contrasenia", usuario.clave);
                 datos.setearParametro("@idRol", usuario.rol);
                 datos.setearParametro("@esActivo", 1);
@@ -184,7 +186,48 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
-           
+        }
+
+        public void ActualizarPerfil (Usuario usuario,int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            DateTime dateTime = DateTime.Now;
+
+            try
+            {
+                datos.setearConsulta(@"UPDATE USUARIO set nombre=@nombre,apellido=@ape,correo=@correo,nombreUsuario=@nombreusuario,clave=@clave,urlFoto=@urlFoto,nombreFoto=@nombreFoto,
+                                      telefono=@telefono,
+                                      idRol=@idRol,
+                                      esActivo=@esActivo,
+                                      fechaRegistro=@fechaRegistro 
+                                      where idUsuario=@idUsuario");
+
+                datos.setearParametro("@nombre", usuario.nombre);
+                datos.setearParametro("@ape",usuario.apellido);
+                datos.setearParametro("@nombreUsuario", usuario.nombreUsuario);
+                datos.setearParametro("@correo", usuario.correo);
+                datos.setearParametro("@clave", usuario.clave);
+                datos.setearParametro("@urlFoto", usuario.urlFoto);
+                datos.setearParametro("@nombreFoto", usuario.nombreFoto);
+                datos.setearParametro("@telefono", usuario.telefono);
+                datos.setearParametro("@idRol", usuario.rol);
+                datos.setearParametro("@esActivo", 1);
+                datos.setearParametro("@fechaRegistro", dateTime);
+                datos.setearParametro("@idUsuario", usuario.idUsuario);
+
+                datos.ejecutarAccion();
+
+               
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al actualizar sus datos: linea 190 UsuarioService " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     } 
 }

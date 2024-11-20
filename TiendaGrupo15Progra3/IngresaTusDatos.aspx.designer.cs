@@ -15,24 +15,6 @@ namespace TiendaGrupo15Progra3
     {
 
         /// <summary>
-        /// Control DNInumero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DNInumero;
-
-        /// <summary>
-        /// Control Button2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-
-        /// <summary>
         /// Control nombreText.
         /// </summary>
         /// <remarks>
@@ -51,6 +33,33 @@ namespace TiendaGrupo15Progra3
         protected global::System.Web.UI.WebControls.TextBox apellidoText;
 
         /// <summary>
+        /// Control DNInumero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DNInumero;
+
+        /// <summary>
+        /// Control TextNombreUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextNombreUsuario;
+
+        /// <summary>
+        /// Control TxtClave.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtClave;
+
+        /// <summary>
         /// Control EmailInput.
         /// </summary>
         /// <remarks>
@@ -60,31 +69,31 @@ namespace TiendaGrupo15Progra3
         protected global::System.Web.UI.WebControls.TextBox EmailInput;
 
         /// <summary>
-        /// Control direccionText.
+        /// Control txtFotoPerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox direccionText;
+        protected global::System.Web.UI.WebControls.TextBox txtFotoPerfil;
 
         /// <summary>
-        /// Control ciudadText.
+        /// Control TxtDescripcionFoto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ciudadText;
+        protected global::System.Web.UI.WebControls.TextBox TxtDescripcionFoto;
 
         /// <summary>
-        /// Control codigoPostalText.
+        /// Control TxtTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox codigoPostalText;
+        protected global::System.Web.UI.WebControls.TextBox TxtTelefono;
 
         /// <summary>
         /// Control terminosCheckBox.
@@ -96,12 +105,21 @@ namespace TiendaGrupo15Progra3
         protected global::System.Web.UI.WebControls.CheckBox terminosCheckBox;
 
         /// <summary>
-        /// Control ParticiparButton.
+        /// Control Aceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ParticiparButton;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
+
+        /// <summary>
+        /// Control btnCancelarCambios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelarCambios;
     }
 }

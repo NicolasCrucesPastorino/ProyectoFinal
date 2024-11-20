@@ -94,6 +94,9 @@
                                     <li><a class="dropdown-item" href="#">Ofertas del día</a></li>
                                 </ul>
                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="/IngresaTusDatos.aspx">Mi perfil</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/Login.aspx">Login</a>
                             </li>
@@ -123,9 +126,11 @@
         </main>
 
         <!-- Pie de Página -->
+        <div>
         <footer class="text-center">
             <p>&copy; 2024 Transforma Tienda. Todos los derechos reservados.</p>
         </footer>
+        </div>
     </form>
 
     <!-- Scripts de Bootstrap -->
