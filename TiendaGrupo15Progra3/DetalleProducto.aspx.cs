@@ -78,15 +78,30 @@ namespace TiendaGrupo15Progra3
         {   
              CarritoService carritoService = new CarritoService();
             Usuario usuario = new Usuario();
+            int CantidadActualEnElCarrito = 0;
             int cantidadParaCarrito;
+            int CantidadFinal;
+            int IdCarrito;
             cantidadParaCarrito=int.Parse(DropDownListAgregarCarrito.SelectedValue);
             usuario=(Usuario)Session["Usuario"];
 
             int idProductoParaCarrito = articuloDetalle.Id;
+            IdCarrito = carritoService.TraerIdCarrito(usuario.idUsuario, idProductoParaCarrito);
+            if (carritoService.BuscarArticuloEnCarrito(IdCarrito)>0)
+            {
+                fGlobales.MostrarAlerta(this, "Ese producto ya se encuentra en su carrito se agregara el stock correspondiente");
+                IdCarrito= carritoService.TraerIdCarrito(usuario.idUsuario, idProductoParaCarrito);
+                CantidadActualEnElCarrito=carritoService.BuscarArticuloEnCarrito(IdCarrito);
+                CantidadFinal=CantidadActualEnElCarrito+cantidadParaCarrito;
+                carritoService.CarritoCambiarCantidad(IdCarrito, CantidadFinal);
+            }
+            else
+            {
+                carritoService.GuardarEnCarritoArticulo(usuario.idUsuario, idProductoParaCarrito, cantidadParaCarrito);
+                Response.Redirect("CarritoWebForm.aspx");
+            }
 
-
-            carritoService.GuardarEnCarritoArticulo(usuario.idUsuario, idProductoParaCarrito, cantidadParaCarrito);
-            Response.Redirect("CarritoWebForm.aspx");
+            
 
         }
     }

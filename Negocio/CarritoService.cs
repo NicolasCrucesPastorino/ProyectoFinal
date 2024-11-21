@@ -38,6 +38,68 @@ namespace Negocio
 
 
         }
+        public int TraerIdCarrito(int idUsuarioEntrante, int idArticuloEntrante)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int Id = 0;
+            try
+            {
+                datos.setearConsulta("SELECT Id from Carrito where idUsuario=@idUsuario And idProducto=@idProducto");
+                datos.setearParametro("@idUsuario", idUsuarioEntrante);
+                datos.setearParametro("@idProducto", idArticuloEntrante);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+
+
+                    Id = (int)datos.Lector["Id"];
+
+
+                }
+                return Id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+        public int BuscarArticuloEnCarrito(int idCarrito)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            int cantidad = 0;
+            try
+            {
+                datos.setearConsulta("SELECT Cantidad from Carrito where id=@idCarrito");
+                datos.setearParametro("@idCarrito", idCarrito);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+
+
+                    cantidad = (int)datos.Lector["Cantidad"];
+
+
+                }
+                return cantidad;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+        }
+        
         public void EliminarArticulosEnCarritoPorId(int idProducto,int IdUsuario)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -59,7 +121,27 @@ namespace Negocio
 
 
         }
+        public void EliminarEnCarritoPorIdCarrito(int idCarrito)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DElete Carrito where id=@IdCarrito");
+                datos.setearParametro("@IdCarrito", idCarrito);
+               
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
 
+
+        }
         public List<Carrito> BuscarEnCarritoporIdUsuario(int idUsuarioEntrante)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -120,6 +202,24 @@ namespace Negocio
 
 
         }
+        /*
+            public void VerificarProductoExistenteEnCarrito(Articulo producto)
+            {
+
+                var productoExistente = producto.FirstOrDefault(p => p.Id == producto.Id);
+
+                if (productoExistente != null)
+                {
+
+                    productoExistente.Cantidad += producto.Cantidad;
+                }
+                else
+                {
+
+                    Productos.Add(producto);
+                }
+            }
+        */
 
     }
 }

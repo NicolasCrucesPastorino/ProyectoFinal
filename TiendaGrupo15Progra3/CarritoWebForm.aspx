@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Carrito de Compras" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="CarritoWebForm.aspx.cs" Inherits="TiendaGrupo15Progra3.Carrito" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="CarritoWebForm.aspx.cs" Inherits="TiendaGrupo15Progra3.CarritoWebForm" EnableEventValidation="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
@@ -71,11 +71,15 @@
                 <asp:Repeater ID="RepeaterCarrito" runat="server">
                     <ItemTemplate>
                         <tr>
-                            <td><%# Eval("Nombre")   %></td>
-                            <td><%# Eval("Precio") %></td>                            
+                            <td><%# Eval("Nombre") %></td>
+                            <td><%# Eval("Precio") %></td>
                             <td><%# Eval("Cantidad") %></td>
                             <td><%# Eval("Total") %></td>
-                            
+                            <td>
+                                
+                                
+                                <asp:Button ID="BTNCarritoEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("IdCarrito") %>' OnClick="BTNCarritoEliminar_Click" />
+                            </td>
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -83,7 +87,8 @@
         </table>
 
         <div class="cart-total">
-            <strong>Total:</strong> <span id="totalCarrito"><%=TotalCarritoGlobal %></span>
+            <strong>Total:</strong> <asp:Literal ID="LiteralTotalCarrito" runat="server"></asp:Literal>
+
         </div>
 
         <div class="text-center">
