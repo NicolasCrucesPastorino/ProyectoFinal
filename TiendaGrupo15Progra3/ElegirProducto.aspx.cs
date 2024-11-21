@@ -57,8 +57,9 @@ namespace TiendaGrupo15Progra3
                 {
                     FiltradoAvanzado = false;
                 }
-                Productos = articuloService.GetArticulos();
+                
             }
+            Productos = articuloService.GetArticulos();
         }
 
         protected void ProductoBoton_Click(object sender, EventArgs e)
