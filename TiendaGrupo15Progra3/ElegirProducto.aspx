@@ -26,6 +26,7 @@
     <h2 class="text-center mb-4">PRODUCTOS</h2>
     <asp:Label ID="labelElijeTuProductoBuscar" runat="server" Text="Buscar por nombre de producto"></asp:Label>
     <asp:TextBox ID="TextElijeTuProductoBuscar" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
+    <asp:Button ID="BtnBusquedaComun" runat="server" Text="Buscar por nombre" OnClick="BtnBusquedaComun_Click" />
     <div>
     <asp:Label ID="labelElijeTuProductoBuscarLabelCheckBox" runat="server" Text="Filtro Avanzado"></asp:Label>
     <asp:CheckBox ID="CheckBoxElijeTuProductoBuscar" runat="server" AutoPostBack="true" Checked="false" OnCheckedChanged="CheckBoxElijeTuProductoBuscar_CheckedChanged" />
@@ -37,6 +38,7 @@
         <asp:DropDownList ID="DropDownListFiltroAvanzadoCategoria" runat="server" AppendDataBoundItems="true"></asp:DropDownList>
         <asp:Label ID="labelFiltroAvanzadoMarca" runat="server" Text="Elija Marca:"></asp:Label>
         <asp:DropDownList ID="DropDownListFiltroAvanzadoMarca" runat="server" AppendDataBoundItems="true"></asp:DropDownList>
+        <asp:Button ID="BtnBusquedaAvanzada" runat="server" Text="Busqueda avanzada" OnClick="BtnBusquedaAvanzada_Click" />
     </div>
 
     <div class="row">

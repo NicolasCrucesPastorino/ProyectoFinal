@@ -42,7 +42,7 @@ namespace TiendaGrupo15Progra3
                 }
                 cantidadCarrito = listaSubMenu.Count;
             }
-            
+   
         }
     }
 }

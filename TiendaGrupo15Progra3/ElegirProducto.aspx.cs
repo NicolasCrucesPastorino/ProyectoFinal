@@ -52,6 +52,36 @@ namespace TiendaGrupo15Progra3
         {
             FiltradoAvanzado = !FiltradoAvanzado;
             TextElijeTuProductoBuscar.Enabled = FiltradoAvanzado;
+            BtnBusquedaComun.Enabled = FiltradoAvanzado;
+        }
+
+        protected void BtnBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            ArticuloService busquedaavanzada = new ArticuloService();
+            string nombreProducto = TextFiltroAvanzadoNombre.Text.Trim();
+
+            decimal? precioProducto = null; // Usamos un valor nullable por si no se ingresa un precio
+            if (!string.IsNullOrWhiteSpace(TextFiltroAvanzadoPrecio.Text))
+            {
+                if (decimal.TryParse(TextFiltroAvanzadoPrecio.Text.Trim(), out decimal precio))
+                {
+                    precioProducto = precio;
+                }
+            }   
+           
+            
+            string categoriaProducto = DropDownListFiltroAvanzadoCategoria.Text.Trim();
+            string marcaProducto = DropDownListFiltroAvanzadoMarca.Text.Trim();
+            Productos=busquedaavanzada.BusquedaAvanzada(nombreProducto, precioProducto,categoriaProducto, marcaProducto);
+        }
+
+        protected void BtnBusquedaComun_Click(object sender, EventArgs e)
+        {
+            ArticuloService articuloBusqueda = new ArticuloService();
+            string busquedaString =TextElijeTuProductoBuscar.Text.Trim();
+            List<Articulo> articuloLista = new List<Articulo>();
+            articuloLista = articuloBusqueda.GetArticulosBusquedaNombre(busquedaString);
+            Productos = articuloLista;
         }
     }
 }
