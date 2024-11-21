@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\tiendagrupo15progra3\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|c:\\users\\nico\\downloads\\proyectofinalnuevabasededatos\\proyectofinal\\tiendagrupo15progra3\\elegirproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\elegirproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\tiendagrupo15progra3\\elegirproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\elegirproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\tiendagrupo15progra3\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\negocio\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|solutionrelative:negocio\\articuloservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|c:\\users\\nico\\downloads\\proyectofinalnuevabasededatos\\proyectofinal\\tiendagrupo15progra3\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|c:\\users\\nico\\downloads\\proyectofinalnuevabasededatos\\proyectofinal\\tiendagrupo15progra3\\elegirproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\elegirproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9DA292B8-BD1F-48DD-88CD-72D25C038C1D}|Negocio\\Negocio.csproj|C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\negocio\\accesodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,7 +35,7 @@
       "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\site1.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|c:\\users\\nico\\downloads\\proyectofinalnuevabasededatos\\proyectofinal\\tiendagrupo15progra3\\site1.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\tiendagrupo15progra3\\site1.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C739637F-87B6-4E03-A483-E775AF6B6AEF}|TiendaGrupo15Progra3\\TiendaGrupo15Progra3.csproj|solutionrelative:tiendagrupo15progra3\\site1.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -106,11 +106,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Default.aspx",
               "DocumentMoniker": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\TiendaGrupo15Progra3\\Default.aspx",
               "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Default.aspx",
@@ -119,18 +119,17 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-11-19T22:32:11.091Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Default.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\TiendaGrupo15Progra3\\Default.aspx.cs",
               "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\Default.aspx.cs",
               "ToolTip": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\TiendaGrupo15Progra3\\Default.aspx.cs",
               "RelativeToolTip": "TiendaGrupo15Progra3\\Default.aspx.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T04:17:26.915Z",
               "IsPinned": true,
@@ -138,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ElegirProducto.aspx",
               "DocumentMoniker": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\TiendaGrupo15Progra3\\ElegirProducto.aspx",
               "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\ElegirProducto.aspx",
@@ -151,13 +150,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ElegirProducto.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
               "RelativeDocumentMoniker": "TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
               "ToolTip": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
               "RelativeToolTip": "TiendaGrupo15Progra3\\ElegirProducto.aspx.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAkwEYAAAALAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAADEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T13:23:52.086Z",
               "EditorCaption": ""
@@ -172,8 +171,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\AgregarNuevoArticulo.aspx.cs",
               "ViewState": "AQIAAFoAAAAAAAAAAAAiwGcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T03:17:49.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T03:17:49.625Z"
             },
             {
               "$type": "Document",
@@ -185,8 +183,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\DetalleProducto.aspx.cs",
               "ViewState": "AQIAADkAAAAAAAAAAAAswE0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T01:10:19.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T01:10:19.667Z"
             },
             {
               "$type": "Document",
@@ -198,12 +195,11 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\CarritoWebForm.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-20T23:20:48.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T23:20:48.48Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ArticuloService.cs",
               "DocumentMoniker": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\Negocio\\ArticuloService.cs",
               "RelativeDocumentMoniker": "Negocio\\ArticuloService.cs",
@@ -211,8 +207,7 @@
               "RelativeToolTip": "Negocio\\ArticuloService.cs",
               "ViewState": "AQIAAHIAAAAAAAAAAAA2wHUAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T04:12:02.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T04:12:02.607Z"
             },
             {
               "$type": "Document",
@@ -250,8 +245,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\DetalleProducto.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-21T01:43:02.926Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T01:43:02.926Z"
             },
             {
               "$type": "Document",
@@ -263,8 +257,7 @@
               "RelativeToolTip": "Negocio\\AccesoDatos.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAQwBwAAABrAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T03:15:20.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T03:15:20.055Z"
             },
             {
               "$type": "Document",
@@ -276,8 +269,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx.cs",
               "ViewState": "AQIAAEAAAAAAAAAAAAAiwE4AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T03:17:49.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T03:17:49.619Z"
             },
             {
               "$type": "Document",
@@ -289,8 +281,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\Site1.Master.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAowCwAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T13:49:27.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T13:49:27.987Z"
             },
             {
               "$type": "Document",
@@ -302,8 +293,7 @@
               "RelativeToolTip": "Negocio\\UsuarioService.cs",
               "ViewState": "AQIAALYAAAAAAAAAAAAUwMIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T03:17:49.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T03:17:49.612Z"
             },
             {
               "$type": "Document",
@@ -315,8 +305,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\CarritoWebForm.aspx.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAIIAAABcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T16:32:45.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T16:32:45.817Z"
             },
             {
               "$type": "Document",
@@ -328,8 +317,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\Login.aspx.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T03:29:19.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T03:29:19.808Z"
             },
             {
               "$type": "Document",
@@ -341,8 +329,7 @@
               "RelativeToolTip": "TiendaGrupo15Progra3\\IngresaTusDatos.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-21T03:30:03.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T03:30:03.292Z"
             },
             {
               "$type": "Document",
@@ -353,8 +340,7 @@
               "ToolTip": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\Negocio\\CarritoService.cs",
               "RelativeToolTip": "Negocio\\CarritoService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T22:54:05.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T22:54:05.546Z"
             },
             {
               "$type": "Document",
@@ -366,8 +352,7 @@
               "RelativeToolTip": "Dominio\\Usuario.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAA1wBUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T03:21:54.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T03:21:54.214Z"
             },
             {
               "$type": "Document",
@@ -378,8 +363,7 @@
               "ToolTip": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\Negocio\\DetalleVentaService.cs",
               "RelativeToolTip": "Negocio\\DetalleVentaService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T21:21:11.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T21:21:11.288Z"
             },
             {
               "$type": "Document",
@@ -390,8 +374,7 @@
               "ToolTip": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\Dominio\\CarritoSubMenu.cs",
               "RelativeToolTip": "Dominio\\CarritoSubMenu.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T23:39:32.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T23:39:32.581Z"
             },
             {
               "$type": "Document",
@@ -402,8 +385,7 @@
               "ToolTip": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\Negocio\\VentaService.cs",
               "RelativeToolTip": "Negocio\\VentaService.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T21:41:29.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T21:41:29.966Z"
             },
             {
               "$type": "Document",
@@ -414,8 +396,7 @@
               "ToolTip": "C:\\Users\\Nico\\Downloads\\ProyectoFinalNuevaBaseDeDatos\\ProyectoFinal\\Dominio\\Venta.cs",
               "RelativeToolTip": "Dominio\\Venta.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T21:19:56.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T21:19:56.746Z"
             }
           ]
         }

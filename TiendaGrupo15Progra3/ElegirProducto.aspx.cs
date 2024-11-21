@@ -18,28 +18,47 @@ namespace TiendaGrupo15Progra3
         
 
         protected void Page_Load(object sender, EventArgs e)
-        {       
-            CategoriaService categoriaService = new CategoriaService();
-            MarcaService marcaService = new MarcaService();
-            List<Categoria> DropDownListCategoriaGlobal = new List<Categoria>();
-            List<Marca> DropDownListMarca = new List<Marca>();
-
-            DropDownListCategoriaGlobal = categoriaService.getCategorias();
-            DropDownListFiltroAvanzadoCategoria.DataSource = DropDownListCategoriaGlobal;
-            DropDownListFiltroAvanzadoCategoria.DataBind();
-            DropDownListMarca = marcaService.getMarcas();
-            DropDownListFiltroAvanzadoMarca.DataSource = DropDownListMarca;
-            DropDownListFiltroAvanzadoMarca.DataBind();
-            if(CheckBoxElijeTuProductoBuscar.Checked == true)
+        {
+            if (!IsPostBack)
             {
-                FiltradoAvanzado=true;
-            }
-            else
-            {
-                FiltradoAvanzado = false;
-            }
-            Productos=articuloService.GetArticulos();
 
+
+                CategoriaService categoriaService = new CategoriaService();
+                MarcaService marcaService = new MarcaService();
+                List<Categoria> DropDownListCategoriaGlobal = new List<Categoria>();
+                List<Marca> DropDownListMarca = new List<Marca>();
+
+
+
+                Categoria categoria = new Categoria();
+                categoria.Descripcion = "No Filtrar Por Categoria";
+                Marca marca = new Marca();
+                marca.Descripcion = "No Filtrar Por Marca";
+
+
+
+
+                DropDownListMarca = marcaService.getMarcas();
+                DropDownListMarca.Insert(0, marca);
+                
+                DropDownListCategoriaGlobal = categoriaService.getCategorias();
+                DropDownListCategoriaGlobal.Insert(0,categoria);
+                DropDownListFiltroAvanzadoMarca.DataSource = DropDownListMarca;
+                DropDownListFiltroAvanzadoCategoria.DataSource = DropDownListCategoriaGlobal;
+                DropDownListFiltroAvanzadoMarca.DataBind();
+                DropDownListFiltroAvanzadoCategoria.DataBind();
+
+
+                if (CheckBoxElijeTuProductoBuscar.Checked == true)
+                {
+                    FiltradoAvanzado = true;
+                }
+                else
+                {
+                    FiltradoAvanzado = false;
+                }
+                Productos = articuloService.GetArticulos();
+            }
         }
 
         protected void ProductoBoton_Click(object sender, EventArgs e)
@@ -71,8 +90,16 @@ namespace TiendaGrupo15Progra3
            
             
             string categoriaProducto = DropDownListFiltroAvanzadoCategoria.Text.Trim();
+            if(categoriaProducto== "No Filtrar Por Categoria")
+            {
+                categoriaProducto = null;
+            }
             string marcaProducto = DropDownListFiltroAvanzadoMarca.Text.Trim();
-            Productos=busquedaavanzada.BusquedaAvanzada(nombreProducto, precioProducto,categoriaProducto, marcaProducto);
+            if (marcaProducto == "No Filtrar Por Marca")
+            {
+                marcaProducto = null;
+            }
+            Productos =busquedaavanzada.BusquedaAvanzada(nombreProducto, precioProducto,categoriaProducto, marcaProducto);
         }
 
         protected void BtnBusquedaComun_Click(object sender, EventArgs e)
