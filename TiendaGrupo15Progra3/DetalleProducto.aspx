@@ -39,7 +39,7 @@
 
  </div>
  <%} %>
- <%if(Rol == 2)
+ <%if(Rol !=0)
     {  %>
 <div>
  <asp:DropDownList ID="DropDownListAgregarCarrito" runat="server"></asp:DropDownList>

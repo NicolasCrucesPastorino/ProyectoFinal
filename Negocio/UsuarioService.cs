@@ -86,7 +86,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,urlFoto,nombreFoto,clave,esActivo,apellido,nombreUsuario from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia");
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia");
                 datos.setearParametro("@nombreUsuario", usuario);
                 datos.setearParametro("@contrasenia", contrasenia);
 
@@ -99,8 +99,6 @@ namespace Negocio
                     usuarioObjeto.correo = datos.Lector["correo"].ToString();
                     usuarioObjeto.telefono = datos.Lector["telefono"].ToString();
                     usuarioObjeto.rol = int.Parse(datos.Lector["idRol"].ToString());
-                    usuarioObjeto.urlFoto = datos.Lector["urlFoto"].ToString();
-                    usuarioObjeto.nombreFoto = datos.Lector["nombreFoto"].ToString();
                     usuarioObjeto.clave = datos.Lector["clave"].ToString();
                     usuarioObjeto.esActivo = (bool)datos.Lector["esActivo"];
                     usuarioObjeto.apellido = datos.Lector["apellido"].ToString();
@@ -195,7 +193,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta(@"UPDATE USUARIO set nombre=@nombre,apellido=@ape,correo=@correo,nombreUsuario=@nombreusuario,clave=@clave,urlFoto=@urlFoto,nombreFoto=@nombreFoto,
+                datos.setearConsulta(@"UPDATE USUARIO set nombre=@nombre,apellido=@ape,correo=@correo,nombreUsuario=@nombreusuario,clave=@clave,
                                       telefono=@telefono,
                                       idRol=@idRol,
                                       esActivo=@esActivo,
@@ -207,8 +205,6 @@ namespace Negocio
                 datos.setearParametro("@nombreUsuario", usuario.nombreUsuario);
                 datos.setearParametro("@correo", usuario.correo);
                 datos.setearParametro("@clave", usuario.clave);
-                datos.setearParametro("@urlFoto", usuario.urlFoto);
-                datos.setearParametro("@nombreFoto", usuario.nombreFoto);
                 datos.setearParametro("@telefono", usuario.telefono);
                 datos.setearParametro("@idRol", usuario.rol);
                 datos.setearParametro("@esActivo", 1);

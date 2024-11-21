@@ -77,10 +77,7 @@
                 <label for="apellidoText" class="form-label">Apellido:</label>
                 <asp:TextBox ID="apellidoText" CssClass="form-control" placeholder="Apellido" runat="server"></asp:TextBox>
             </div>
-             <div class="form-group">
-                    <label for="DNInumero" class="form-label">DNI:</label>
-                    <asp:TextBox ID="DNInumero" textmode="Number" CssClass="form-control" placeholder="12345678" runat="server"></asp:TextBox>
-            </div>
+             
             <div class="form-group">
                 <label for="nombreUsuarioText" class="form-label">Nombre de Usuario:</label>
                 <asp:TextBox ID="TextNombreUsuario" CssClass="form-control" placeholder="NombreUsuario" runat="server"></asp:TextBox>
@@ -93,14 +90,8 @@
                 <label for="Emailtxt" class="form-label">Email:</label>
                 <asp:TextBox ID="EmailInput" textmode="Email" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
             </div>
-            <div class="form-group">
-                <label for="IMGperfil" class="form-label">Imagen perfil:</label>
-                <asp:TextBox ID="txtFotoPerfil" TextMode="Url" CssClass="form-control" placeholder="FotoPerfil" runat="server"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <label for="FotoText" class="form-label">Descripcion Imagen:</label>
-                <asp:TextBox ID="TxtDescripcionFoto" CssClass="form-control" placeholder="Nombre Foto" runat="server"></asp:TextBox>
-            </div>
+            
+            
          <div class="form-group">
             <label for="telefonoTxt" class="form-label">Telefono:</label>
             <asp:TextBox ID="TxtTelefono" CssClass="form-control" placeholder="Telefono" runat="server"></asp:TextBox>

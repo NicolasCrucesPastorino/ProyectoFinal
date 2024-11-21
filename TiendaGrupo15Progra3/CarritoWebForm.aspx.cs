@@ -128,6 +128,7 @@ namespace TiendaGrupo15Progra3
                     ventaService.CargarVenta(nuevaVenta);
                     carritoService.EliminarArticulosEnCarritoPorId(articulo.Id, usuario.idUsuario);
                 }
+                fGlobales.MostrarAlerta(this, "Articulos del carrito comprados con exito.");
                 CargarCarrito();
             }
             else

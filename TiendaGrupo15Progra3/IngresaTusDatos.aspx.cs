@@ -70,10 +70,8 @@ namespace TiendaGrupo15Progra3
                 usuario.nombreUsuario = TextNombreUsuario.Text.Trim();
                 usuario.clave = TxtClave.Text.Trim();
                 usuario.correo = EmailInput.Text.Trim();
-                usuario.urlFoto = txtFotoPerfil.Text.Trim();
-                usuario.nombreFoto = TxtDescripcionFoto.Text.Trim();
                 usuario.idUsuario = usuarioTraidoSession.idUsuario;
-                usuario.rol = 1;
+                usuario.rol = 2;
                 usuario.telefono = TxtTelefono.Text.Trim();
 
 

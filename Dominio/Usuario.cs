@@ -20,8 +20,6 @@ namespace Dominio
         public string correo { get; set; }
         public string telefono { get; set; }
         public int rol { get; set; }
-        public string urlFoto {get;set;}
-        public string nombreFoto {get;set;}
         public string clave { get; set; }
         public bool esActivo {get;set;}
         public DateTime fechaRegistro { get; set; }
