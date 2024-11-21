@@ -1,5 +1,4 @@
-
-INSERT INTO MARCAS (Descripcion) VALUES ('Bosh'); 
+INSERT INTO MARCAS (Descripcion) VALUES ('Bosh');
 INSERT INTO MARCAS (Descripcion) VALUES ('Motorola');
 INSERT INTO MARCAS (Descripcion) VALUES ('Royal Kludge');
 INSERT INTO MARCAS (Descripcion) VALUES ('Wilson');
@@ -12,38 +11,55 @@ INSERT INTO MARCAS (Descripcion) VALUES ('Adidas');
 INSERT INTO MARCAS (Descripcion) VALUES ('Puma');
 INSERT INTO MARCAS (Descripcion) VALUES ('Madre Terra');
 
+----------------------------------------------------------------------------------------------------------------------
 INSERT INTO CATEGORIAS (Descripcion) VALUES 
 ('Mochilas'),
-('Periféricos'),
+('Perifericos'),
 ('Accesorios'),
 ('Ropa Deportiva'),
-('Electrodomésticos'),
+('Electrodomesticos'),
 ('Libros'),
 ('Juguetes'),
 ('Muebles'),
 ('Herramientas'),
-('Joyería'),
+('Joyeria'),
 ('Calzado'),
 ('Alimentos');
 
+----------------------------------------------------------------------------------------------------------------------
+INSERT INTO rol (descripcion)
+VALUES
+('Administrador'),
+('Usuario');
 
-INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IDCategoria, IDMarca, Precio)
+----------------------------------------------------------------------------------------------------------------------
+INSERT INTO usuario (nombreUsuario, clave, idRol, nombre, apellido, correo, telefono, esActivo, fechaRegistro)
+VALUES
+('Usuario', '12345', 2, 'Marta', 'Rojas', 'martaRojas@example.com', '987654321', 1, GETDATE()), 
+('Usuario2', '12345', 2, 'Juan', 'Perez', 'juanPerez@example.com', '123456789', 1, GETDATE()),
+('Usuario3', '12345', 2, 'Esteban', 'Quito', 'EstebanQuito@example.com', '321456789', 1, GETDATE()),
+('Admin1', '1234', 1, 'Agus', 'Perez', 'AgusPerez@example.com', '987456789', 1, GETDATE());
+
+----------------------------------------------------------------------------------------------------------------------
+INSERT INTO ARTICULOS (IdUsuario, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, Stock)
 VALUES 
-('M01', 'Mochila Porta Notebook', 'Esta mochila combina un diseño elegante y profesional con la robustez necesaria para enfrentar el ajetreo urbano y los viajes de negocios.', 1, 1, 49999),
-('P03', 'Mouse Gamer Hero G502', 'Sumérgete en el mundo de los videojuegos con el mouse gamer Logitech G Series Hero G502 en color negro', 2, 2, 64999),
-('P08', 'Teclado Mecánico 75% Rk M75', 'Este teclado cuenta con un diseño compacto con 81 teclas, por lo que es fácil de transportar y usar en cualquier lugar.', 2, 3, 185000),
-('R10', 'Camiseta Deportiva Nike', 'Camiseta deportiva Nike con tecnología de secado rápido.', 4, 4, 32999),
-('E15', 'Aspiradora Inteligente Samsung', 'Aspiradora inteligente con control remoto y programación.', 5, 5, 199999),
-('L23', 'Libro de Cocina Gourmet', 'Un libro de cocina con recetas gourmet de todo el mundo.', 6, 6, 5999),
-('J40', 'Muñeca Barbie Edición Especial', 'Muñeca Barbie edición especial coleccionable.', 7, 7, 45999),
-('M55', 'Sofá Modular', 'Sofá modular con diseño contemporáneo y tejido de alta calidad.', 8, 8, 349999),
-('H65', 'Taladro Inalámbrico Bosch', 'Taladro inalámbrico con batería de larga duración.', 9, 9, 79999),
-('J77', 'Collar de Plata Estrella', 'Collar de plata con colgante en forma de estrella.', 10, 10, 19999),
-('C89', 'Zapatillas Adidas Running', 'Zapatillas de running con suela de alto rendimiento.', 11, 11, 89999),
-('A100', 'Pack de Alimentos Orgánicos', 'Pack de alimentos orgánicos para una alimentación saludable.', 12, 12, 29999);
+(1, 'M01', 'Mochila Porta Notebook', 'Esta mochila combina un diseno elegante y profesional con la robustez necesaria para enfrentar el ajetreo urbano y los viajes de negocios.', 1, 1, 49999, 10),
+(1, 'P03', 'Mouse Gamer Hero G502', 'Sumergite en el mundo de los videojuegos con el mouse gamer Logitech G Series Hero G502 en color negro', 2, 2, 64999, 10),
+(1, 'P08', 'Teclado Mecanico 75% Rk M75', 'Este teclado cuenta con un diseno compacto con 81 teclas, por lo que es facil de transportar y usar en cualquier lugar.', 3, 3, 185000, 10),
+(1, 'R10', 'Camiseta Deportiva Nike', 'Camiseta deportiva Nike con tecnologia de secado rapido.', 4, 4, 32999, 10),
+(1, 'E15', 'Aspiradora Inteligente Samsung', 'Aspiradora inteligente con control remoto y programacion.', 5, 5, 199999, 10),
+(1, 'L23', 'Libro de Cocina Gourmet', 'Un libro de cocina con recetas gourmet de todo el mundo.', 6, 6, 5999, 10),
+(2, 'J40', 'Muñeca Barbie Edicion Especial', 'Muñeca Barbie edicion especial coleccionable.', 7, 7, 45999, 10),
+(2, 'M55', 'Sofa Modular', 'Sofa modular con diseno contemporaneo y tejido de alta calidad.', 8, 8, 349999, 10),
+(2, 'H65', 'Taladro Inalambrico Bosch', 'Taladro inalambrico con bateria de larga duracion.', 9, 9, 79999, 10),
+(3, 'J77', 'Collar de Plata Estrella', 'Collar de plata con colgante en forma de estrella.', 10, 10, 19999, 10),
+(3, 'C89', 'Zapatillas Adidas Running', 'Zapatillas de running con suela de alto rendimiento.', 11, 11, 89999, 10),
+(3, 'A100', 'Pack de Alimentos Organicos', 'Pack de alimentos organicos para una alimentacion saludable.', 12, 12, 29999, 10);
 
+-----------------------------------------------------------------
 
-insert into imagenes values
+insert into imagenes (IdArticulo, ImagenUrl)
+VALUES
 (1,'https://http2.mlstatic.com/D_NQ_NP_703368-MLU76300898146_052024-O.webp'),
 (1, 'https://http2.mlstatic.com/D_NQ_NP_842545-MLU76300482840_052024-O.webp'),
 (1, 'https://http2.mlstatic.com/D_NQ_NP_747302-MLU76300769244_052024-O.webp'),
@@ -79,9 +95,4 @@ insert into imagenes values
 (11, 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/61a20037811147e8b820bc5474709eca_9366/Tenis_Corrida_Switch_Run_Azul_IF5713_03_standard.jpg'),
 (12, 'https://www.cdn.ciorganicos.com.br/wp-content/uploads/2018/05/mae_terra.jpg'),--pack de alimentos organicos
 (12, 'https://redemix.vteximg.com.br/arquivos/ids/212933-500-500/7896496917013.jpg?v=638350619828900000'),
-(12, 'https://zonasul.vtexassets.com/arquivos/ids/3101093/VF4qT-qqCUAAAAAAAATYvg.jpg?v=638282430470870000')
-
-insert into clientes values ('32333222', 'Doug', 'Narinas', 'doug@narinas.com','avenida 123', 'chuletas city', 1234)
-
-
-
+(12, 'https://zonasul.vtexassets.com/arquivos/ids/3101093/VF4qT-qqCUAAAAAAAATYvg.jpg?v=638282430470870000');
