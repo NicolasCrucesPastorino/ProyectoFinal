@@ -16,6 +16,8 @@ namespace Dominio
         public decimal Total { get; set; }
         public DateTime fechaRegistro { get; set; }
         public int Id_cliente { get; set; }
+        public bool Comprado { get; set; }
+        public bool Vendido { get; set; }
 
     }
 }

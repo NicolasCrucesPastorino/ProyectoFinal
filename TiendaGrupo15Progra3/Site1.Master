@@ -78,12 +78,21 @@
                             </li>
                            
                             <li class="nav-item">
-                                <a class="nav-link" href="/ElegirProducto.aspx">Productos</a>
+                                <a class="nav-link" href="/ElegirProducto.aspx">Market Place</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/ElegirProducto.aspx">Comprados</a>
+                              </li>
+                          <li class="nav-item">
+                             <a class="nav-link" href="/ElegirProducto.aspx">En Camino</a>
+                             </li>
                           
                              <li class="nav-item">
                                 <a class="nav-link" href="/VenderProductos.aspx">Vender</a>
                              </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/VenderProductos.aspx">Vendidos</a>
+                               </li>
                              <li class="nav-item">
                                 <a class="nav-link" href="/IngresaTusDatos.aspx">Mi perfil</a>
                             </li>

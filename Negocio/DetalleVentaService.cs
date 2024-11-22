@@ -15,10 +15,11 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO DetalleVenta (idVenta, idProducto, marcaProducto, descripcionProducto, categoriaProducto, cantidad, precio, total) VALUES (@idVenta, @idProducto, @marcaProducto, @descripcionProducto, @categoriaProducto, @cantidad, @precio, @total);");
+                datos.setearConsulta("INSERT INTO DetalleVenta (idProducto,idVenta, marcaProducto, descripcionProducto, categoriaProducto, cantidad, precio, total) VALUES ( @idProducto, @idVenta,@marcaProducto, @descripcionProducto, @categoriaProducto, @cantidad, @precio, @total);");
 
-                datos.setearParametro("@idVenta", nuevaVenta.idVenta);
+                
                 datos.setearParametro("@idProducto", nuevaVenta.idProducto);
+                datos.setearParametro("@idVenta", nuevaVenta.idVenta);
                 datos.setearParametro("@marcaProducto", nuevaVenta.marcaProducto);
                 datos.setearParametro("@descripcionProducto", nuevaVenta.descripcionProducto);
                 datos.setearParametro("@categoriaProducto", nuevaVenta.categoriaProducto);
@@ -26,7 +27,7 @@ namespace Negocio
                 datos.setearParametro("@precio", nuevaVenta.precio);
                 datos.setearParametro("@total", nuevaVenta.total);
 
-                datos.ejecutarAccion();
+                datos.ejecutarLectura();
 
             }
             catch (Exception ex)

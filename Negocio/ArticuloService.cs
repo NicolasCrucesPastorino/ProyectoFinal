@@ -143,7 +143,7 @@ namespace Negocio
             }
 
             // Ejecutar la consulta
-            using (var connection = new SqlConnection("server=localhost; database =  EcomerceTCPGrupo15A; integrated security = true"))
+            using (var connection = new SqlConnection("server=.\\SQLEXPRESS; database =  EcomerceTCPGrupo15A; integrated security = true"))
             using (var command = new SqlCommand(query, connection))
             {
                 connection.Open();

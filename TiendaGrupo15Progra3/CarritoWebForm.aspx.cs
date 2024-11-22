@@ -112,6 +112,10 @@ namespace TiendaGrupo15Progra3
                 {
                     int StockNuevo;
                     Usuario usuario = new Usuario();
+                    DetalleVenta detalleVenta = new DetalleVenta();
+                    DetalleVentaService detalleVentaService1 = new DetalleVentaService();
+
+
                     usuario = (Usuario)Session["Usuario"];
                     ArticuloService articuloService = new ArticuloService();
                     Articulo articulo = new Articulo();
@@ -124,8 +128,24 @@ namespace TiendaGrupo15Progra3
                     nuevaVenta.subTotal = (decimal)articulo.Precio;
                     nuevaVenta.Total = nuevaVenta.subTotal * carritoItem.Cantidad;
                     StockNuevo = articulo.Stock - carritoItem.Cantidad;
+
+                    detalleVenta.idProducto = articulo.Id;
+                    detalleVenta.cantidad = carritoItem.Cantidad;
+                    detalleVenta.marcaProducto = articulo.Marca.Descripcion;
+                    detalleVenta.descripcionProducto = articulo.Descripcion;
+                    detalleVenta.categoriaProducto = articulo.Categoria.Descripcion;
+                    detalleVenta.precio= articulo.Precio;
+                    detalleVenta.total= nuevaVenta.Total;
+
+
+
                     articuloService.CambiarStockArticuloPorId(articulo.Id, StockNuevo);
                     ventaService.CargarVenta(nuevaVenta);
+                    int nuevoIdVentaGenerado = ventaService.UltimaVenta();
+                    detalleVenta.idVenta = nuevoIdVentaGenerado;
+                    detalleVentaService.CargarDetalleVenta(detalleVenta);
+
+
                     carritoService.EliminarArticulosEnCarritoPorId(articulo.Id, usuario.idUsuario);
                 }
                 fGlobales.MostrarAlerta(this, "Articulos del carrito comprados con exito.");
