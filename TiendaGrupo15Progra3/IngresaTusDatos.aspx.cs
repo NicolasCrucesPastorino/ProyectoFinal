@@ -14,6 +14,17 @@ namespace TiendaGrupo15Progra3
 {
     public partial class IngresaTusDatos : System.Web.UI.Page
     {
+        private bool SoloLetras(string texto)
+        {
+            foreach (char c in texto)
+            {
+                if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
+                {
+                    return false;  
+                }
+            }
+            return true; 
+        }
 
         public string ArticuloId { get; set; }
         public Usuario UsuarioIngresaTusDatos = new Usuario();
@@ -48,6 +59,47 @@ namespace TiendaGrupo15Progra3
                 fGlobales.MostrarAlerta(this, "Por favor, acepte los términos y condiciones.");
                 return;
             }
+            if (string.IsNullOrWhiteSpace(nombreText.Text) ||
+                string.IsNullOrWhiteSpace(apellidoText.Text) ||
+                string.IsNullOrWhiteSpace(TextNombreUsuario.Text) ||
+                string.IsNullOrWhiteSpace(TxtClave.Text) ||
+                string.IsNullOrWhiteSpace(EmailInput.Text) ||
+                string.IsNullOrWhiteSpace(TxtTelefono.Text))
+            {
+                fGlobales.MostrarAlerta(this, "Todos los campos son obligatorios.");
+                return;
+            }
+
+
+            if (!SoloLetras(nombreText.Text.Trim()))
+            {
+                string script = "alert('El campo \\\"Nombre\\\" solo puede contener letras.');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "AlertNombre", script, true);
+                return;
+            }
+            if (!SoloLetras(apellidoText.Text.Trim()))
+            {
+                string script = "alert('El campo \\\"Apellido\\\" solo puede contener letras.');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "AlertApellido", script, true);
+                return;
+            }
+
+
+            if (!EmailInput.Text.Contains("@") || !EmailInput.Text.Contains("."))
+            {
+                fGlobales.MostrarAlerta(this, "Ingrese un correo electrónico válido.");
+                return;
+            }
+
+
+
+          
+            if (!long.TryParse(TxtTelefono.Text, out _))
+            {
+                fGlobales.MostrarAlerta(this, "El número de teléfono debe contener solo números");
+                return;
+            }
+
 
             try
             {
