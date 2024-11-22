@@ -59,10 +59,14 @@
         <thead>
             <tr>
                 <th>Producto</th>
+                <th>Categoria</th>                
+                <th>Marca</th>
                 <th>Precio</th>
-                <th>Cantidad</th>              
-                <th>Total</th>
-                
+                <th>Cantidad Comprada</th>
+                <th>Mail Vendedor</th>
+                <th>Telefono Vendedor</th>
+                <th>Stock Restante</th>
+                <th>Monto Total</th>                
 
             </tr>
         </thead>
@@ -72,9 +76,14 @@
                 <ItemTemplate>
                     <tr>
                         <td><%# Eval("producto") %></td>
-                        <td><%# Eval("precio") %></td>
+                        <td><%# Eval("categoria") %></td>
+                        <td><%# Eval("marca") %></td>
+                        <td><%# Eval("precio") %> $</td>
                         <td><%# Eval("cantidad") %></td>
-                        <td><%# Eval("Total") %></td>                       
+                        <td><%# Eval("correo") %></td>
+                        <td><%# Eval("telefono") %></td>
+                        <td><%# Eval("Stock") %></td>
+                        <td><%# Eval("Total") %> $</td>                       
                             
                                                
                     </tr>

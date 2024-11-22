@@ -50,14 +50,24 @@ namespace TiendaGrupo15Progra3
             {
                 if (detalleVentaService.BuscarPorIdVenta(ventaItem.idVenta) != null)
                 {
-                detalleVenta= detalleVentaService.BuscarPorIdVenta(ventaItem.idVenta);
+                    Usuario usuarioParaRepetear = new Usuario();
+                    UsuarioService usuarioService = new UsuarioService();
+                    detalleVenta= detalleVentaService.BuscarPorIdVenta(ventaItem.idVenta);
+                    usuarioParaRepetear = usuarioService.TraerUsuarioPorId(ventaItem.idUsuario);
+
+
                     Articulo articulo = new Articulo();
                     ParaRepeter paraRepeter = new ParaRepeter();
                     articulo = articuloService.listarXid(detalleVenta.idProducto);
                 paraRepeter.producto = articulo.Nombre;
-                paraRepeter.precio = articulo.Precio;
+                paraRepeter.precio = Math.Round(articulo.Precio,2);
                 paraRepeter.cantidad = detalleVenta.cantidad;
-                paraRepeter.Total = detalleVenta.cantidad * articulo.Precio;
+                paraRepeter.Total = Math.Round(detalleVenta.cantidad * articulo.Precio,2);
+                    paraRepeter.categoria=detalleVenta.categoriaProducto;
+                    paraRepeter.marca=detalleVenta.marcaProducto;
+                    paraRepeter.Stock=articulo.Stock;
+                    paraRepeter.telefono = usuarioParaRepetear.telefono;
+                    paraRepeter.correo = usuarioParaRepetear.correo;
                 paraRepeterList.Add(paraRepeter);
                 }
                 

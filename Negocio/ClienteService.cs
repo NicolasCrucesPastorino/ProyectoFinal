@@ -106,17 +106,17 @@ namespace Negocio
             }
             return 0;
         }
-        public Cliente PrellenarDatos (string dni)
+        public Cliente PrellenarDatos(string dni)
         {
             AccesoDatos datos = new AccesoDatos();
             Cliente existente = new Cliente();
             try
             {
                 datos.setearConsulta("SELECT Id,Nombre,Apellido,Email,Direccion,Ciudad,Cp,Documento FROM Clientes WHERE DOCUMENTO=@dni");
-                datos.setearParametro("@dni",dni);
+                datos.setearParametro("@dni", dni);
                 datos.ejecutarLectura();
 
-                while(datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     existente.idCliente = (int)datos.Lector["Id"];
                     existente.nombre = (string)datos.Lector["Nombre"];
@@ -125,9 +125,9 @@ namespace Negocio
                     existente.direccion = (string)datos.Lector["Direccion"];
                     existente.ciudad = (string)datos.Lector["Ciudad"];
                     existente.cp = (int)datos.Lector["Cp"];
-                    existente.dni =  int.Parse(dni);
+                    existente.dni = int.Parse(dni);
                 }
-                
+
                 return existente;
             }
             catch (Exception ex)
@@ -138,7 +138,7 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
-            
         }
-    }
+           
+        }
 }

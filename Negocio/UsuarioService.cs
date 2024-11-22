@@ -225,5 +225,52 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public Usuario TraerUsuarioPorId(int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            DateTime dateTime = DateTime.Now;
+
+            try
+            {
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario from USUARIO WHERE idUsuario=@idUsuario");
+                datos.setearParametro("@idUsuario", IdUsuario);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {   Usuario usuario = new Usuario();
+                    
+
+                    
+                    usuario.idUsuario = (int)datos.Lector["idUsuario"];
+                    usuario.nombre = (string)datos.Lector["nombre"];
+                    usuario.correo = (string)datos.Lector["correo"];
+                    usuario.telefono = (string)datos.Lector["telefono"];
+                    usuario.rol = (int)datos.Lector["idRol"];
+                    usuario.clave = (string)datos.Lector["clave"];
+                    usuario.esActivo = (bool)datos.Lector["esActivo"];
+                    usuario.apellido = (string)datos.Lector["apellido"];
+                    usuario.nombreUsuario= (string)datos.Lector["nombreUsuario"];
+
+
+                    return usuario;
+
+
+                }
+                
+                Usuario usuario1 = new Usuario();
+                usuario1.idUsuario = 0;
+                return usuario1;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al actualizar sus datos: linea 190 UsuarioService " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     } 
 }
