@@ -64,7 +64,7 @@ namespace Negocio
                 datos.setearParametro("@idVenta", idVenta);
                 datos.ejecutarLectura();
 
-                if (datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     detalleVenta = new DetalleVenta
                     {

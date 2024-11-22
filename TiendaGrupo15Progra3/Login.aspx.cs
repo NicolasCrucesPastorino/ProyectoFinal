@@ -14,7 +14,18 @@ namespace TiendaGrupo15Progra3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            if (Session["loMandamosLogin"] != null)
+            {
+                bool VieneDeAlgunLado = (bool)Session["loMandamosLogin"];
+
+                if (VieneDeAlgunLado==true)
+                {
+                    fGlobales.MostrarAlerta(this, "Para Ver Productos Comprados, Vendidos y en Proceso, y demas acciones se requiere estar logueado.");
+                    Session["loMandamosLogin"] = false;
+                }
+            }
+
+
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)

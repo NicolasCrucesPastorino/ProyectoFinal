@@ -29,9 +29,12 @@ namespace TiendaGrupo15Progra3
                 
             }
             else
-            {
+            {   
+
                 UsuarioIngresaTusDatos.nombre = "No se encuentra";
                 UsuarioIngresaTusDatos.apellido = "Registrado";
+                Session["loMandamosLogin"] = true;
+                Response.Redirect("Login.aspx");
             }
 
         }

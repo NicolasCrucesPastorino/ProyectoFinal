@@ -88,3 +88,9 @@ C:\Users\windows\Desktop\Repo Final Progra III\ProyectoFinal\Dominio\obj\Debug\D
 C:\Users\windows\Desktop\Repo Final Progra III\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\windows\Desktop\Repo Final Progra III\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 C:\Users\windows\Desktop\Repo Final Progra III\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\proyectoFinalCompradosYvendidos\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nico\Downloads\proyectoFinalCompradosYvendidos\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\proyectoFinalCompradosYvendidos\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nico\Downloads\proyectoFinalCompradosYvendidos\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Downloads\proyectoFinalCompradosYvendidos\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nico\Downloads\proyectoFinalCompradosYvendidos\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb

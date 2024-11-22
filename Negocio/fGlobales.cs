@@ -13,5 +13,6 @@ namespace Negocio
         {
             ScriptManager.RegisterStartupScript(page, page.GetType(), "alert", $"alert('{mensaje}');", true);
         }
+        
     }
 }

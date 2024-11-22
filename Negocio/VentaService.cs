@@ -45,12 +45,13 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT idUsuario, nombreCliente, subTotal,Total, fechaRegistro, Id_cliente,comprado,vendido FROM Venta WHERE idCliente=@idCliente");
+                datos.setearConsulta("SELECT idVenta,idUsuario, nombreCliente, subTotal,Total, fechaRegistro, Id_cliente,comprado,vendido FROM Venta WHERE id_cliente=@idCliente");
                 datos.setearParametro("@idCliente",idCliente);
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
                     Venta venta = new Venta();
+                    venta.idVenta = (int)datos.Lector["idVenta"];
                     venta.idUsuario = (int)datos.Lector["idUsuario"];
                     venta.nombreCliente = (string)datos.Lector["nombreCliente"];
                     venta.subTotal = (decimal)datos.Lector["subTotal"];
