@@ -91,7 +91,7 @@
                                 <a class="nav-link" href="/VenderProductos.aspx">Vender</a>
                              </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/VenderProductos.aspx">Vendidos</a>
+                                <a class="nav-link" href="/Vendidos.aspx">Vendidos</a>
                                </li>
                              <li class="nav-item">
                                 <a class="nav-link" href="/IngresaTusDatos.aspx">Mi perfil</a>

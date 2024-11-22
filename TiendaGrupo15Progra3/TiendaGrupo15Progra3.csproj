@@ -102,6 +102,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="UsuarioRegistrado.aspx" />
     <Content Include="VenderProductos.aspx" />
+    <Content Include="Vendidos.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="Login.aspx" />
@@ -194,6 +195,13 @@
     </Compile>
     <Compile Include="VenderProductos.aspx.designer.cs">
       <DependentUpon>VenderProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendidos.aspx.cs">
+      <DependentUpon>Vendidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendidos.aspx.designer.cs">
+      <DependentUpon>Vendidos.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
