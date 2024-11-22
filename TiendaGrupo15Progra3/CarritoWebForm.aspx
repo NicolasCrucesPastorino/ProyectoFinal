@@ -71,9 +71,9 @@
                 <asp:Repeater ID="RepeaterCarrito" runat="server">
                     <ItemTemplate>
                         <tr>
-                            <td><%# Eval("Nombre") %></td>
-                            <td><%# Eval("Precio") %></td>
-                            <td><%# Eval("Cantidad") %></td>
+                            <td><%# Eval("producto") %></td>
+                            <td><%# Eval("precio") %></td>
+                            <td><%# Eval("cantidad") %></td>
                             <td><%# Eval("Total") %></td>
                             <td>
                                 

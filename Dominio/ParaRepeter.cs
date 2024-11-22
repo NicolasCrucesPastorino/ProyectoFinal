@@ -11,7 +11,7 @@ namespace Dominio
         public string producto {  get; set; }
         public decimal precio { get; set; }
         public int cantidad { get; set; }
-        public decimal subTotal { get; set; }
+       
         public decimal Total { get; set; }
                
     }
