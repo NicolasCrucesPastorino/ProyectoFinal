@@ -73,6 +73,56 @@ namespace Negocio
 
                 throw;
             }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void MarcarComoVendido(int idVentaEntrante)
+        {
+            
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update Venta set vendido=1 where idVenta=@idVenta");
+                datos.setearParametro("@idVenta", idVentaEntrante);
+                datos.ejecutarAccion();
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+        public void MarcarComoComprado(int idVentaEntrante)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update Venta set comprado=1 where idVenta=@idVenta");
+                datos.setearParametro("@idVenta", idVentaEntrante);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
         }
 
         public List<Venta> buscarVendido(int idUsuario)
@@ -109,6 +159,10 @@ namespace Negocio
             {
 
                 throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
 
@@ -147,6 +201,10 @@ namespace Negocio
 
                 throw;
             }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
         public List<Venta> buscarEnCaminoCompras(int idCliente)
@@ -183,6 +241,10 @@ namespace Negocio
             {
 
                 throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
 

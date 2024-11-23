@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Dominio
 {
     public class ParaRepeter
-    {
+    {   
+        public int idVenta {  get; set; }
         public string producto {  get; set; }
         public decimal precio { get; set; }
         public int cantidad { get; set; }

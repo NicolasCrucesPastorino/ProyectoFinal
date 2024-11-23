@@ -68,6 +68,7 @@ namespace TiendaGrupo15Progra3
                     paraRepeter.Stock = articulo.Stock;
                     paraRepeter.telefono = usuarioParaRepetear.telefono;
                     paraRepeter.correo = usuarioParaRepetear.correo;
+                    paraRepeter.idVenta = ventaItem.idVenta;
                     paraRepeterList.Add(paraRepeter);
                 }
 

@@ -106,3 +106,15 @@ C:\Users\windows\Desktop\Repo agregar validaciones\ProyectoFinal\Dominio\obj\Deb
 C:\Users\windows\Desktop\Repo agregar validaciones\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\windows\Desktop\Repo agregar validaciones\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 C:\Users\windows\Desktop\Repo agregar validaciones\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Nico\Documents\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nico\Documents\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Documents\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nico\Documents\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Documents\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nico\Documents\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nico\Downloads\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Downloads\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalTodasLasSolapasHechas\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb

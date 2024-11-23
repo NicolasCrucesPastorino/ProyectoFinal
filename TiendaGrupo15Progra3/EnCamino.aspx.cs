@@ -69,6 +69,7 @@ namespace TiendaGrupo15Progra3
                     paraRepeter.Stock = articulo.Stock;
                     paraRepeter.telefono = usuarioParaRepetear.telefono;
                     paraRepeter.correo = usuarioParaRepetear.correo;
+                    paraRepeter.idVenta = ventaItem.idVenta;
                     paraRepeterList.Add(paraRepeter);
                 }
 
@@ -118,6 +119,7 @@ namespace TiendaGrupo15Progra3
                     paraRepeter.Stock = articulo.Stock;
                     paraRepeter.telefono = usuarioParaRepetear.telefono;
                     paraRepeter.correo = usuarioParaRepetear.correo;
+                    paraRepeter.idVenta = ventaItem.idVenta;
                     paraRepeterListComprados.Add(paraRepeter);
                 }
 
@@ -129,7 +131,29 @@ namespace TiendaGrupo15Progra3
 
 
         }
+
+        protected void BTNEnProcesoVendidosEliminar_Click(object sender, EventArgs e)
+        {
+            Button idVentaAVenderBoton = (Button)sender;
+            int idVenta = int.Parse(idVentaAVenderBoton.CommandArgument);
+            VentaService ventaService = new VentaService();
+            ventaService.MarcarComoVendido(idVenta);
+
+        }
+        protected void BTNEnProcesoComprados_Click(object sender, EventArgs e)
+        {
+            Button idVentaARecibirBoton = (Button)sender;
+            int idVenta = int.Parse(idVentaARecibirBoton.CommandArgument);
+            VentaService ventaService = new VentaService();
+            ventaService.MarcarComoComprado(idVenta);
+        
+
+        }
+
+
     }
+    
+        
 
 
 }

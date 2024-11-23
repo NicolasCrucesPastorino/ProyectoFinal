@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EnCamino.aspx.cs" Inherits="TiendaGrupo15Progra3.EnCamino" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="EnCamino.aspx.cs" Inherits="TiendaGrupo15Progra3.EnCamino" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <style>
     .cart-table {
@@ -72,7 +72,9 @@
                 <th>Mail Comprador</th>
                 <th>Telefono Comprador</th>
                 <th>Stock Restante</th>
-                <th>Monto Total</th>                
+                <th>Monto Total</th> 
+                <th>Marcar como entregado</th> 
+                
 
             </tr>
         </thead>
@@ -90,7 +92,9 @@
                         <td><%# Eval("telefono") %></td>
                         <td><%# Eval("Stock") %></td>
                         <td><%# Eval("Total") %> $</td>                       
-                            
+                            <td>    
+                           <asp:Button ID="BTNEnProcesoVendidos" runat="server" Text="Entregado" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoVendidosEliminar_Click" />
+                            </td>
                                                
                     </tr>
                 </ItemTemplate>
@@ -99,9 +103,9 @@
     </table>
 </div>
 
-     <h2>Tus productos en proceso de compra</h2>
+    
 <div class="container">
-
+ <h2>Tus productos en proceso de compra</h2>
 <table class="cart-table">
     <thead>
         <tr>
@@ -113,7 +117,8 @@
             <th>Mail Vendedor</th>
             <th>Telefono Vendedor</th>
             <th>Stock Restante</th>
-            <th>Monto Total</th>                
+            <th>Monto Total</th>     
+            <th>Marcar como recibido</th> 
 
         </tr>
     </thead>
@@ -131,7 +136,9 @@
                     <td><%# Eval("telefono") %></td>
                     <td><%# Eval("Stock") %></td>
                     <td><%# Eval("Total") %> $</td>                       
-                        
+                         <td>    
+                    <asp:Button ID="BTNEnProcesoComprados" runat="server" Text="Recibido" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoComprados_Click" />
+                    </td>
                                            
                 </tr>
             </ItemTemplate>

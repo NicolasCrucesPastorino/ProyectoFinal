@@ -73,6 +73,7 @@ namespace TiendaGrupo15Progra3
             FiltradoAvanzado = !FiltradoAvanzado;
             TextElijeTuProductoBuscar.Enabled = FiltradoAvanzado;
             BtnBusquedaComun.Enabled = FiltradoAvanzado;
+            
         }
 
         protected void BtnBusquedaAvanzada_Click(object sender, EventArgs e)
