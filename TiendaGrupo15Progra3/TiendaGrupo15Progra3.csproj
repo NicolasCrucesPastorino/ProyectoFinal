@@ -89,6 +89,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DetalleProducto.aspx" />
     <Content Include="ElegirProducto.aspx" />
+    <Content Include="EnCamino.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\StyleSheet1.css" />
     <Content Include="IngresaTusDatos.aspx" />
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="ElegirProducto.aspx.designer.cs">
       <DependentUpon>ElegirProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnCamino.aspx.cs">
+      <DependentUpon>EnCamino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnCamino.aspx.designer.cs">
+      <DependentUpon>EnCamino.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

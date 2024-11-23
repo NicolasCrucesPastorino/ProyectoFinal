@@ -111,6 +111,81 @@ namespace Negocio
                 throw;
             }
         }
+
+        public List<Venta> buscarEnCaminoVentas(int idUsuario)
+        {
+            List<Venta> ListaDeVentas = new List<Venta>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT idVenta,idUsuario, nombreCliente, subTotal,Total, fechaRegistro, Id_cliente,comprado,vendido FROM Venta WHERE idUsuario=@idUsuario");
+                datos.setearParametro("@idUsuario", idUsuario);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Venta venta = new Venta();
+                    venta.idVenta = (int)datos.Lector["idVenta"];
+                    venta.idUsuario = (int)datos.Lector["idUsuario"];
+                    venta.nombreCliente = (string)datos.Lector["nombreCliente"];
+                    venta.subTotal = (decimal)datos.Lector["subTotal"];
+                    venta.Total = (decimal)datos.Lector["Total"];
+                    venta.fechaRegistro = (DateTime)datos.Lector["fechaRegistro"];
+                    venta.Id_cliente = (int)datos.Lector["Id_cliente"];
+                    venta.Comprado = (bool)datos.Lector["comprado"];
+                    venta.Vendido = (bool)datos.Lector["vendido"];
+
+                    if (venta.Comprado == false || venta.Vendido == false)
+                    {
+                        ListaDeVentas.Add(venta);
+                    }
+                }
+                return ListaDeVentas;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<Venta> buscarEnCaminoCompras(int idCliente)
+        {
+            List<Venta> ListaDeVentas = new List<Venta>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT idVenta,idUsuario, nombreCliente, subTotal,Total, fechaRegistro, Id_cliente,comprado,vendido FROM Venta WHERE id_cliente=@idCliente");
+                datos.setearParametro("@idCliente", idCliente);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Venta venta = new Venta();
+                    venta.idVenta = (int)datos.Lector["idVenta"];
+                    venta.idUsuario = (int)datos.Lector["idUsuario"];
+                    venta.nombreCliente = (string)datos.Lector["nombreCliente"];
+                    venta.subTotal = (decimal)datos.Lector["subTotal"];
+                    venta.Total = (decimal)datos.Lector["Total"];
+                    venta.fechaRegistro = (DateTime)datos.Lector["fechaRegistro"];
+                    venta.Id_cliente = (int)datos.Lector["Id_cliente"];
+                    venta.Comprado = (bool)datos.Lector["comprado"];
+                    venta.Vendido = (bool)datos.Lector["vendido"];
+
+                    if (venta.Comprado == false || venta.Vendido == false)
+                    {
+                        ListaDeVentas.Add(venta);
+                    }
+                }
+                return ListaDeVentas;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public int UltimaVenta()
         {
             AccesoDatos datos = new AccesoDatos();

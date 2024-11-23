@@ -84,7 +84,7 @@
                                 <a class="nav-link" href="/Comprados.aspx">Comprados</a>
                               </li>
                           <li class="nav-item">
-                             <a class="nav-link" href="/ElegirProducto.aspx">En Camino</a>
+                             <a class="nav-link" href="/EnCamino.aspx">En Camino</a>
                              </li>
                           
                              <li class="nav-item">

@@ -49,12 +49,17 @@
     .btn-checkout:hover {
         background-color: #ffcc00;
     }
+        .main-content { 
+                margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
+
+}
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <div class="main-content"
+     <h2>Tus Productos Comprados</h2>
     <div class="container">
-    <h2>Tus Productos Comprados</h2>
+    
     <table class="cart-table">
         <thead>
             <tr>
@@ -92,10 +97,10 @@
         </tbody>
     </table>
 
+        </div>
 
 
-
-
+        </div>
 
 
 
