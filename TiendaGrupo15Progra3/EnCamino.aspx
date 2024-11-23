@@ -93,7 +93,7 @@
                         <td><%# Eval("Stock") %></td>
                         <td><%# Eval("Total") %> $</td>                       
                             <td>    
-                           <asp:Button ID="BTNEnProcesoVendidos" runat="server" Text="Entregado" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoVendidosEliminar_Click" />
+                           <asp:Button ID="BTNEnProcesoVendidos" runat="server" Text="Entregar" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoVendidosEliminar_Click" onClientClick="this.disabled=true; this.value='ENTREGADO';" />
                             </td>
                                                
                     </tr>
@@ -137,7 +137,7 @@
                     <td><%# Eval("Stock") %></td>
                     <td><%# Eval("Total") %> $</td>                       
                          <td>    
-                    <asp:Button ID="BTNEnProcesoComprados" runat="server" Text="Recibido" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoComprados_Click" />
+                    <asp:Button ID="BTNEnProcesoComprados" runat="server" Text="Recibir" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoComprados_Click" onClientClick="this.disabled=true; this.value='RECIBIDO';" />
                     </td>
                                            
                 </tr>
