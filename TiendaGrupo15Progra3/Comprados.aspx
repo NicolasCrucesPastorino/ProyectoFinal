@@ -81,6 +81,7 @@
     <div class="bg-custom"></div>
     <div class="main-content padding-botom">
      <h2>Tus Productos Comprados</h2>
+        <h2>Total gastado en compras : <%=Math.Round( TotalGastado,2 )%> $</h2>
     <div class="container">
     
     <table class="cart-table">

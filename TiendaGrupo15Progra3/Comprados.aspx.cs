@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Schema;
 
 namespace TiendaGrupo15Progra3
 {
@@ -13,6 +14,7 @@ namespace TiendaGrupo15Progra3
     {
         public List<ParaRepeter> paraRepeterList = new List<ParaRepeter>();
         public string mensajesAlerta;
+        public decimal TotalGastado= new decimal();
         public void AgregarMensajeAlerta(string mensaje)
         {
             mensajesAlerta += mensaje + "\\n";
@@ -77,7 +79,12 @@ namespace TiendaGrupo15Progra3
             RepeaterComprado.DataSource = paraRepeterList;
            
             RepeaterComprado.DataBind();
-
+            decimal TotalParaMostrar = 0;
+            foreach(ParaRepeter paraRepeterItem in paraRepeterList)
+            {
+                TotalParaMostrar += paraRepeterItem.Total;
+            }
+            TotalGastado = TotalParaMostrar;
 
 
         }

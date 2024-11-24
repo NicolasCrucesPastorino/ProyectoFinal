@@ -13,6 +13,7 @@ namespace TiendaGrupo15Progra3
     {
         public int RolDefault;
         public Usuario UsuarioDefault= new Usuario();
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -13,6 +13,7 @@ namespace TiendaGrupo15Progra3
     {
         public List<ParaRepeter> paraRepeterList = new List<ParaRepeter>();
         public string mensajesAlerta;
+        public decimal TotalVendido = new decimal();
         public void AgregarMensajeAlerta(string mensaje)
         {
             mensajesAlerta += mensaje + "\\n";
@@ -77,6 +78,13 @@ namespace TiendaGrupo15Progra3
             RepeaterComprado.DataSource = paraRepeterList;
 
             RepeaterComprado.DataBind();
+            RepeaterComprado.DataBind();
+            decimal TotalParaMostrar = 0;
+            foreach (ParaRepeter paraRepeterItem in paraRepeterList)
+            {
+                TotalParaMostrar += paraRepeterItem.Total;
+            }
+            TotalVendido = TotalParaMostrar;
 
 
 
