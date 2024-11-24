@@ -76,6 +76,20 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="/Default.aspx">Inicio</a>
                             </li>
+                            <%if (Session["Usuario"] != null)
+                                {
+                                    Dominio.Usuario usuario = (Dominio.Usuario)Session["Usuario"];
+                                    int Rol = int.Parse(usuario.rol.ToString());
+                                    if (Rol == 1)
+                                    {
+                    %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/ListaDeUsuarios.aspx">Usuarios</a>
+                               </li>
+
+                            <%
+                }
+            } %>
                            
                             <li class="nav-item">
                                 <a class="nav-link" href="/ElegirProducto.aspx">Market Place</a>

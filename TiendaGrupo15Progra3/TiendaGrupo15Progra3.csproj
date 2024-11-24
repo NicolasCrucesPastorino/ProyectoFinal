@@ -93,6 +93,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\StyleSheet1.css" />
     <Content Include="IngresaTusDatos.aspx" />
+    <Content Include="ListaDeUsuarios.aspx" />
     <Content Include="ModificarArticulo.aspx" />
     <Content Include="ProductosABML.aspx" />
     <Content Include="RegistrarseLogin.aspx" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="IngresaTusDatos.aspx.designer.cs">
       <DependentUpon>IngresaTusDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaDeUsuarios.aspx.cs">
+      <DependentUpon>ListaDeUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaDeUsuarios.aspx.designer.cs">
+      <DependentUpon>ListaDeUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModificarArticulo.aspx.cs">
       <DependentUpon>ModificarArticulo.aspx</DependentUpon>

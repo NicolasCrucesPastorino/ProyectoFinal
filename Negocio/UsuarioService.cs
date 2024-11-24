@@ -271,5 +271,60 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
-    } 
-}
+
+        public List<Usuario> listarUsuarios () {
+            AccesoDatos datos = new AccesoDatos();
+            List<Usuario> listaUsuarios = new List<Usuario>();
+            try
+            {
+
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario, fechaRegistro from USUARIO where telefono IS NOT NULL");
+                datos.ejecutarLectura();
+
+                
+
+                while (datos.Lector.Read())
+                {
+                    Usuario usuario = new Usuario();
+
+                    
+
+                    usuario.idUsuario = (int)datos.Lector["idUsuario"];
+
+                        usuario.nombre = (string)datos.Lector["nombre"];
+                    
+                        
+                    usuario.correo = (string)datos.Lector["correo"];
+                    
+                    
+                      usuario.telefono = (string)datos.Lector["telefono"];  
+                    
+                    
+                    usuario.rol = (int)datos.Lector["idRol"];
+                    usuario.clave = (string)datos.Lector["clave"];
+                    usuario.esActivo = (bool)datos.Lector["esActivo"];
+                    
+                    
+                        usuario.apellido = (string)datos.Lector["apellido"];
+                    
+                    usuario.nombreUsuario = (string)datos.Lector["nombreUsuario"];
+                    usuario.fechaRegistro = (DateTime)datos.Lector["fechaRegistro"];
+                    listaUsuarios.Add(usuario);
+                               
+                }
+                return listaUsuarios;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error" + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        }
+        }
