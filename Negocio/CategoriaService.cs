@@ -68,6 +68,39 @@ namespace Negocio
             }
         }
 
+        public Categoria BuscarCategoriaPorId(int idCategoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Categoria categoriaError = new Categoria();
+            categoriaError.Id = 0;
+            try
+            {
+                datos.setearConsulta("SELECT Id,Descripcion from CATEGORIAS where Id=@Id");
+                datos.setearParametro("@Id", idCategoria);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {   
+                    Categoria categoria = new Categoria();
+
+                    categoria.Id = int.Parse(datos.Lector["Id"].ToString());
+                    categoria.Descripcion = datos.Lector["Id"].ToString();
+                    return categoria;
+
+                }
+
+                return categoriaError;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar categoria: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public void AgregarCategoriaNueva(string Descripcion)
         {
             AccesoDatos datos = new AccesoDatos();

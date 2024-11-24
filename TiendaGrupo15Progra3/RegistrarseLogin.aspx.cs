@@ -36,7 +36,7 @@ namespace TiendaGrupo15Progra3
                 {
                     confirmarContraseniaBool = true;
                 }
-                existeUsuario = usuarioService.ExisteUsuario(email);
+                existeUsuario = usuarioService.ExisteUsuario(Nombreusuario);
 
                 if (existeUsuario == false && confirmarContraseniaBool == true)
                 {

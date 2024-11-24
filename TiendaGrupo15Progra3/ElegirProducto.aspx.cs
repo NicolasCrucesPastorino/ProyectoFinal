@@ -60,6 +60,17 @@ namespace TiendaGrupo15Progra3
                 
             }
             Productos = articuloService.GetArticulos();
+            List<Articulo> productosConStock= new List<Articulo>();
+
+            foreach(Articulo articuloItem in Productos)
+            {
+                if (articuloItem.Stock > 0)
+                {
+                    productosConStock.Add(articuloItem);
+                }
+
+            }
+            Productos= productosConStock;
         }
 
         protected void ProductoBoton_Click(object sender, EventArgs e)

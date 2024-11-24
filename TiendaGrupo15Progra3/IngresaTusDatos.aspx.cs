@@ -118,7 +118,12 @@ namespace TiendaGrupo15Progra3
                 UsuarioService usuarioService = new UsuarioService();
 
                 usuarioTraidoSession = (Usuario)Session["Usuario"];
-         
+                if (usuarioService.ExisteUsuario(TextNombreUsuario.Text.Trim())==true)
+                {
+                    fGlobales.MostrarAlerta(this, "Ese nombre de Usuario ya existe");
+                    return;
+
+                }
 
                 usuario.nombre = nombreText.Text.Trim();
                 usuario.apellido = apellidoText.Text.Trim();

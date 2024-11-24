@@ -19,8 +19,7 @@ namespace Negocio
             List<Articulo> ArticulosFinal = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
             ImagenService imagenArticulos = new ImagenService();
-            Marca Maraux = new Marca();
-            Categoria CatAux = new Categoria();
+            
 
             try
             {
@@ -32,7 +31,8 @@ namespace Negocio
                 datos.ejecutarLectura();
              
                 while (datos.Lector.Read())
-                {
+                {   Marca Maraux = new Marca();
+                    Categoria CatAux = new Categoria();
                     Articulo aux = new Articulo();
                     aux.Id = Convert.ToInt32(datos.Lector["Id"]);
                     aux.Nombre = Convert.ToString(datos.Lector["Nombre"]);
@@ -43,6 +43,8 @@ namespace Negocio
                     aux.IdUsuario = (int)(datos.Lector["IdUsuario"]);
                     Maraux.Descripcion = Convert.ToString(datos.Lector["MarcaDescripcion"]);
                     CatAux.Descripcion = Convert.ToString(datos.Lector["CategoriaDescripcion"]);
+                    aux.Marca = Maraux;
+                    aux.Categoria = CatAux;
                    
 
                     ArticulosFinal.Add(aux);

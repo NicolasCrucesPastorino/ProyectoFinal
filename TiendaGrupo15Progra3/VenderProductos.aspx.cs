@@ -21,6 +21,13 @@ namespace TiendaGrupo15Progra3
                 usuarioVendedor.nombre = "No se encuentra";
                 usuarioVendedor.apellido = "Registrado";
             }
+            if (Session["Usuario"] == null)
+            {
+
+                Session["loMandamosLogin"] = true;
+                Response.Redirect("Login.aspx");
+
+            }
         }
 
         protected void IMGagregarProducto_Click(object sender, System.Web.UI.ImageClickEventArgs e)
@@ -31,7 +38,7 @@ namespace TiendaGrupo15Progra3
 
         protected void IMGactualizarArticulo_Click(object sender, System.Web.UI.ImageClickEventArgs e)
         {
-
+            Response.Redirect("/ModificarArticulo.aspx");
         }
 
         protected void IMGeliminarArticulo_Click(object sender, System.Web.UI.ImageClickEventArgs e)

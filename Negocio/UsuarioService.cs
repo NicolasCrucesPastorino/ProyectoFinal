@@ -119,7 +119,7 @@ namespace Negocio
             }
         }
 
-        public bool ExisteUsuario(string UsuarioEmail)
+        public bool ExisteUsuario(string nuevoNombreUsuario)
         {
            AccesoDatos datos = new AccesoDatos();
 
@@ -127,9 +127,8 @@ namespace Negocio
             {
 
 
-            datos.setearConsulta("select FechaRegistro,Correo,EsActivo from USUARIO where Correo=@mail and EsActivo=@Inactivo and (FechaRegistro IS NULL OR FechaRegistro ='')");
-            datos.setearParametro("@mail", UsuarioEmail);
-            datos.setearParametro("@Inactivo", 0);
+            datos.setearConsulta("select FechaRegistro,Correo,EsActivo from USUARIO where nombreUsuario=@nombreUsuario");
+            datos.setearParametro("@nombreUsuario", nuevoNombreUsuario);
             datos.ejecutarLectura();
             while (datos.Lector.Read())
             {
