@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="EnCamino.aspx.cs" Inherits="TiendaGrupo15Progra3.EnCamino" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true"  EnableEventValidation="false" CodeBehind="EnCamino.aspx.cs" Inherits="TiendaGrupo15Progra3.EnCamino" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <style>
     .cart-table {
@@ -73,7 +73,10 @@
                 <th>Telefono Comprador</th>
                 <th>Stock Restante</th>
                 <th>Monto Total</th> 
-                <th>Marcar como entregado</th> 
+                <th>Marcar como entregado</th>
+                <th>Entregado</th>
+                
+                
                 
 
             </tr>
@@ -91,10 +94,11 @@
                         <td><%# Eval("correo") %></td>
                         <td><%# Eval("telefono") %></td>
                         <td><%# Eval("Stock") %></td>
-                        <td><%# Eval("Total") %> $</td>                       
-                            <td>    
-                           <asp:Button ID="BTNEnProcesoVendidos" runat="server" Text="Entregar" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoVendidosEliminar_Click" onClientClick="this.disabled=true; this.value='ENTREGADO';" />
+                        <td><%# Eval("Total") %> $</td>   
+                          <td>    
+                           <asp:Button ID="BTNEnProcesoVendidos" runat="server" Text="Entregar" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoVendidosEliminar_Click"/>
                             </td>
+                        <td><%# (Convert.ToBoolean(Eval("EnCamino")) == true  ? "SI" : "NO") %> </td> 
                                                
                     </tr>
                 </ItemTemplate>
@@ -119,6 +123,7 @@
             <th>Stock Restante</th>
             <th>Monto Total</th>     
             <th>Marcar como recibido</th> 
+            <th>Recibido</th> 
 
         </tr>
     </thead>
@@ -136,10 +141,10 @@
                     <td><%# Eval("telefono") %></td>
                     <td><%# Eval("Stock") %></td>
                     <td><%# Eval("Total") %> $</td>                       
-                         <td>    
-                    <asp:Button ID="BTNEnProcesoComprados" runat="server" Text="Recibir" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoComprados_Click" onClientClick="this.disabled=true; this.value='RECIBIDO';" />
+                    <td>    
+                    <asp:Button ID="BTNEnProcesoComprados" runat="server" Text="Recibir" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoComprados_Click" />
                     </td>
-                                           
+                     <td><%# (Convert.ToBoolean(Eval("EnCamino")) == true  ? "SI" : "NO") %> </td>                   
                 </tr>
             </ItemTemplate>
         </asp:Repeater>

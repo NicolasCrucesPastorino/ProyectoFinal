@@ -18,6 +18,7 @@ namespace Dominio
         public int Stock { get; set; }
         public string telefono { get; set; }
         public string correo { get; set; }
+        public bool EnCamino { get; set; }
 
     }
 }
