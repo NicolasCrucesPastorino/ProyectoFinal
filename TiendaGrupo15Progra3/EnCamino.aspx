@@ -14,7 +14,7 @@
     }
 
     .cart-table th {
-        background-color: #f2f2f2;
+        background-color:lightslategrey;
     }
 
     .cart-total {
@@ -49,20 +49,40 @@
     .btn-checkout:hover {
         background-color: #ffcc00;
     }
+                .bg-custom {
+    background-image: url('images/fondoAmarillo.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
             .main-content { 
                 margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
 
 }
+                .paraTabla{
+                color:whitesmoke;
+                background-color:#1a1a1a;
+                border-color:black;
+                }
+            .padding-botom{
+                padding-bottom: 100px;
+            }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <div class="bg-custom"></div>
     <div class="main-content">
     
     <div class="container">
     <h2>Tus productos en proceso de venta</h2>
     <table class="cart-table">
-        <thead>
+        <thead class="paraTabla">
             <tr>
                 <th>Producto</th>
                 <th>Categoria</th>                
@@ -75,13 +95,10 @@
                 <th>Monto Total</th> 
                 <th>Marcar como entregado</th>
                 <th>Entregado</th>
-                
-                
-                
 
             </tr>
         </thead>
-        <tbody>
+        <tbody class="paraTabla">
             <!-- Repeater para mostrar productos en el carrito -->
             <asp:Repeater ID="RepeaterEnProcesoVendidos" runat="server">
                 <ItemTemplate>
@@ -108,10 +125,10 @@
 </div>
 
     
-<div class="container">
+<div class="container padding-botom">
  <h2>Tus productos en proceso de compra</h2>
 <table class="cart-table">
-    <thead>
+    <thead class="paraTabla">
         <tr>
             <th>Producto</th>
             <th>Categoria</th>                
@@ -127,7 +144,7 @@
 
         </tr>
     </thead>
-    <tbody>
+    <tbody class="paraTabla">
         <!-- Repeater para mostrar productos en el carrito -->
         <asp:Repeater ID="RepeaterEnProcesoComprados" runat="server">
             <ItemTemplate>

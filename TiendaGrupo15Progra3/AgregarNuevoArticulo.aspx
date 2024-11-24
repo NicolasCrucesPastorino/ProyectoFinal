@@ -51,11 +51,14 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+        .padding-botom{
+    padding-bottom: 100px;
+}
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="main-content">
+    <div class="main-content padding-botom">
         <div class="center-container">
             <div class="form-container">
                 <h2><%=usuarioAgregarProducto.nombre %> <%=usuarioAgregarProducto.apellido %></h2>

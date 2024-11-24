@@ -50,8 +50,15 @@
             color: blue;
         }
         .main-content { 
-            margin-top: 70px; /* Ajusta este valor según la altura de tu navbar */
+            margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
 
+        }
+        .paraH2{
+            font-size:4rem;
+            font-weight:bolder;
+            font-family: luminari,fantasy;
+            color:yellow;
+                     
         }
     </style>
 </asp:Content>
@@ -64,7 +71,7 @@
             <%if (UsuarioDefault.nombre.Length>2 && UsuarioDefault.apellido.Length>2)
                 {  %>
 
-              <h2>Bienvenido <%=char.ToUpper(UsuarioDefault.nombre[0]) + UsuarioDefault.nombre.Substring(1)%> <%=char.ToUpper(UsuarioDefault.apellido[0]) + UsuarioDefault.apellido.Substring(1)%></h2>
+              <h2 class="paraH2">Bienvenido <%=char.ToUpper(UsuarioDefault.nombre[0]) + UsuarioDefault.nombre.Substring(1)%> <%=char.ToUpper(UsuarioDefault.apellido[0]) + UsuarioDefault.apellido.Substring(1)%></h2>
              <% }
                  else
                  { %>   

@@ -37,7 +37,9 @@
     width: 200px; /* Ancho fijo para las imágenes */
     height: auto; /* Mantiene la proporción */
 }
-
+.padding-botom{
+    padding-bottom: 100px;
+}
 
 </style>
 
@@ -52,7 +54,8 @@
                  <asp:ImageButton ID="IMGeliminarArticulo" runat="server" ImageUrl="~/images/eliminarArticulo.png" class="rounded float-start" alt="Eliminar Articulo" OnClick="IMGeliminarArticulo_Click"/>
             </div>   
     </div>
-
+        
+       
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>

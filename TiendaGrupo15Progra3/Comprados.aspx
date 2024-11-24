@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Comprados.aspx.cs" Inherits="TiendaGrupo15Progra3.Comprados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
+
+            .bg-custom {
+    background-image: url('images/fondoAmarillo.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
     .cart-table {
         width: 100%;
         margin-top: 20px;
@@ -13,9 +26,10 @@
         border: 1px solid #ddd;
     }
 
+    
     .cart-table th {
-        background-color: #f2f2f2;
-    }
+    background-color: lightslategrey;
+}
 
     .cart-total {
         font-size: 1.5rem;
@@ -45,6 +59,11 @@
         cursor: pointer;
         border-radius: 5px;
     }
+    .paraTabla{
+    color:whitesmoke;
+    background-color:#1a1a1a;
+    border-color:black;
+}
 
     .btn-checkout:hover {
         background-color: #ffcc00;
@@ -53,15 +72,19 @@
                 margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
 
 }
+        .padding-botom{
+    padding-bottom: 100px;
+}
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="main-content"
+    <div class="bg-custom"></div>
+    <div class="main-content padding-botom">
      <h2>Tus Productos Comprados</h2>
     <div class="container">
     
     <table class="cart-table">
-        <thead>
+        <thead class="paraTabla">
             <tr>
                 <th>Producto</th>
                 <th>Categoria</th>                
@@ -75,7 +98,7 @@
 
             </tr>
         </thead>
-        <tbody>
+        <tbody class="paraTabla">
             <!-- Repeater para mostrar productos en el carrito -->
             <asp:Repeater ID="RepeaterComprado" runat="server">
                 <ItemTemplate>

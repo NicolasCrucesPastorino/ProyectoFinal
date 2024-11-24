@@ -15,9 +15,12 @@
         z-index: -1;
     }
       .main-content { 
-      margin-top: 70px; /* Ajusta este valor según la altura de tu navbar */
+      margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
 
   }
+      .padding-botom{
+    padding-bottom: 100px;
+}
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -40,7 +43,7 @@
         <asp:DropDownList ID="DropDownListFiltroAvanzadoMarca" runat="server" AppendDataBoundItems="true"></asp:DropDownList>
         <asp:Button ID="BtnBusquedaAvanzada" runat="server" Text="Busqueda avanzada" OnClick="BtnBusquedaAvanzada_Click" />
     </div>
-
+    <div class="padding-botom">
     <div class="row">
         <% foreach (var articulo in Productos)
             { %>
@@ -80,4 +83,5 @@
         </div>
         <% } %>
     </div>
+   </div>
 </asp:Content>

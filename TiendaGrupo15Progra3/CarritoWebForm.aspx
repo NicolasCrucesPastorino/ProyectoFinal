@@ -2,6 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
+        .bg-custom {
+    background-image: url('images/Pglog.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
         .cart-table {
             width: 100%;
             margin-top: 20px;
@@ -15,9 +27,13 @@
         }
 
         .cart-table th {
-            background-color: #f2f2f2;
+            background-color:lightslategrey;
         }
-
+        .paraTabla{
+        color:whitesmoke;
+        background-color:#1a1a1a;
+        border-color:black;
+        }
         .cart-total {
             font-size: 1.5rem;
             margin-top: 20px;
@@ -32,14 +48,25 @@
             cursor: pointer;
             border-radius: 5px;
         }
-
+            .bg-custom {
+    background-image: url('images/fondoAmarillo.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
         .btn-update:hover, .btn-remove:hover {
             background-color: darkgray;
         }
 
         .btn-checkout {
-            background-color: #ffd700;
-            color: black;
+            background-color: #1a1a1a;
+            color: whitesmoke;
             font-size: 1.5rem;
             padding: 15px 30px;
             border: none;
@@ -50,14 +77,19 @@
         .btn-checkout:hover {
             background-color: #ffcc00;
         }
+        .padding-botom{
+    padding-bottom: 100px;
+}
+        
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="bg-custom"></div>
+    <div class="container padding-botom">
         <h2>Tu Carrito de Compras</h2>
         <table class="cart-table">
-            <thead>
+            <thead class="paraTabla">
                 <tr>
                     <th>Producto</th>
                     <th>Precio</th>
@@ -66,7 +98,7 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="paraTabla">
                 <!-- Repeater para mostrar productos en el carrito -->
                 <asp:Repeater ID="RepeaterCarrito" runat="server">
                     <ItemTemplate>

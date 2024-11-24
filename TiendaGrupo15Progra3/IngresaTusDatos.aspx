@@ -2,6 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
+                    .bg-custom {
+    background-image: url('images/fondoAmarillo.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
         .bg-custom {
             background-color: darkorange;
             background-size: cover;
@@ -56,17 +68,27 @@
             align-items: center;
         }
         .main-content { 
-                        margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
+                        margin-top: 60px; /* Ajusta este valor según la altura de tu navbar */
 
+        }
+        .padding-botom{
+    padding-bottom: 100px;
+}
+        .paraForm{
+            background-color: lightslategrey;
+        }
+        .colorBlancoDeLetra{
+            color:whitesmoke;
         }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="main-content"></div>
+    <div class="bg-custom"></div>
+    <div class="main-content padding-botom">
     <div class="center-container">
-        <div class="form-container">
-            <h2><%=UsuarioIngresaTusDatos.nombre %> <%=UsuarioIngresaTusDatos.apellido %></h2>
+        <div class="form-container paraForm">
+            <h2 class="colorBlancoDeLetra"><%=UsuarioIngresaTusDatos.nombre %> <%=UsuarioIngresaTusDatos.apellido %></h2>
             <h1 class="header-custom">Ingresa tus Datos</h1>
            
             <div class="form-group">
@@ -110,6 +132,6 @@
         </div>
       </div>
     </div>
-
+</div>
 </asp:Content>
 

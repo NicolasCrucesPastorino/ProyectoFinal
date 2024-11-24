@@ -11,12 +11,15 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             background-color: #ffffff;
         }
+        .padding-botom{
+    padding-bottom: 100px;
+}
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-        <div class="register-container">
+        <div class="register-container padding-botom">
             <h2 class="text-center mb-4">Registro de Usuario</h2>
 
             <asp:Label ID="LabelUsuario" runat="server" Text="Usuario" CssClass="form-label"></asp:Label>
