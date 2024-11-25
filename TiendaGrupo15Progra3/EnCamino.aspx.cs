@@ -45,7 +45,8 @@ namespace TiendaGrupo15Progra3
                 DetalleVentaService detalleVentaService = new DetalleVentaService();
 
 
-
+                List<ParaRepeter>limpia= new List<ParaRepeter>();
+                paraRepeterList = limpia;
                 ArticuloService articuloService = new ArticuloService();
 
                 listaVentasVendidas = ventaService.buscarEnCaminoVentas(usuario.idUsuario);
@@ -98,7 +99,7 @@ namespace TiendaGrupo15Progra3
 
 
                 ArticuloService articuloService2 = new ArticuloService();
-
+                 paraRepeterList = limpia;
                 listaVentasCompradas = ventaService2.buscarEnCaminoCompras(usuario.idUsuario);
 
                 foreach (Venta ventaItem in listaVentasCompradas)

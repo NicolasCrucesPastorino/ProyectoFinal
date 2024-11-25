@@ -93,14 +93,14 @@
                     </div>
                     <div class="col">
                         <label for="PrecioTxt" class="form-label">Precio:</label>
-                        <asp:TextBox ID="PrecioTxt" CssClass="form-control" placeholder="Precio" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="PrecioTxt" TextMode="Number" CssClass="form-control" placeholder="Precio" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
                         <label for="StockTxt" class="form-label">Stock:</label>
-                        <asp:TextBox ID="txtStock" CssClass="form-control" placeholder="Stock" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtStock" TextMode="Number" CssClass="form-control" placeholder="Stock" runat="server"></asp:TextBox>
                     </div>
                     <div class="col">
                         <label for="ImagenText" class="form-label">Agregar Imagen:</label>

@@ -43,9 +43,24 @@ namespace TiendaGrupo15Progra3
                 ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true);
                 return;
             }
+
             usuarioAgregarProducto = (Usuario)Session["Usuario"];
 
-            
+
+            if (string.IsNullOrWhiteSpace(CodigoArticuloTxt.Text) ||
+                string.IsNullOrWhiteSpace(nombreArtTxt.Text) ||
+                string.IsNullOrWhiteSpace(DescripcionTxt.Text) ||
+                string.IsNullOrWhiteSpace(TxtMarca.Text) ||
+                string.IsNullOrWhiteSpace(TxtCategoria.Text) ||
+                string.IsNullOrWhiteSpace(PrecioTxt.Text) ||
+                string.IsNullOrWhiteSpace(txtStock.Text) ||
+                string.IsNullOrWhiteSpace(TxtAgregarImg.Text))
+            {
+                fGlobales.MostrarAlerta(this, "Todos los campos son obligatorios.");
+                return;
+            }
+
+
             try
             {  
                 ArticuloService articuloService =new ArticuloService();
