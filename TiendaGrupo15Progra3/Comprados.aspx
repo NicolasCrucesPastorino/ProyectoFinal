@@ -80,10 +80,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-custom"></div>
     <div class="main-content padding-botom">
-     <h2>Tus Productos Comprados</h2>
-        <h2>Total gastado en compras : <%=Math.Round( TotalGastado,2 )%> $</h2>
+     
     <div class="container">
-    
+    <h2>Tus Productos Comprados</h2>
+        <h2>Total gastado en compras : $<%=Math.Round( TotalGastado,2 )%></h2>
     <table class="cart-table">
         <thead class="paraTabla">
             <tr>
@@ -107,12 +107,12 @@
                         <td><%# Eval("producto") %></td>
                         <td><%# Eval("categoria") %></td>
                         <td><%# Eval("marca") %></td>
-                        <td><%# Eval("precio") %> $</td>
+                        <td>$<%# Eval("precio") %></td>
                         <td><%# Eval("cantidad") %></td>
                         <td><%# Eval("correo") %></td>
                         <td><%# Eval("telefono") %></td>
                         <td><%# Eval("Stock") %></td>
-                        <td><%# Eval("Total") %> $</td>                       
+                        <td>$<%# Eval("Total") %></td>                       
                             
                                                
                     </tr>

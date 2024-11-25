@@ -103,9 +103,9 @@
     <div class="bg-custom"></div>
 
     <div class="main-content">
- <h2>Tus Productos Personales.</h2>
-<div class="container">
 
+<div class="container">
+ <h2>Tus Productos Personales.</h2>
 <table class="cart-table">
     <thead class="paraTabla">
         <tr>
@@ -128,7 +128,7 @@
                     <td><%# Eval("Marca.Descripcion") %></td>
                     <td><%# Eval("Categoria.Descripcion") %></td>
                     <td><%# Eval("Descripcion") %></td>
-                    <td><%# Eval("Precio") %> $</td>                    
+                    <td>$<%# Eval("Precio") %></td>                    
                     <td><%# Eval("Stock") %></td>
                                           
                         

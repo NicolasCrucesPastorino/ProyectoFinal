@@ -106,12 +106,12 @@
                         <td><%# Eval("producto") %></td>
                         <td><%# Eval("categoria") %></td>
                         <td><%# Eval("marca") %></td>
-                        <td><%# Eval("precio") %> $</td>
+                        <td>$<%# Eval("precio") %></td>
                         <td><%# Eval("cantidad") %></td>
                         <td><%# Eval("correo") %></td>
                         <td><%# Eval("telefono") %></td>
                         <td><%# Eval("Stock") %></td>
-                        <td><%# Eval("Total") %> $</td>   
+                        <td>$<%# Eval("Total") %></td>   
                           <td>    
                            <asp:Button ID="BTNEnProcesoVendidos" runat="server" Text="Entregar" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoVendidosEliminar_Click"/>
                             </td>
@@ -152,12 +152,12 @@
                     <td><%# Eval("producto") %></td>
                     <td><%# Eval("categoria") %></td>
                     <td><%# Eval("marca") %></td>
-                    <td><%# Eval("precio") %> $</td>
+                    <td>$<%# Eval("precio") %></td>
                     <td><%# Eval("cantidad") %></td>
                     <td><%# Eval("correo") %></td>
                     <td><%# Eval("telefono") %></td>
                     <td><%# Eval("Stock") %></td>
-                    <td><%# Eval("Total") %> $</td>                       
+                    <td>$<%# Eval("Total") %></td>                       
                     <td>    
                     <asp:Button ID="BTNEnProcesoComprados" runat="server" Text="Recibir" CommandArgument='<%# Eval("idVenta") %>' OnClick="BTNEnProcesoComprados_Click" />
                     </td>

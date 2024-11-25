@@ -83,6 +83,7 @@
         .padding-botom{
     padding-bottom: 100px;
 }
+        
         </style>
  
 
@@ -90,9 +91,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-custom"></div>
     <div class="main-content padding-botom">
-        <h2>Lista de usuarios del Market Place</h2>
+      
 
-        <div class="container">
+        <div class="container">  
+            <h2>Lista de usuarios del Market Place</h2>
             <table class="cart-table">
                 <thead class="paraTabla">
                     <tr>
@@ -120,7 +122,7 @@
                                 <td>
                                    <td>
     <!-- Botón Modificar -->
-    <asp:Button ID="btnAbrirModalModificar" runat="server" Text="Modificar" CssClass="btn-update" target="_blank" CommandName="Modificar" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnAbrirModalModificar_Click" />
+    <asp:Button ID="btnAbrirModalModificar" runat="server" Text="Modificar Rol" CssClass="btn-update" target="_blank" CommandName="Modificar" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnAbrirModalModificar_Click" />
     <!-- Botón Eliminar -->
     <asp:Button ID="btnEliminarUsuario" runat="server" Text="Eliminar" CssClass="btn-remove" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnEliminarUsuario_Click" />
 </td>
