@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminModificarUsuario.aspx" />
     <Content Include="AgregarNuevoArticulo.aspx" />
     <Content Include="CarritoWebForm.aspx" />
     <Content Include="Comprados.aspx" />
@@ -111,6 +112,13 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminModificarUsuario.aspx.cs">
+      <DependentUpon>AdminModificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModificarUsuario.aspx.designer.cs">
+      <DependentUpon>AdminModificarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarNuevoArticulo.aspx.cs">
       <DependentUpon>AgregarNuevoArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

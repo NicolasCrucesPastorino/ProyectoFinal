@@ -120,7 +120,7 @@
                                 <td>
                                    <td>
     <!-- Botón Modificar -->
-    <asp:Button ID="btnAbrirModalModificar" runat="server" Text="Modificar" CssClass="btn-update" CommandName="Modificar" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnAbrirModalModificar_Click" />
+    <asp:Button ID="btnAbrirModalModificar" runat="server" Text="Modificar" CssClass="btn-update" target="_blank" CommandName="Modificar" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnAbrirModalModificar_Click" />
     <!-- Botón Eliminar -->
     <asp:Button ID="btnEliminarUsuario" runat="server" Text="Eliminar" CssClass="btn-remove" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnEliminarUsuario_Click" />
 </td>
@@ -135,27 +135,28 @@
     </div>
 
     <!-- Modal para modificar usuario -->
-<div class="modal fade" id="modalModificar" tabindex="-1" aria-labelledby="modalModificarLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalModificarLabel">Modificar Usuario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="container">
+        <div class="modal fade" id="ModalUsuarios" role="dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Modal</h4>
+
+                </div>
+                <div class="modal-body">
+
+
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+
             </div>
-            <div class="modal-body">
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Placeholder="Nombre"></asp:TextBox>
-                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" Placeholder="Apellido"></asp:TextBox>
-                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" Placeholder="Correo"></asp:TextBox>
-                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" Placeholder="Teléfono"></asp:TextBox>
-                <asp:HiddenField ID="hiddenUserId" runat="server" />
-            </div>
-            <div class="modal-footer">
-                <asp:Button ID="btnCerrarModal" runat="server" CssClass="btn btn-secondary" Text="Cerrar" />
-                <asp:Button ID="btnGuardarCambios" runat="server" CssClass="btn btn-primary" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click" />
-            </div>
+
         </div>
+
     </div>
-</div>
+
 
 </asp:Content>
 

@@ -47,29 +47,20 @@ namespace TiendaGrupo15Progra3
         {
             Button btn = (Button)sender;
             string userId = btn.CommandArgument;
+            Session["userId"] = userId;
+            Response.Redirect("AdminMOdificarUsuario.aspx");
 
-            // Cargar datos del usuario (simulación)
-            // Aquí obtienes los datos desde la base de datos
-            txtNombre.Text = "Ejemplo Nombre"; // Reemplaza con el dato real
-            txtApellido.Text = "Ejemplo Apellido";
-            txtCorreo.Text = "ejemplo@correo.com";
-            txtTelefono.Text = "123456789";
-            hiddenUserId.Value = userId;
-
-            // Mostrar el modal
- 
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "MostrarModal", "$('#modalModificar').modal('show');", true);
 
         }
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
             // Obtener datos del formulario
-            string userId = hiddenUserId.Value;
-            string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
-            string correo = txtCorreo.Text;
-            string telefono = txtTelefono.Text;
+            //string userId = hiddenUserId.Value;
+            //string nombre = txtNombre.Text;
+            //string apellido = txtApellido.Text;
+            //string correo = txtCorreo.Text;
+            //string telefono = txtTelefono.Text;
 
             // Guardar cambios en la base de datos
             // Aquí llamas a tu lógica para actualizar el usuario
