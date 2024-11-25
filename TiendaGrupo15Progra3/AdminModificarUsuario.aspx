@@ -68,7 +68,7 @@
             align-items: center;
         }
         .main-content { 
-                        margin-top: 60px; /* Ajusta este valor según la altura de tu navbar */
+                        margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
 
         }
         .padding-botom{
@@ -85,11 +85,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         <div class="bg-custom"></div>
-    <div class="main-content padding-botom">
+    <div class="main-content" ></div>
+    <asp:Button ID="ButtonVolverAUsuarios" OnClick="VolverUsuariosClickButton_Click" runat="server" Text="Volver a la lista de Usuarios" />
+    <div class=" padding-botom">
     <div class="center-container">
         <div class="form-container paraForm">
             <h2 class="colorBlancoDeLetra"><%=UsuarioIngresaTusDatos.nombre %> <%=UsuarioIngresaTusDatos.apellido %></h2>
-            <h1 class="header-custom">Ingresa tus Datos</h1>
+            <h1 class="header-custom">Cambiar a Administrador o Usuario</h1>
            
             <div class="form-group">
                 <label for="nombreText" class="form-label">Nombre:</label>
@@ -104,10 +106,7 @@
                 <label for="nombreUsuarioText" class="form-label">Nombre de Usuario:</label>
                 <asp:TextBox ID="TextNombreUsuario" CssClass="form-control" placeholder="NombreUsuario" runat="server"></asp:TextBox>
             </div>
-            <div class="form-group">
-                <label for="PaswordText" class="form-label">Clave:</label>
-                <asp:TextBox ID="TxtClave" TextMode="Password" CssClass="form-control" placeholder="Password" runat="server"></asp:TextBox>
-            </div>
+            
             <div class="form-group">
                 <label for="Emailtxt" class="form-label">Email:</label>
                 <asp:TextBox ID="EmailInput" textmode="Email" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
@@ -115,9 +114,14 @@
             
             
          <div class="form-group">
-            <label for="telefonoTxt" class="form-label">Telefono:</label>
+            <label for="LabeltelefonoTxt" class="form-label">Telefono:</label>
             <asp:TextBox ID="TxtTelefono" CssClass="form-control" placeholder="Telefono" runat="server"></asp:TextBox>
         </div>
+             
+             <div class="form-group">
+                <label for="LabelrolTxt" class="form-label">Rol:</label>
+                 <asp:DropDownList ID="DropDownListRol" runat="server"></asp:DropDownList>
+            </div>
         <!-- Checkbox -->
         
         <!-- Actualizar o cancelar cambios btn -->

@@ -15,6 +15,15 @@ namespace TiendaGrupo15Progra3
     {
 
         /// <summary>
+        /// ButtonVolverAUsuarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonVolverAUsuarios;
+
+        /// <summary>
         /// nombreText control.
         /// </summary>
         /// <remarks>
@@ -42,15 +51,6 @@ namespace TiendaGrupo15Progra3
         protected global::System.Web.UI.WebControls.TextBox TextNombreUsuario;
 
         /// <summary>
-        /// TxtClave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtClave;
-
-        /// <summary>
         /// EmailInput control.
         /// </summary>
         /// <remarks>
@@ -67,6 +67,15 @@ namespace TiendaGrupo15Progra3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtTelefono;
+
+        /// <summary>
+        /// DropDownListRol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRol;
 
         /// <summary>
         /// Aceptar control.

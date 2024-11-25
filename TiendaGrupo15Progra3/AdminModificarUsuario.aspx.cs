@@ -48,29 +48,43 @@ namespace TiendaGrupo15Progra3
                 Session["loMandamosLogin"] = true;
                 Response.Redirect("Login.aspx");
             }
-            Usuario usuario = new Usuario();
 
-            UsuarioService usuarioService = new UsuarioService();
-            usuario = usuarioService.TraerUsuarioPorId(int.Parse(Session["userId"].ToString()));
-
+            if (!IsPostBack)
+            {
 
 
+                Usuario usuario = new Usuario();
 
-            nombreText.Text = usuario.nombre;
-            apellidoText.Text = usuario.apellido;
-            TextNombreUsuario.Text = usuario.nombreUsuario;
-            TxtClave.Text = usuario.clave;
-            EmailInput.Text = usuario.correo;
-
-            usuario.rol = 2;
-            TxtTelefono.Text = usuario.telefono;
+                UsuarioService usuarioService = new UsuarioService();
+                usuario = usuarioService.TraerUsuarioPorId(int.Parse(Session["userId"].ToString()));
 
 
 
 
+                nombreText.Text = usuario.nombre;
+                apellidoText.Text = usuario.apellido;
+                TextNombreUsuario.Text = usuario.nombreUsuario;
 
-            UsuarioIngresaTusDatos = usuario;
+                EmailInput.Text = usuario.correo;
 
+                List<string> list = new List<string>();
+                list.Add("Administrador");
+                list.Add("Usuario");
+
+                DropDownListRol.DataSource = list;
+                DropDownListRol.DataBind();
+                TxtTelefono.Text = usuario.telefono;
+                nombreText.Enabled = false;
+                apellidoText.Enabled = false;
+                TextNombreUsuario.Enabled = false;
+                EmailInput.Enabled = false;
+                TxtTelefono.Enabled = false;
+
+
+
+
+                UsuarioIngresaTusDatos = usuario;
+            }
         }
 
         public void AceptarButton_Click(object sender, EventArgs e)
@@ -78,55 +92,23 @@ namespace TiendaGrupo15Progra3
 
 
            
-            if (string.IsNullOrWhiteSpace(nombreText.Text) ||
-                string.IsNullOrWhiteSpace(apellidoText.Text) ||
-                string.IsNullOrWhiteSpace(TextNombreUsuario.Text) ||
-                string.IsNullOrWhiteSpace(TxtClave.Text) ||
-                string.IsNullOrWhiteSpace(EmailInput.Text) ||
-                string.IsNullOrWhiteSpace(TxtTelefono.Text))
-            {
-                fGlobales.MostrarAlerta(this, "Todos los campos son obligatorios.");
-                return;
-            }
-
-
-            if (!SoloLetras(nombreText.Text.Trim()))
-            {
-                string script = "alert('El campo \\\"Nombre\\\" solo puede contener letras.');";
-                ScriptManager.RegisterStartupScript(this, GetType(), "AlertNombre", script, true);
-                return;
-            }
-            if (!SoloLetras(apellidoText.Text.Trim()))
-            {
-                string script = "alert('El campo \\\"Apellido\\\" solo puede contener letras.');";
-                ScriptManager.RegisterStartupScript(this, GetType(), "AlertApellido", script, true);
-                return;
-            }
-
-
-            if (!EmailInput.Text.Contains("@") || !EmailInput.Text.Contains("."))
-            {
-                fGlobales.MostrarAlerta(this, "Ingrese un correo electrónico válido.");
-                return;
-            }
-
-
-
-
-            if (!long.TryParse(TxtTelefono.Text, out _))
-            {
-                fGlobales.MostrarAlerta(this, "El número de teléfono debe contener solo números");
-                return;
-            }
-
-
             try
             {
+                int rol;
                 
+                if (DropDownListRol.SelectedValue.ToString() == "Administrador")
+                {
+                    rol = 1;
+                }
+                else
+                {
+                    rol = 2;
+                }
+                UsuarioService usuarioService = new UsuarioService();
+                usuarioService.CambiarRolUsuarioPorId(rol, int.Parse(Session["userId"].ToString()));
 
 
-                
-
+                fGlobales.MostrarAlerta(this, "Rol cambiado con exito");
 
 
 
@@ -144,10 +126,11 @@ namespace TiendaGrupo15Progra3
         }
         protected void CancelarClickButton_Click(object sender, EventArgs e)
         {
-            
-
-
-
+            Response.Redirect("ListaDeUsuarios.aspx");
+        }
+        protected void VolverUsuariosClickButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListaDeUsuarios.aspx");
         }
     }
 }

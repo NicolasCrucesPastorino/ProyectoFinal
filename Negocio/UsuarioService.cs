@@ -271,6 +271,29 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+        public void CambiarRolUsuarioPorId(int rol,int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+
+            try
+            {
+                datos.setearConsulta("UPDATE Usuario set idRol=@idRol where idUsuario=@idUsuario");
+                datos.setearParametro("@idRol", rol);
+                datos.setearParametro("@idUsuario", IdUsuario);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al actualizar su usuario Rol" + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
         public List<Usuario> listarUsuarios () {
             AccesoDatos datos = new AccesoDatos();
