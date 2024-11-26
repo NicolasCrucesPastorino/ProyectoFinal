@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ModificarArticulo.aspx.cs" Inherits="TiendaGrupo15Progra3.ModificarArticulo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ModificarArticulo.aspx.cs" Inherits="TiendaGrupo15Progra3.ModificarArticulo" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
        <style>
     .bg-custom {
@@ -131,22 +131,12 @@
                     <td>$<%# Eval("Precio") %></td>                    
                     <td><%# Eval("Stock") %></td>
                     <td>
-                        <asp:Button ID="btnModificarArticulo" runat="server" Text="Modificar Articulo" CssClass="btn-update" OnClick="btnModificarArticulo_Click" />
+                        <asp:Button ID="btnModificarArticulo" runat="server" Text="Modificar Articulo" CssClass="btn-update" CommandName="ModificarArticulo" CommandArgument='<%# Eval("Id") %>'  OnClick="btnModificarArticulo_Click" />
                     </td>                                     
                 </tr>
             </ItemTemplate>
         </asp:Repeater>
     </tbody>
 </table>
-
-
-
-
     <div class="padding-botom"></div>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder4" runat="server">
 </asp:Content>

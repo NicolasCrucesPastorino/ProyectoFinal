@@ -11,9 +11,10 @@ namespace TiendaGrupo15Progra3
 {
     public partial class ModificarArticulo : System.Web.UI.Page
     {
-        List<Articulo> articulosDelUsuario=new List<Articulo>();
-      
-        
+
+        List<Articulo> articulosDelUsuario = new List<Articulo>();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] == null)
@@ -29,9 +30,9 @@ namespace TiendaGrupo15Progra3
             Listatemporal = articuloService.GetArticulos();
             List<Articulo> ListatemporalFiltrada = new List<Articulo>();
 
-            foreach(Articulo articulo in Listatemporal)
-            {   
-                
+            foreach (Articulo articulo in Listatemporal)
+            {
+
 
                 if (articulo.IdUsuario == usuario.idUsuario)
                 {
@@ -47,7 +48,26 @@ namespace TiendaGrupo15Progra3
 
         protected void btnModificarArticulo_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Button btn = (Button)sender;
+                string ArticuloId = btn.CommandArgument;
+                Session.Add("Id", ArticuloId);
+                Response.Redirect("EditarArticulo.aspx", false);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
+
+
     }
+
+
+
 }
