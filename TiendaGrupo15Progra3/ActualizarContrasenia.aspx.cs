@@ -27,8 +27,9 @@ namespace TiendaGrupo15Progra3
             try
             {
                UsuarioService contrasenia = new UsuarioService();
-
-              contrasenia.actualizarContrasenia(TxtContraseniaPin.Text, TxtActualizarContrasenia.Text, mailRecuperacion);
+               
+                
+                contrasenia.actualizarContrasenia(TxtContraseniaPin.Text, TxtActualizarContrasenia.Text, mailRecuperacion);
                 
                 lblMessage.Text = "Contraseña actualiza con exito";
                  
