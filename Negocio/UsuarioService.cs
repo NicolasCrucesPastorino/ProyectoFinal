@@ -398,22 +398,6 @@ namespace Negocio
             }
 
         }
-        public void CambiarContrasenia(string mail)
-        {
-            AccesoDatos datos = new AccesoDatos();
-            try
-            {
-                datos.setearConsulta("UPDATE USUARIO SET clave=12345 WHERE correo=@emailRecuperacion");
-                datos.setearParametro("@emailRecuperacion", mail);
-                datos.ejecutarAccion();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception("Error Cambiar Contraseña" + ex.Message);
-            }
-        }
 
         public void actualizarContrasenia(string contraseniaPin,string nuevaContrasenia,string mailRecuperacion)
         {

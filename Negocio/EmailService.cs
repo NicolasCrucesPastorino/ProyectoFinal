@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio;
 
 namespace Negocio
 {
@@ -31,26 +32,29 @@ namespace Negocio
             email.Body = cuerpo;
         }
 
-        public bool ExisteMail(string mailusuario)
+        public string ExisteMail(string mailusuario)
         {
             AccesoDatos datos = new AccesoDatos();
+            string clavePin ="vacio";
 
             try
             {
 
 
-                datos.setearConsulta("select FechaRegistro,Correo from USUARIO where correo=@mailExistente");
+                datos.setearConsulta("select clave from USUARIO where correo=@mailExistente");
                 datos.setearParametro("@mailExistente", mailusuario);
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
 
-                    return true;
+                    clavePin = (string)datos.Lector["clave"];
+                    
+                    return clavePin;
 
 
                 }
 
-                return false;
+                return clavePin;
 
             }
             catch (Exception ex)

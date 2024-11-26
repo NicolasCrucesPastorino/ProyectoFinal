@@ -22,24 +22,24 @@ namespace TiendaGrupo15Progra3
         protected void btnRestablecerPasword_Click(object sender, EventArgs e)
         {
             EmailService emailService = new EmailService();
-            UsuarioService ParaRecuperarContrasenia = new UsuarioService();
+            
 
-            bool enviarContraseniaNueva = false;
+            string enviarContraseniaNueva = " ";
 
             try
             {
                 enviarContraseniaNueva = emailService.ExisteMail(TxtEmail.Text);
 
 
-                if (enviarContraseniaNueva)
+                if (enviarContraseniaNueva!=" ")
                 {
                     string email = TxtEmail.Text;
 
                     Session.Add("emailRecuperacion", email);
 
-                    ParaRecuperarContrasenia.CambiarContrasenia(email);
+                    
 
-                    emailService.armarMail(email, "Restablecimiento de Contraseña", "Su nueva Contrasenia es 12345");
+                    emailService.armarMail(email, "Restablecimiento de Contraseña", "Su contrasenia Pin es la siguiente: " + enviarContraseniaNueva);
                     emailService.enviarEmail();                  
         
                    
