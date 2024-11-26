@@ -24,7 +24,7 @@ namespace TiendaGrupo15Progra3
             EmailService emailService = new EmailService();
             
 
-            string enviarContraseniaNueva = " ";
+            string enviarContraseniaNueva = null;
 
             try
             {
