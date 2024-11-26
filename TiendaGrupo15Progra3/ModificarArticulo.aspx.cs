@@ -12,6 +12,8 @@ namespace TiendaGrupo15Progra3
     public partial class ModificarArticulo : System.Web.UI.Page
     {
         List<Articulo> articulosDelUsuario=new List<Articulo>();
+      
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] == null)
@@ -41,6 +43,11 @@ namespace TiendaGrupo15Progra3
             RepeaterArticulosUsuario.DataSource = articulosDelUsuario;
             RepeaterArticulosUsuario.DataBind();
 
+        }
+
+        protected void btnModificarArticulo_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

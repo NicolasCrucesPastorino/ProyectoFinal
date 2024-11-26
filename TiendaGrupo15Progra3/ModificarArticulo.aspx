@@ -105,7 +105,7 @@
     <div class="main-content">
 
 <div class="container">
- <h2>Tus Productos Personales.</h2>
+ <h2>Tus Productos.</h2>
 <table class="cart-table">
     <thead class="paraTabla">
         <tr>
@@ -130,9 +130,9 @@
                     <td><%# Eval("Descripcion") %></td>
                     <td>$<%# Eval("Precio") %></td>                    
                     <td><%# Eval("Stock") %></td>
-                                          
-                        
-                                           
+                    <td>
+                        <asp:Button ID="btnModificarArticulo" runat="server" Text="Modificar Articulo" CssClass="btn-update" OnClick="btnModificarArticulo_Click" />
+                    </td>                                     
                 </tr>
             </ItemTemplate>
         </asp:Repeater>

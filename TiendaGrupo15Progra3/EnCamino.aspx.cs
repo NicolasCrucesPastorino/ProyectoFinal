@@ -24,6 +24,7 @@ namespace TiendaGrupo15Progra3
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('" + mensajesAlerta + "');", true);
         }
+
         public void Page_Load(object sender, EventArgs e)
         {
             if (Session["Usuario"] == null)
@@ -33,9 +34,6 @@ namespace TiendaGrupo15Progra3
                 Response.Redirect("Login.aspx");
 
             }
-
-            
-
 
                 Usuario usuario = (Usuario)Session["Usuario"];
                 VentaService ventaService = new VentaService();
@@ -83,12 +81,6 @@ namespace TiendaGrupo15Progra3
                 RepeaterEnProcesoVendidos.DataSource = paraRepeterList;
                 RepeaterEnProcesoVendidos.DataBind();
 
-
-
-
-
-
-
                 Usuario usuario2 = (Usuario)Session["Usuario"];
                 VentaService ventaService2 = new VentaService();
                 List<Venta> listaVentasCompradas = new List<Venta>();
@@ -99,7 +91,8 @@ namespace TiendaGrupo15Progra3
 
 
                 ArticuloService articuloService2 = new ArticuloService();
-                 paraRepeterList = limpia;
+                limpia = new List<ParaRepeter>();
+                paraRepeterListComprados = limpia;
                 listaVentasCompradas = ventaService2.buscarEnCaminoCompras(usuario.idUsuario);
 
                 foreach (Venta ventaItem in listaVentasCompradas)

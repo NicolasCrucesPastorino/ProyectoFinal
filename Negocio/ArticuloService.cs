@@ -354,6 +354,7 @@ namespace Negocio
             }
           
         }
+
         public void EliminarArticuloPorId(int IdArticulo)
         {
             AccesoDatos datos = new AccesoDatos();
