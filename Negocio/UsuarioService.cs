@@ -320,7 +320,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario, fechaRegistro from USUARIO where telefono IS NOT NULL AND esActivo=1");
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario, fechaRegistro from USUARIO where telefono IS NOT NULL");
                 datos.ejecutarLectura();
 
                 
@@ -398,7 +398,27 @@ namespace Negocio
             }
 
         }
+        public void DarAltaUsuario(int idUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(@"UPDATE USUARIO set esActivo=1 where idUsuario=@idUsuario");
+                datos.setearParametro("@idUsuario", idUsuario);
+                datos.ejecutarAccion();
 
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error" + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
         public void actualizarContrasenia(string contraseniaPin,string nuevaContrasenia,string mailRecuperacion)
         {
             AccesoDatos datos = new AccesoDatos();

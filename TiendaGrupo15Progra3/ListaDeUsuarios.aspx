@@ -94,7 +94,7 @@
       
 
         <div class="container">  
-            <h2>Lista de usuarios del Market Place</h2>
+            <h2>Lista de usuarios del Market Place con acceso</h2>
             <table class="cart-table">
                 <thead class="paraTabla">
                     <tr>
@@ -127,6 +127,52 @@
     <asp:Button ID="btnAbrirModalModificar" runat="server" Text="Modificar Rol" CssClass="btn-update" target="_blank" CommandName="Modificar" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnAbrirModalModificar_Click" />
     <!-- Botón Eliminar -->
     <asp:Button ID="btnEliminarUsuario" runat="server" Text="Eliminar" CssClass="btn-remove" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnEliminarUsuario_Click" />
+</td>
+
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <div class="main-content padding-botom">
+      
+
+        <div class="container">  
+            <h2>Lista de usuarios del Market Place con acceso restringido</h2>
+            <table class="cart-table">
+                <thead class="paraTabla">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Nombre de usuario</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Rol</th>
+                        <th>Fecha de registro</th>
+                        <th>Acciones</th> <!-- Nueva columna -->
+                    </tr>
+                </thead>
+                <tbody class="paraTabla">
+                    <asp:Repeater ID="RepeaterUsuariosBaja" runat="server">
+                        <ItemTemplate>
+                            <tr>
+                                <td><%# Eval("nombre") %></td>
+                                <td><%# Eval("apellido") %></td>
+                                <td><%# Eval("nombreUsuario") %></td>
+                                <td><%# Eval("correo") %></td>
+                                <td><%# Eval("telefono") %></td>
+                                <td>
+                                 <%# Eval("rol").ToString() == "1" ? "Administrador" : (Eval("rol").ToString() == "2" ? "Usuario" : "Dueño") %>
+                                </td>
+                                <td><%# Eval("fechaRegistro") %></td>
+                                
+                                   <td>
+    <!-- Botón Modificar -->
+    <asp:Button ID="btnDarAltaUsuario" runat="server" Text="Permitir Acceso" CssClass="btn-update" target="_blank" CommandName="Modificar" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnDarAltaUsuario_Click" />
+    
 </td>
 
                                 </td>

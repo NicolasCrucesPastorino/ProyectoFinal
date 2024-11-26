@@ -12,6 +12,7 @@ namespace TiendaGrupo15Progra3
     public partial class ListaDeUsuarios : System.Web.UI.Page
     {
         public List<Usuario> ListaUsuarios = new List<Usuario>();
+        public List<Usuario> ListaUsuariosDadosDeBaja = new List<Usuario>();
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -35,13 +36,39 @@ namespace TiendaGrupo15Progra3
 
 
             UsuarioService usuarioService = new UsuarioService();
-            ListaUsuarios =usuarioService.listarUsuarios();
+            List<Usuario> listaUsuariosDeAlta = new List<Usuario>();
+            listaUsuariosDeAlta=usuarioService.listarUsuarios();
+            List<Usuario> listaUsuariosDeAltaAux = new List<Usuario>();
+            ListaUsuarios = listaUsuariosDeAltaAux;
+            foreach(Usuario usuario1 in listaUsuariosDeAlta)
+            {
+                if (usuario1.esActivo == true)
+                {
+                    listaUsuariosDeAltaAux.Add(usuario1);
+                }
+            }
+            ListaUsuarios = listaUsuariosDeAltaAux;
+            
+
 
             RepeaterUsuarios.DataSource = ListaUsuarios;
             RepeaterUsuarios.DataBind();
+            List<Usuario> listaUsuariosDeBaja = new List<Usuario>();
+            ListaUsuariosDadosDeBaja = new List<Usuario>();
+            List<Usuario> listaUsuariosTodos = usuarioService.listarUsuarios();
 
-            
-            
+            foreach (Usuario usuario in listaUsuariosTodos)
+            {
+                if (usuario.esActivo == false)
+                {
+                    listaUsuariosDeBaja.Add(usuario);
+                }
+            }
+            ListaUsuariosDadosDeBaja = listaUsuariosDeBaja;
+            RepeaterUsuariosBaja.DataSource = ListaUsuariosDadosDeBaja;
+            RepeaterUsuariosBaja.DataBind();
+
+
         }
         protected void btnAbrirModalModificar_Click(object sender, EventArgs e)
         {
@@ -69,7 +96,15 @@ namespace TiendaGrupo15Progra3
             fGlobales.MostrarAlerta(this, "Cambios guardados con exito");
 
         }
-
+        protected void btnDarAltaUsuario_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string userId = btn.CommandArgument;
+            UsuarioService usuarioObj = new UsuarioService();
+            usuarioObj.DarAltaUsuario( int.Parse( userId.ToString()));
+            fGlobales.MostrarAlerta(this, "Usuario con Accesso restringido cambiado a acceso permitido con exito");
+            Page_Load(sender, e);
+        }
         protected void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
