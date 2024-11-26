@@ -130,3 +130,9 @@ C:\Users\Nico\Downloads\ProyectoFinalIntentodeModal\ProyectoFinal\Dominio\obj\De
 C:\Users\Nico\Downloads\ProyectoFinalIntentodeModal\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Downloads\ProyectoFinalIntentodeModal\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 C:\Users\Nico\Downloads\ProyectoFinalIntentodeModal\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalAGusSOlaYoConFerdi\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalAGusSOlaYoConFerdi\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalAGusSOlaYoConFerdi\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nico\Downloads\ProyectoFinalAGusSOlaYoConFerdi\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Downloads\ProyectoFinalAGusSOlaYoConFerdi\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalAGusSOlaYoConFerdi\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb

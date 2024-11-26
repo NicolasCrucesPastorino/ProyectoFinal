@@ -20,13 +20,13 @@ namespace TiendaGrupo15Progra3
         //Revisada: Ok. Se agregael mail para evitar conflictos de nombres iguales
         protected void AceptarButton_Click(object sender, EventArgs e)
         {
-            string Nombre = nombreText.Text;
-            string Apellido = apellidoText.Text;
-            string Username = TextNombreUsuario.Text;
-            string Clave = TxtClave.Text;
-            string RepetirClave = TxtRepetirClave.Text;
-            string Email = EmailInput.Text;
-            string Telefono = TxtTelefono.Text;
+            string Nombre = nombreText.Text.Trim();
+            string Apellido = apellidoText.Text.Trim();
+            string Username = TextNombreUsuario.Text.Trim();
+            string Clave = TxtClave.Text.Trim();
+            string RepetirClave = TxtRepetirClave.Text.Trim();
+            string Email = EmailInput.Text.Trim();
+            string Telefono = TxtTelefono.Text.Trim();
 
             UsuarioService usuarioService = new UsuarioService();
             Usuario nuevoUsuario = new Usuario();
