@@ -26,15 +26,17 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();          
             try
             {
-                datos.setearConsulta("SELECT idRol from USUARIOS WHERE nombreUsuario = @nombreUsuario AND clave = @contrasenia");
+                datos.setearConsulta("SELECT idRol,esActivo from USUARIOS WHERE nombreUsuario = @nombreUsuario AND clave = @contrasenia AND esActivo=1");
                 datos.setearParametro("@nombreUsuario", usuario.nombre);
                 datos.setearParametro("@contrasenia", usuario.clave);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
+                 
+                    rol = (int)datos.Lector["idRol"];
                   
-                   rol = (int)datos.Lector["idRol"];
+                    
                    
                    
                 }
@@ -55,7 +57,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT idRol from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia");
+                datos.setearConsulta("SELECT idRol from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia AND esActivo=1");
                 datos.setearParametro("@nombreUsuario", usuario);
                 datos.setearParametro("@contrasenia", contrasenia);
 
@@ -63,8 +65,11 @@ namespace Negocio
 
                 while (datos.Lector.Read())
                 {
-
-                    rol = int.Parse( datos.Lector["idRol"].ToString());
+                    
+                    rol = int.Parse(datos.Lector["idRol"].ToString());
+                   
+                    
+                    
 
 
                 }
@@ -86,7 +91,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia");
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario,fechaRegistro from USUARIO WHERE nombreUsuario = @nombreUsuario AND Clave=@contrasenia AND esActivo=1");
                 datos.setearParametro("@nombreUsuario", usuario);
                 datos.setearParametro("@contrasenia", contrasenia);
 
@@ -94,6 +99,9 @@ namespace Negocio
 
                 while (datos.Lector.Read())
                 {
+                     
+                    
+                    
                     usuarioObjeto.idUsuario = int.Parse(datos.Lector["idUsuario"].ToString());
                     usuarioObjeto.nombre = datos.Lector["nombre"].ToString();
                     usuarioObjeto.correo = datos.Lector["correo"].ToString();
@@ -103,7 +111,9 @@ namespace Negocio
                     usuarioObjeto.esActivo = (bool)datos.Lector["esActivo"];
                     usuarioObjeto.apellido = datos.Lector["apellido"].ToString();
                     usuarioObjeto.nombreUsuario = datos.Lector["nombreUsuario"].ToString();
+                    usuarioObjeto.fechaRegistro = (DateTime)datos.Lector["fechaRegistro"];
 
+                   
 
                 }
 
@@ -127,13 +137,16 @@ namespace Negocio
             {
 
 
-            datos.setearConsulta("select FechaRegistro,Correo,EsActivo from USUARIO where nombreUsuario=@nombreUsuario");
+            datos.setearConsulta("select EsActivo from USUARIO where nombreUsuario=@nombreUsuario AND esActivo=1");
             datos.setearParametro("@nombreUsuario", nuevoNombreUsuario);
             datos.ejecutarLectura();
             while (datos.Lector.Read())
             {
-
-                return true;
+                   
+                    
+                        return true;
+              
+                
 
 
             }
@@ -160,16 +173,21 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta (@"Insert into USUARIO(nombreUsuario,correo, clave, idRol,esActivo,fechaRegistro) VALUES
-                                        (@nombreUsuario,@Correo,@Contrasenia, @idRol,@esActivo,@FechaRegistro)");
+                datos.setearConsulta (@"Insert into USUARIO(nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario, fechaRegistro) VALUES
+                                        (@nombre,@correo, @telefono, @idRol, @clave, @esActivo, @apellido, @nombreUsuario, @fechaRegistro)");
 
-
-                datos.setearParametro("@nombreUsuario", usuario.nombreUsuario);
-                datos.setearParametro("@Correo",usuario.correo);
-                datos.setearParametro("@Contrasenia", usuario.clave);
+ 
+                datos.setearParametro("@nombre", usuario.nombre);
+                datos.setearParametro("@correo", usuario.correo);
+                datos.setearParametro("@telefono", usuario.telefono);
                 datos.setearParametro("@idRol", usuario.rol);
+                datos.setearParametro("@clave", usuario.clave);
                 datos.setearParametro("@esActivo", 1);
+                datos.setearParametro("@apellido", usuario.apellido);
+                datos.setearParametro("@nombreUsuario", usuario.nombreUsuario);
                 datos.setearParametro("@fechaRegistro", dateTime);
+
+      
 
                 datos.ejecutarAccion(); 
 
@@ -239,7 +257,7 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {   Usuario usuario = new Usuario();
                     
-
+                    
                     
                     usuario.idUsuario = (int)datos.Lector["idUsuario"];
                     usuario.nombre = (string)datos.Lector["nombre"];
@@ -251,6 +269,7 @@ namespace Negocio
                     usuario.apellido = (string)datos.Lector["apellido"];
                     usuario.nombreUsuario= (string)datos.Lector["nombreUsuario"];
 
+                   
 
                     return usuario;
 
@@ -301,7 +320,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario, fechaRegistro from USUARIO where telefono IS NOT NULL");
+                datos.setearConsulta("SELECT idUsuario,nombre,correo,telefono,idRol,clave,esActivo,apellido,nombreUsuario, fechaRegistro from USUARIO where telefono IS NOT NULL AND esActivo=1");
                 datos.ejecutarLectura();
 
                 
@@ -332,8 +351,15 @@ namespace Negocio
                     
                     usuario.nombreUsuario = (string)datos.Lector["nombreUsuario"];
                     usuario.fechaRegistro = (DateTime)datos.Lector["fechaRegistro"];
-                    listaUsuarios.Add(usuario);
-                               
+
+
+                   
+                        listaUsuarios.Add(usuario);
+                            
+
+
+
+
                 }
                 return listaUsuarios;
 
@@ -348,6 +374,29 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
+        }
+
+
+        public void EliminarUsuario(int idUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(@"UPDATE USUARIO set esActivo=0 where idUsuario=@idUsuario");
+                datos.setearParametro("@idUsuario", idUsuario);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error" + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
         }
         }
         }

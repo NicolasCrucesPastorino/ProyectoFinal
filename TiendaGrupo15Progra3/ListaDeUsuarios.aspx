@@ -117,9 +117,11 @@
                                 <td><%# Eval("nombreUsuario") %></td>
                                 <td><%# Eval("correo") %></td>
                                 <td><%# Eval("telefono") %></td>
-                                <td><%# Eval("rol") %></td>
-                                <td><%# Eval("fechaRegistro") %></td>
                                 <td>
+                                 <%# Eval("rol").ToString() == "1" ? "Administrador" : (Eval("rol").ToString() == "2" ? "Usuario" : "Dueño") %>
+                                </td>
+                                <td><%# Eval("fechaRegistro") %></td>
+                                
                                    <td>
     <!-- Botón Modificar -->
     <asp:Button ID="btnAbrirModalModificar" runat="server" Text="Modificar Rol" CssClass="btn-update" target="_blank" CommandName="Modificar" CommandArgument='<%# Eval("idUsuario") %>' OnClick="btnAbrirModalModificar_Click" />

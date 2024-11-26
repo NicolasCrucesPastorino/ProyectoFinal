@@ -18,12 +18,16 @@ namespace TiendaGrupo15Progra3
 
         }
         //Revisada: Ok. Se agregael mail para evitar conflictos de nombres iguales
-        protected void ButtonRegister_Click(object sender, EventArgs e)
+        protected void AceptarButton_Click(object sender, EventArgs e)
         {
-            string Nombreusuario =TextBoxUsuario.Text.Trim();
-            string email = TxtMail.Text.Trim();
-            string contrasenia = TextBoxPassword.Text.Trim();
-            string confirmarContrasenia = TextBoxConfirmPassword.Text.Trim();
+            string Nombre = nombreText.Text;
+            string Apellido = apellidoText.Text;
+            string Username = TextNombreUsuario.Text;
+            string Clave = TxtClave.Text;
+            string RepetirClave = TxtRepetirClave.Text;
+            string Email = EmailInput.Text;
+            string Telefono = TxtTelefono.Text;
+
             UsuarioService usuarioService = new UsuarioService();
             Usuario nuevoUsuario = new Usuario();
             bool confirmarContraseniaBool = false;
@@ -32,22 +36,26 @@ namespace TiendaGrupo15Progra3
             
             try
             {
-                if (contrasenia == confirmarContrasenia)
+                if (Clave == RepetirClave)
                 {
                     confirmarContraseniaBool = true;
                 }
-                existeUsuario = usuarioService.ExisteUsuario(Nombreusuario);
+                existeUsuario = usuarioService.ExisteUsuario(Username);
 
                 if (existeUsuario == false && confirmarContraseniaBool == true)
                 {
-                    nuevoUsuario.nombreUsuario = Nombreusuario;
-                    nuevoUsuario.clave = contrasenia;
-                    nuevoUsuario.correo = email;
+                    nuevoUsuario.nombre = Nombre;
+                    nuevoUsuario.apellido = Apellido;
+                    nuevoUsuario.nombreUsuario = Username;
+                    nuevoUsuario.clave = Clave;
+                    nuevoUsuario.correo = Email;
+                    nuevoUsuario.telefono = Telefono;
                     nuevoUsuario.rol = 1;
 
                     usuarioService.RegistrarUsuario(nuevoUsuario);
                     Session["Rol"] = 1;
-                    fGlobales.MostrarAlerta(this, "Se ha creado con exito el usuario. Y desde ahora se encuentra logueado. BIENVENIDO!!!");
+                    string script = "alert('Se ha creado con exito su usuario'); window.location='RegistrarseLogin.aspx';";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true);
                     Session["Usuario"] = usuarioService.LoginUsuarioYcontraseniaDevuelveUsuario(nuevoUsuario.nombreUsuario, nuevoUsuario.clave);
                     
                    // 
@@ -71,6 +79,11 @@ namespace TiendaGrupo15Progra3
             }
           
            
+        }
+
+        protected void CancelarClickButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Login.aspx");
         }
     }
 }

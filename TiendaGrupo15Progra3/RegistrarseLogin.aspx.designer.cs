@@ -15,84 +15,93 @@ namespace TiendaGrupo15Progra3
     {
 
         /// <summary>
-        /// LabelUsuario control.
+        /// nombreText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUsuario;
+        protected global::System.Web.UI.WebControls.TextBox nombreText;
 
         /// <summary>
-        /// TextBoxUsuario control.
+        /// apellidoText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
+        protected global::System.Web.UI.WebControls.TextBox apellidoText;
 
         /// <summary>
-        /// LblEmail control.
+        /// TextNombreUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblEmail;
+        protected global::System.Web.UI.WebControls.TextBox TextNombreUsuario;
 
         /// <summary>
-        /// TxtMail control.
+        /// TxtClave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtMail;
+        protected global::System.Web.UI.WebControls.TextBox TxtClave;
 
         /// <summary>
-        /// LabelPassword control.
+        /// TxtRepetirClave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPassword;
+        protected global::System.Web.UI.WebControls.TextBox TxtRepetirClave;
 
         /// <summary>
-        /// TextBoxPassword control.
+        /// EmailInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        protected global::System.Web.UI.WebControls.TextBox EmailInput;
 
         /// <summary>
-        /// LabelConfirmPassword control.
+        /// TxtTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelConfirmPassword;
+        protected global::System.Web.UI.WebControls.TextBox TxtTelefono;
 
         /// <summary>
-        /// TextBoxConfirmPassword control.
+        /// terminosCheckBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxConfirmPassword;
+        protected global::System.Web.UI.WebControls.CheckBox terminosCheckBox;
 
         /// <summary>
-        /// ButtonRegister control.
+        /// Aceptar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonRegister;
+        protected global::System.Web.UI.WebControls.Button Aceptar;
+
+        /// <summary>
+        /// btnCancelarCambios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelarCambios;
     }
 }

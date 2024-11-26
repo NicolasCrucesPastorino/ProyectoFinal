@@ -74,11 +74,11 @@ namespace TiendaGrupo15Progra3
         {
             Button btn = (Button)sender;
             string userId = btn.CommandArgument;
-
-            // Lógica para eliminar el usuario de la base de datos
-
-            // Recargar la lista de usuarios
-            // Método que llena el repeater
+            UsuarioService usuarioObj = new UsuarioService();
+            usuarioObj.EliminarUsuario(int.Parse(userId));
+               
+                   
+           
 
             fGlobales.MostrarAlerta(this, "Usuario eliminado con exito");
             Page_Load(sender, e);
