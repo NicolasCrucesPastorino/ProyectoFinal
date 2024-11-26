@@ -23,7 +23,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta(@"SELECT ART.Id, ART.Nombre, ART.Codigo, ART.Descripcion, ART.Precio,ART.Stock,ART.IdUsuario,
+                datos.setearConsulta(@"SELECT ART.Id, ART.Nombre, ART.Codigo, ART.Descripcion, ART.Precio,ART.Stock,ART.IdUsuario, ART.Alta,
                                         MAR.Descripcion AS MarcaDescripcion, CAT.Descripcion AS CategoriaDescripcion 
                                      FROM ARTICULOS ART 
                                      INNER JOIN CATEGORIAS CAT ON ART.IdCategoria = CAT.Id 
@@ -41,6 +41,7 @@ namespace Negocio
                     aux.Precio = (decimal)(datos.Lector["Precio"]);
                     aux.Stock = (int)(datos.Lector["Stock"]);
                     aux.IdUsuario = (int)(datos.Lector["IdUsuario"]);
+                    aux.Alta = (bool)datos.Lector["Alta"];
                     Maraux.Descripcion = Convert.ToString(datos.Lector["MarcaDescripcion"]);
                     CatAux.Descripcion = Convert.ToString(datos.Lector["CategoriaDescripcion"]);
                     aux.Marca = Maraux;
@@ -233,7 +234,7 @@ namespace Negocio
 
             try
             {
-                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre,IdUsuario,A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion Nombre_Marca,C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio,A.Stock FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.id=@idArticulo");
+                accesoDatos.setearConsulta("SELECT A.Id, Codigo, Nombre,IdUsuario,A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion Nombre_Marca,C.Descripcion Nombre_Categoria, M.Id Id_Marca, C.Id Id_Categoria, A.Precio,A.Stock, A.Alta FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.id=@idArticulo");
                 accesoDatos.setearParametro("@idArticulo",ArticuloID);
                 accesoDatos.ejecutarLectura();
                 Articulo articulo = new Articulo();
@@ -259,6 +260,7 @@ namespace Negocio
 
                     articulo.Precio = (decimal)accesoDatos.Lector["Precio"];
                     articulo.Stock = (int)accesoDatos.Lector["Stock"];
+                    articulo.Alta = (bool)accesoDatos.Lector["Alta"];
 
                 }
 
@@ -352,7 +354,43 @@ namespace Negocio
 
                throw new Exception("Error al modificar producto: " + ex.Message);
             }
-          
+            finally { datos.cerrarConexion(); }
+        }
+        public void LevantarArticuloPorUsuario(int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS set Alta=1 where IdUsuario=@IdUsuario");
+                datos.setearParametro("@IdUsuario", IdUsuario);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al modificar producto: " + ex.Message);
+            }
+            finally { datos.cerrarConexion(); }
+        }
+        public void BajarArticuloPorUsuario(int IdUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS set Alta=0 where IdUsuario=@IdUsuario");
+                datos.setearParametro("@IdUsuario", IdUsuario);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al modificar producto: " + ex.Message);
+            }
+            finally { datos.cerrarConexion(); }
         }
 
         public void EliminarArticuloPorId(int IdArticulo)

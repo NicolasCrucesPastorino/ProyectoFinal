@@ -102,6 +102,11 @@ namespace TiendaGrupo15Progra3
             string userId = btn.CommandArgument;
             UsuarioService usuarioObj = new UsuarioService();
             usuarioObj.DarAltaUsuario( int.Parse( userId.ToString()));
+
+            ArticuloService articuloService = new ArticuloService();
+            articuloService.LevantarArticuloPorUsuario(int.Parse(userId.ToString()));
+
+
             fGlobales.MostrarAlerta(this, "Usuario con Accesso restringido cambiado a acceso permitido con exito");
             Page_Load(sender, e);
         }
@@ -111,7 +116,8 @@ namespace TiendaGrupo15Progra3
             string userId = btn.CommandArgument;
             UsuarioService usuarioObj = new UsuarioService();
             usuarioObj.EliminarUsuario(int.Parse(userId));
-               
+            ArticuloService articuloService = new ArticuloService();
+            articuloService.BajarArticuloPorUsuario(int.Parse(userId.ToString()));
                    
            
 

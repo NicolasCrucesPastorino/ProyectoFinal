@@ -64,7 +64,7 @@ namespace TiendaGrupo15Progra3
 
             foreach(Articulo articuloItem in Productos)
             {
-                if (articuloItem.Stock > 0)
+                if (articuloItem.Stock > 0 && articuloItem.Alta==true)
                 {
                     productosConStock.Add(articuloItem);
                 }

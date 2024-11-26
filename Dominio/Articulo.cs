@@ -22,6 +22,7 @@ namespace Dominio
         public Categoria Categoria { get; set; }
         [DisplayName("Precio")]
         public decimal Precio { get; set; }
+        public bool Alta { get; set; }
         [DisplayName("Stock")]
         public int Stock { get; set; }
         [DisplayName("IdUsuario")]
