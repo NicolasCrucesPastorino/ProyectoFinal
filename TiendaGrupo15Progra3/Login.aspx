@@ -103,10 +103,10 @@
             <asp:Button ID="LoginButton" runat="server" Text="Iniciar sesión" OnClick="LoginButton_Click" CssClass="btn btn-custom" />
 
             <!-- Enlace para recuperar contraseña -->
-            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            <a href="RestablecerContrasenia.aspx" class="forgot-password">¿Olvidaste tu contraseña?</a>
 
             <!-- Enlace para registrarse -->
-            <a href="RegistrarseLogin.aspx" class="register-link">¿No tienes cuenta? Regístrate aquí</a>
+            <a href="RegistrarseLogin.aspx" class="register-link">¿No tenes cuenta? Regístrate aquí</a>
         </div>
     </div>
 </asp:Content>

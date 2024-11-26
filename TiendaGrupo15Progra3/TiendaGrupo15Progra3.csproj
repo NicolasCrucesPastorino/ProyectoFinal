@@ -98,6 +98,7 @@
     <Content Include="ModificarArticulo.aspx" />
     <Content Include="ProductosABML.aspx" />
     <Content Include="RegistrarseLogin.aspx" />
+    <Content Include="RestablecerContrasenia.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="RegistrarseLogin.aspx.designer.cs">
       <DependentUpon>RegistrarseLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RestablecerContrasenia.aspx.cs">
+      <DependentUpon>RestablecerContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RestablecerContrasenia.aspx.designer.cs">
+      <DependentUpon>RestablecerContrasenia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

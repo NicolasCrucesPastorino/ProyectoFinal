@@ -49,6 +49,7 @@
     <Compile Include="CategoriaService.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="DetalleVentaService.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="fGlobales.cs" />
     <Compile Include="ImagenService.cs" />
     <Compile Include="MarcaService.cs" />
