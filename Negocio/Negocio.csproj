@@ -47,7 +47,6 @@
     <Compile Include="ArticuloService.cs" />
     <Compile Include="CarritoService.cs" />
     <Compile Include="CategoriaService.cs" />
-    <Compile Include="ClienteService.cs" />
     <Compile Include="DetalleVentaService.cs" />
     <Compile Include="EmailService.cs" />
     <Compile Include="fGlobales.cs" />
@@ -56,7 +55,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioService.cs" />
     <Compile Include="VentaService.cs" />
-    <Compile Include="VoucherService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">

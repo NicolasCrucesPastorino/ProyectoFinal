@@ -415,5 +415,26 @@ namespace Negocio
             }
         }
 
+        public void actualizarContrasenia(string contraseniaPin,string nuevaContrasenia,string mailRecuperacion)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE USUARIO SET clave=@nuevaContrasenia WHERE correo=@emailRecuperacion and clave=@contraseniaPin");
+                datos.setearParametro("@nuevaContrasenia",nuevaContrasenia);
+                datos.setearParametro("@emailRecuperacion", mailRecuperacion);
+                datos.setearParametro("@contraseniaPin",contraseniaPin);
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error Cambiar Contraseña" + ex.Message);
+            }
+
+        }
+
     }
 }

@@ -11,34 +11,43 @@ namespace TiendaGrupo15Progra3
 {
 
 
-    public partial class WebForm1
+    public partial class ActualizarContrasenia
     {
 
         /// <summary>
-        /// Control Label1.
+        /// Control TxtContraseniaPin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.TextBox TxtContraseniaPin;
 
         /// <summary>
-        /// Control CodigoVoucherText.
+        /// Control TxtActualizarContrasenia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CodigoVoucherText;
+        protected global::System.Web.UI.WebControls.TextBox TxtActualizarContrasenia;
 
         /// <summary>
-        /// Control EnviarCodigoVoucher.
+        /// Control btnActualizarPasword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EnviarCodigoVoucher;
+        protected global::System.Web.UI.WebControls.Button btnActualizarPasword;
+
+        /// <summary>
+        /// Control lblMessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

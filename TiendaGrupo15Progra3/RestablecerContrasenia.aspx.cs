@@ -11,8 +11,11 @@ namespace TiendaGrupo15Progra3
 {
     public partial class RestablecerContrasenia : System.Web.UI.Page
     {
+      
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -30,13 +33,17 @@ namespace TiendaGrupo15Progra3
 
                 if (enviarContraseniaNueva)
                 {
-                    ParaRecuperarContrasenia.CambiarContrasenia(TxtEmail.Text);
+                    string email = TxtEmail.Text;
 
-                    emailService.armarMail(TxtEmail.Text, "Restablecimiento de Contraseña", "Su nueva Contrasenia es 12345");
-                    emailService.enviarEmail();
+                    Session.Add("emailRecuperacion", email);
 
+                    ParaRecuperarContrasenia.CambiarContrasenia(email);
 
-                    Response.Redirect("Login.aspx", false);
+                    emailService.armarMail(email, "Restablecimiento de Contraseña", "Su nueva Contrasenia es 12345");
+                    emailService.enviarEmail();                  
+        
+                   
+                    Response.Redirect("ActualizarContrasenia.aspx",false);        
                 }
                 else
                 {

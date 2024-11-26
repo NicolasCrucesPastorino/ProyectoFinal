@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizarContrasenia.aspx" />
     <Content Include="AdminModificarUsuario.aspx" />
     <Content Include="AgregarNuevoArticulo.aspx" />
     <Content Include="CarritoWebForm.aspx" />
@@ -109,10 +110,16 @@
     <Content Include="VenderProductos.aspx" />
     <Content Include="Vendidos.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarContrasenia.aspx.cs">
+      <DependentUpon>ActualizarContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarContrasenia.aspx.designer.cs">
+      <DependentUpon>ActualizarContrasenia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminModificarUsuario.aspx.cs">
       <DependentUpon>AdminModificarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -242,13 +249,6 @@
     </Compile>
     <Compile Include="Vendidos.aspx.designer.cs">
       <DependentUpon>Vendidos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
