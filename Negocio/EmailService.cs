@@ -35,7 +35,7 @@ namespace Negocio
         public string ExisteMail(string mailusuario)
         {
             AccesoDatos datos = new AccesoDatos();
-            string clavePin ="vacio";
+            string clavePin =null;
 
             try
             {

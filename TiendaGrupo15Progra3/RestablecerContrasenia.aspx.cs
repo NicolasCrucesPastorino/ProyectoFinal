@@ -31,7 +31,7 @@ namespace TiendaGrupo15Progra3
                 enviarContraseniaNueva = emailService.ExisteMail(TxtEmail.Text);
 
 
-                if (enviarContraseniaNueva!=" ")
+                if (enviarContraseniaNueva!=null)
                 {
                     string email = TxtEmail.Text;
 
