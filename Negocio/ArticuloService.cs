@@ -525,15 +525,15 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("UPDATE ARTICULOS SET Codigo=@codigo,Nombre=@nombre, Descripcion=@descripcion, Precio=@Precio, Stock=@stock, IdCategoria=@idCategoria,IdMarca=@IdMarca  where Id=@idProducto");
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo=@codigo,Nombre=@nombre, Descripcion=@descripcion, Precio=@Precio, Stock=@stock, IdCategoria=@IdCategoria,IdMarca=@IdMarca  where Id=@IdArticulo");
                 datos.setearParametro("@codigo", articuloModificado.CodigoArticulo);
                 datos.setearParametro("@nombre", articuloModificado.Nombre);
-                datos.setearParametro("@Descripcion", articuloModificado.Descripcion);
+                datos.setearParametro("@descripcion", articuloModificado.Descripcion);
                 datos.setearParametro("@Precio", articuloModificado.Precio);
-                datos.setearParametro("@Stock", articuloModificado.Stock);
+                datos.setearParametro("@stock", articuloModificado.Stock);
                 datos.setearParametro("@IdCategoria", articuloModificado.Categoria.Id);
                 datos.setearParametro("@IdMarca", articuloModificado.Marca.Id);
-                datos.setearParametro("@IdArticulos", IdArticulo);
+                datos.setearParametro("@IdArticulo", IdArticulo);
 
                 datos.ejecutarAccion();
             }
