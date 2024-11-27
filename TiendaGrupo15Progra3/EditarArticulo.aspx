@@ -56,6 +56,8 @@
    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
         <div class="main-content padding-botom">
     <div class="center-container">
         <div class="form-container">
@@ -108,13 +110,25 @@
                     </asp:RegularExpressionValidator>
                 </div>
             </div>
-
+              <div class="col-6">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div class="mb-3">
+                        <label for="txtModificarImagenUrl" class="form-label">Url Imagen</label>
+                        <asp:TextBox runat="server" ID="txtModificarImagenUrl" CssClass="form-control"
+                            AutoPostBack="true" />
+                    </div>
+                    <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
+                        runat="server" ID="imgDefault" Width="60%" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
             <div class="form-group">
                 <asp:Button type="submit" ID="btnGuardarCambios" CssClass="btn btn-primary" runat="server" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click" />
             </div>
             <h4><asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label></h4>
         </div>
     </div>
-</div>
 </asp:Content>
 

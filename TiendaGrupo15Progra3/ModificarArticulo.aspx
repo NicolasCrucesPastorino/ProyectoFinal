@@ -131,7 +131,10 @@
                     <td>$<%# Eval("Precio") %></td>                    
                     <td><%# Eval("Stock") %></td>
                     <td>
+                        
                         <asp:Button ID="btnModificarArticulo" runat="server" Text="Modificar Articulo" CssClass="btn-update" CommandName="ModificarArticulo" CommandArgument='<%# Eval("Id") %>'  OnClick="btnModificarArticulo_Click" />
+                        
+                        
                     </td>                                     
                 </tr>
             </ItemTemplate>

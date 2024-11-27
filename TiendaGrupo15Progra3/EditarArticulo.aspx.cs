@@ -16,6 +16,8 @@ namespace TiendaGrupo15Progra3
         public Articulo articulo = new Articulo();
         public Articulo articuloNuevo = new Articulo();
         public ArticuloService articuloService = new ArticuloService();
+        public ImagenService imagenService = new ImagenService();
+        public Imagen imagen =new Imagen();
 
         public string IdArticulo { get; set; }
         public Usuario UsuarioModificarArticulo = new Usuario();
@@ -34,7 +36,9 @@ namespace TiendaGrupo15Progra3
                 {
 
                     articuloService = new ArticuloService();
+                    imagenService = new ImagenService();
                     articulo = new Articulo();
+
 
                     UsuarioModificarArticulo = (Usuario)Session["Usuario"];
                     IdArticulo = Session["Id"].ToString();
@@ -56,6 +60,8 @@ namespace TiendaGrupo15Progra3
 
                 }
                     articuloService = new ArticuloService();
+                    imagenService = new ImagenService();
+                    imagen = new Imagen();
                     IdArticulo = Session["Id"].ToString();
 
 
@@ -94,6 +100,7 @@ namespace TiendaGrupo15Progra3
         protected Articulo CompletarArticulo()
         {
             Articulo aux = new Articulo();
+            
 
             try
             {
@@ -116,6 +123,34 @@ namespace TiendaGrupo15Progra3
                 throw;
             }
 
+        }
+        protected List <Imagen> CompletarImagen()
+        {
+            List<Imagen> ListaUrlImagenAux = new List<Imagen>();
+
+            try
+            {
+                int idArticulo;
+
+
+                if (int.TryParse(IdArticulo, out idArticulo) && idArticulo != 0)
+                {
+                    ListaUrlImagenAux=imagenService.listarPorIdArticulo(int.Parse(IdArticulo));
+                    
+                    return ListaUrlImagenAux;
+
+                }
+
+                else { return null; }
+
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         protected void PrellenarCamposArticulo()
@@ -143,6 +178,18 @@ namespace TiendaGrupo15Progra3
 
 
         }
+        protected void PrellenarImagenesUrl()
+        {
+            List<Imagen>ImagenesPorProducto = new List<Imagen>();
+
+            ImagenesPorProducto = CompletarImagen();
+
+            foreach (var imagen in ImagenesPorProducto)
+            {
+                txtModificarImagenUrl.Text = imagen.UrlImagen;
+            }
+        }
+
         protected bool cambiosENcampos()
         {
             CategoriaService categoriaService = new CategoriaService();

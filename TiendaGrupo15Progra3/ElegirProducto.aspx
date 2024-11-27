@@ -21,6 +21,9 @@
       .padding-botom{
     padding-bottom: 100px;
 }
+      .carousel-control-prev-icon, .carousel-control-next-icon {
+       background-color: black; /* Establece el color de las flechas a negro */
+}
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -54,7 +57,7 @@
                     <h5><%=Math.Round( articulo.Precio,2) %>$</h5>
 
                     <!-- Carousel -->
-                    <div id="carousel<%= articulo.Id %>" class="carousel slide mb-3" data-bs-ride="carousel">
+                    <div id="carousel<%= articulo.Id %>" class="carousel slide mb-3">
                         <div class="carousel-inner">
                             <% for (int i = 0; i < articulo.Imagenes.Count; i++)
                                 { %>

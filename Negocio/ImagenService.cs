@@ -33,7 +33,7 @@ namespace Negocio
                 }
                 catch (Exception ex)
                 {
-
+                
                     throw ex;
                 }
                 finally
