@@ -2,6 +2,7 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -25,38 +26,59 @@ namespace TiendaGrupo15Progra3
                 Response.Redirect("Login.aspx");
             }
             else
-            {
-                articuloService = new ArticuloService();
-                articulo = new Articulo();
+            {               
 
-                UsuarioModificarArticulo = (Usuario)Session["Usuario"];
-                IdArticulo = Session["Id"].ToString();
-            }
-
-            if (!IsPostBack)
-            {
-                try
+                if (!IsPostBack)
                 {
-                    if (CompletarArticulo() != null)
-                    {
-                        RellenarCamposArticulo();
+                    articuloService = new ArticuloService();
+                    articulo = new Articulo();
 
+                    UsuarioModificarArticulo = (Usuario)Session["Usuario"];
+                    IdArticulo = Session["Id"].ToString();
+
+                    try
+                    {
+                        if (CompletarArticulo() != null)
+                        {
+                            PrellenarCamposArticulo();
+
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
                     }
 
                 }
-                catch (Exception)
+                else
                 {
+                    articuloService = new ArticuloService();
+                    articulo = new Articulo();
 
-                    throw;
                 }
-
             }
         }
 
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
-        {
-            actualizarArticulo();
+        {           
+            try
+            {
+                actualizarArticulo();
+                             
+                lblMessage.Text = "Las caracteristicas del producto han sido actualizadas con exito";
+                return;
+                    
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         protected Articulo CompletarArticulo()
@@ -86,7 +108,7 @@ namespace TiendaGrupo15Progra3
 
         }
 
-        protected void RellenarCamposArticulo()
+        protected void PrellenarCamposArticulo()
         {
             articulo = CompletarArticulo();
 
@@ -111,9 +133,99 @@ namespace TiendaGrupo15Progra3
 
 
         }
-        protected void cambiosENcampos()
+        protected bool cambiosENcampos()
         {
+            CategoriaService categoriaService = new CategoriaService();
+            MarcaService marcaService = new MarcaService();
+            Marca marca = new Marca();
+            Categoria categoria = new Categoria();
             
+
+            try
+            {
+                if (validarCamposEntrada())
+                {
+                    if ((int.TryParse(txtStock.Text, out int stock) &&
+                    decimal.TryParse(PrecioTxt.Text, NumberStyles.Any, new CultureInfo("es-ES"), out decimal precio)))
+                    {
+                        articulo.Nombre = nombreArtTxt.Text;
+                        articulo.CodigoArticulo = CodigoArticuloTxt.Text;
+                        articulo.Descripcion = DescripcionTxt.Text;
+                        articulo.Precio = decimal.Parse(PrecioTxt.Text);
+                        articulo.Stock = int.Parse(txtStock.Text);
+
+                        if (categoriaService.BuscarCategoria(TxtCategoria.Text) > 0)
+                        {
+                           
+
+                            categoria.Id = categoriaService.BuscarCategoria(TxtCategoria.Text);
+                            articulo.Categoria.Id = categoria.Id;
+
+                        }
+                        else
+                        {
+                            
+
+                            categoriaService.AgregarCategoriaNueva(TxtCategoria.Text);
+                            categoria.Id = categoriaService.BuscarCategoria(TxtCategoria.Text);
+                            articulo.Categoria.Id = categoria.Id;
+                        }
+                        if (marcaService.BuscarMarca(TxtMarca.Text) > 0)
+                        {
+                            marca = new Marca();
+                            articulo=new Articulo();
+
+                            marca.Id = marcaService.BuscarMarca(TxtMarca.Text);
+                            articulo.Marca.Id = marca.Id;
+
+                        }
+                        else
+                        {
+                            marca = new Marca();
+                            articulo = new Articulo();
+
+                            marcaService.AgregarMarcaNueva(TxtMarca.Text);
+                            marca.Id = categoriaService.BuscarCategoria(TxtMarca.Text);
+                            articulo.Marca.Id = marca.Id;
+                        }
+
+                        return true;
+                    }
+                    else
+                    {
+                        lblMessage.Text = "Alguno de los campos no se encuentra en el formato correcto. Recuerde que los precios llevan 2 decimales y el stock siempre es entero";
+                        return false;
+                    }
+                }
+                else
+                {
+                    lblMessage.Text = "Alguno de los campos no se encuentra en el formato correcto.";
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected bool validarCamposEntrada()
+        {
+            if(Validacion.validaTextoVacio(nombreArtTxt) ||
+               Validacion.validaTextoVacio(CodigoArticuloTxt) ||
+               Validacion.validaTextoVacio(DescripcionTxt) ||
+               Validacion.validaTextoVacio(PrecioTxt) ||
+               Validacion.validaTextoVacio(txtStock) ||
+               Validacion.validaTextoVacio(TxtCategoria) ||
+               Validacion.validaTextoVacio(TxtMarca))   
+            {
+                lblMessage.Text ="Es obligatorio rellenar todos los campos";
+                return false;
+            }
+
+                return true;
+
         }
 
         protected void actualizarArticulo()
@@ -125,10 +237,17 @@ namespace TiendaGrupo15Progra3
 
                 if (int.TryParse(IdArticulo, out idArticulo) && idArticulo != 0)
                 {
+                    if (cambiosENcampos())
+                    {
 
-                    articuloService.ModificarArticulo(int.Parse(IdArticulo), articulo);
+                        articuloService.ModificarArticulo(int.Parse(IdArticulo), articulo);
+
+                        return;
+                    }
 
                 }
+
+                return;
             }
             catch (Exception)
             {
@@ -136,5 +255,6 @@ namespace TiendaGrupo15Progra3
                 throw;
             }           
         }
+
     }
 }

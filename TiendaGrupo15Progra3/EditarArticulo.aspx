@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditarArticulo.aspx.cs" Inherits="TiendaGrupo15Progra3.EditarArticulo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <style>
+    <style>
             .bg-custom {
             background-image: url('images/fondoAmarillo.png');
             background-size: cover;
@@ -90,20 +90,29 @@
                 </div>
                 <div class="col">
                     <label for="PrecioTxt" class="form-label">Precio:</label>
-                    <asp:TextBox ID="PrecioTxt" CssClass="form-control" placeholder="Precio" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="PrecioTxt" type="text" pattern="^\d+([,\.]\d{1,2})?$" title="El precio debe tener un formato válido, por ejemplo, 1234,56" CssClass="form-control" placeholder="Precio" runat="server"></asp:TextBox>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
                     <label for="StockTxt" class="form-label">Stock:</label>
-                    <asp:TextBox ID="txtStock" TextMode="Number" CssClass="form-control" placeholder="Stock" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtStock" CssClass="form-control" placeholder="Stock" runat="server" />
+                    <asp:RegularExpressionValidator 
+                        ID="regexValidator" 
+                        runat="server" 
+                        ControlToValidate="txtStock"
+                        ErrorMessage="El número debe tener un formato válido de números enteros." 
+                        ValidationExpression="^\d+$" 
+                        ForeColor="Red">
+                    </asp:RegularExpressionValidator>
                 </div>
             </div>
 
             <div class="form-group">
                 <asp:Button type="submit" ID="btnGuardarCambios" CssClass="btn btn-primary" runat="server" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click" />
             </div>
+            <h4><asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label></h4>
         </div>
     </div>
 </div>

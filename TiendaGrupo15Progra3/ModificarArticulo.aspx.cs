@@ -34,7 +34,7 @@ namespace TiendaGrupo15Progra3
             {
 
 
-                if (articulo.IdUsuario == usuario.idUsuario)
+                if (articulo.Alta && (articulo.IdUsuario == usuario.idUsuario))
                 {
                     ListatemporalFiltrada.Add(articulo);
                 }
@@ -53,7 +53,7 @@ namespace TiendaGrupo15Progra3
                 Button btn = (Button)sender;
                 string ArticuloId = btn.CommandArgument;
                 Session.Add("Id", ArticuloId);
-                Response.Redirect("EditarArticulo.aspx", false);
+                Response.Redirect("EditarArticulo.aspx");
 
             }
             catch (Exception)
