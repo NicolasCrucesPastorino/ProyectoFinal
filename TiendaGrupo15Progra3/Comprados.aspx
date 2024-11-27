@@ -84,6 +84,13 @@
     <div class="container">
     <h2>Tus Productos Comprados</h2>
         <h2>Total gastado en compras : $<%=Math.Round( TotalGastado,2 )%></h2>
+         <div>
+     <asp:TextBox ID="TextFiltroAvanzadoNombre" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
+     <asp:TextBox ID="TextFiltroAvanzadoPrecio" placeholder="Ingrese Precio" runat="server" textmode="Number"></asp:TextBox>
+    <asp:TextBox ID="TextFiltroAvanzadoCategoria" placeholder="Ingrese Categoria" runat="server"></asp:TextBox>
+<asp:TextBox ID="TextFiltroAvanzadoMarca" placeholder="Ingrese Marca" runat="server"></asp:TextBox>
+     <asp:Button ID="BtnBusquedaAvanzada" runat="server" Text="Busqueda avanzada" OnClick="BtnBusquedaAvanzada_Click" />
+ </div>
     <table class="cart-table">
         <thead class="paraTabla">
             <tr>
@@ -95,9 +102,8 @@
                 <th>Mail Vendedor</th>
                 <th>Telefono Vendedor</th>
                 <th>Stock Restante</th>
-                <th>Monto Total</th>                
-
-            </tr>
+                <th>Monto Total</th>    
+                  </tr>
         </thead>
         <tbody class="paraTabla">
             <!-- Repeater para mostrar productos en el carrito -->

@@ -91,28 +91,36 @@ namespace TiendaGrupo15Progra3
         {
             ArticuloService busquedaavanzada = new ArticuloService();
             string nombreProducto = TextFiltroAvanzadoNombre.Text.Trim();
-
-            decimal? precioProducto = null; // Usamos un valor nullable por si no se ingresa un precio
-            if (!string.IsNullOrWhiteSpace(TextFiltroAvanzadoPrecio.Text))
+            try
             {
-                if (decimal.TryParse(TextFiltroAvanzadoPrecio.Text.Trim(), out decimal precio))
+                decimal? precioProducto = null; // Usamos un valor nullable por si no se ingresa un precio
+                if (!string.IsNullOrWhiteSpace(TextFiltroAvanzadoPrecio.Text))
                 {
-                    precioProducto = precio;
+                    if (decimal.TryParse(TextFiltroAvanzadoPrecio.Text.Trim(), out decimal precio))
+                    {
+                        precioProducto = precio;
+                    }
                 }
-            }   
-           
+
+
+                string categoriaProducto = DropDownListFiltroAvanzadoCategoria.Text.Trim();
+                if (categoriaProducto == "No Filtrar Por Categoria")
+                {
+                    categoriaProducto = null;
+                }
+                string marcaProducto = DropDownListFiltroAvanzadoMarca.Text.Trim();
+                if (marcaProducto == "No Filtrar Por Marca")
+                {
+                    marcaProducto = null;
+                }
+                Productos = busquedaavanzada.BusquedaAvanzada(nombreProducto, precioProducto, categoriaProducto, marcaProducto);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
             
-            string categoriaProducto = DropDownListFiltroAvanzadoCategoria.Text.Trim();
-            if(categoriaProducto== "No Filtrar Por Categoria")
-            {
-                categoriaProducto = null;
-            }
-            string marcaProducto = DropDownListFiltroAvanzadoMarca.Text.Trim();
-            if (marcaProducto == "No Filtrar Por Marca")
-            {
-                marcaProducto = null;
-            }
-            Productos =busquedaavanzada.BusquedaAvanzada(nombreProducto, precioProducto,categoriaProducto, marcaProducto);
         }
 
         protected void BtnBusquedaComun_Click(object sender, EventArgs e)

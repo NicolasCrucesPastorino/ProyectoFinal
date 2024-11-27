@@ -33,59 +33,119 @@ namespace TiendaGrupo15Progra3
                 Response.Redirect("Login.aspx");
 
             }
-
-
-            Usuario usuario =(Usuario) Session["Usuario"];
-            VentaService ventaService = new VentaService();
-            List<Venta> listaVentasCompradas = new List<Venta>();
-            Venta venta = new Venta();
-            DetalleVenta detalleVenta = new DetalleVenta();
-            DetalleVentaService detalleVentaService = new DetalleVentaService();
-            
-           
-            
-            ArticuloService articuloService = new ArticuloService();
-
-            listaVentasCompradas= ventaService.buscarComprado(usuario.idUsuario);
-
-            foreach(Venta ventaItem in listaVentasCompradas)
+            if (!IsPostBack)
             {
-                if (detalleVentaService.BuscarPorIdVenta(ventaItem.idVenta) != null)
+
+
+
+                Usuario usuario = (Usuario)Session["Usuario"];
+                VentaService ventaService = new VentaService();
+                List<Venta> listaVentasCompradas = new List<Venta>();
+                Venta venta = new Venta();
+                DetalleVenta detalleVenta = new DetalleVenta();
+                DetalleVentaService detalleVentaService = new DetalleVentaService();
+
+
+
+                ArticuloService articuloService = new ArticuloService();
+
+                listaVentasCompradas = ventaService.buscarComprado(usuario.idUsuario);
+
+                foreach (Venta ventaItem in listaVentasCompradas)
                 {
-                    Usuario usuarioParaRepetear = new Usuario();
-                    UsuarioService usuarioService = new UsuarioService();
-                    detalleVenta= detalleVentaService.BuscarPorIdVenta(ventaItem.idVenta);
-                    usuarioParaRepetear = usuarioService.TraerUsuarioPorId(ventaItem.idUsuario);
+                    if (detalleVentaService.BuscarPorIdVenta(ventaItem.idVenta) != null)
+                    {
+                        Usuario usuarioParaRepetear = new Usuario();
+                        UsuarioService usuarioService = new UsuarioService();
+                        detalleVenta = detalleVentaService.BuscarPorIdVenta(ventaItem.idVenta);
+                        usuarioParaRepetear = usuarioService.TraerUsuarioPorId(ventaItem.idUsuario);
 
 
-                    Articulo articulo = new Articulo();
-                    ParaRepeter paraRepeter = new ParaRepeter();
-                    articulo = articuloService.listarXid(detalleVenta.idProducto);
-                paraRepeter.producto = articulo.Nombre;
-                paraRepeter.precio = Math.Round(articulo.Precio,2);
-                paraRepeter.cantidad = detalleVenta.cantidad;
-                paraRepeter.Total = Math.Round(detalleVenta.cantidad * articulo.Precio,2);
-                    paraRepeter.categoria=detalleVenta.categoriaProducto;
-                    paraRepeter.marca=detalleVenta.marcaProducto;
-                    paraRepeter.Stock=articulo.Stock;
-                    paraRepeter.telefono = usuarioParaRepetear.telefono;
-                    paraRepeter.correo = usuarioParaRepetear.correo;
-                    paraRepeter.idVenta = ventaItem.idVenta;
-                paraRepeterList.Add(paraRepeter);
+                        Articulo articulo = new Articulo();
+                        ParaRepeter paraRepeter = new ParaRepeter();
+                        articulo = articuloService.listarXid(detalleVenta.idProducto);
+                        paraRepeter.producto = articulo.Nombre;
+                        paraRepeter.precio = Math.Round(articulo.Precio, 2);
+                        paraRepeter.cantidad = detalleVenta.cantidad;
+                        paraRepeter.Total = Math.Round(detalleVenta.cantidad * articulo.Precio, 2);
+                        paraRepeter.categoria = detalleVenta.categoriaProducto;
+                        paraRepeter.marca = detalleVenta.marcaProducto;
+                        paraRepeter.Stock = articulo.Stock;
+                        paraRepeter.telefono = usuarioParaRepetear.telefono;
+                        paraRepeter.correo = usuarioParaRepetear.correo;
+                        paraRepeter.idVenta = ventaItem.idVenta;
+                        paraRepeterList.Add(paraRepeter);
+                    }
+
+
                 }
-                
+                RepeaterComprado.DataSource = paraRepeterList;
 
+                RepeaterComprado.DataBind();
+                decimal TotalParaMostrar = 0;
+                foreach (ParaRepeter paraRepeterItem in paraRepeterList)
+                {
+                    TotalParaMostrar += paraRepeterItem.Total;
+                }
+                TotalGastado = TotalParaMostrar;
             }
-            RepeaterComprado.DataSource = paraRepeterList;
-           
-            RepeaterComprado.DataBind();
-            decimal TotalParaMostrar = 0;
-            foreach(ParaRepeter paraRepeterItem in paraRepeterList)
+            
+        }
+
+        protected void BtnBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+                ArticuloService busquedaavanzada = new ArticuloService();
+               
+            try
             {
-                TotalParaMostrar += paraRepeterItem.Total;
-            }
-            TotalGastado = TotalParaMostrar;
+                decimal? precioProducto = null;
+                if (!string.IsNullOrWhiteSpace(TextFiltroAvanzadoPrecio.Text.Trim()))
+                {
+                    if (decimal.TryParse(TextFiltroAvanzadoPrecio.Text.Trim(), out decimal precio))
+                    {
+                        precioProducto = precio;
+                    }
+                }
+                string nombreProducto = null;
+                if (!string.IsNullOrWhiteSpace(TextFiltroAvanzadoNombre.Text.Trim()))
+                {
 
+                   nombreProducto = TextFiltroAvanzadoNombre.Text.Trim();
+
+                }
+                string categoria = null;
+                if (!string.IsNullOrWhiteSpace(TextFiltroAvanzadoCategoria.Text.Trim()))
+                {
+
+                    categoria = TextFiltroAvanzadoCategoria.Text.Trim();
+
+                }
+                string marca = null;
+                if (!string.IsNullOrWhiteSpace(TextFiltroAvanzadoMarca.Text.Trim()))
+                {
+
+                    categoria = TextFiltroAvanzadoMarca.Text.Trim();
+
+                }
+                List<ParaRepeter> paraRepeterListFiltro = paraRepeterList;
+
+                Usuario usuario = new Usuario();
+                usuario = (Usuario)Session["Usuario"];
+                ParaRepeterService paraRepeterService = new ParaRepeterService();
+                paraRepeterList= paraRepeterService.BusquedaAvanzadaComprados(usuario.idUsuario,nombreProducto,precioProducto,categoria, marca);
+                RepeaterComprado.DataSource = paraRepeterList;
+
+                RepeaterComprado.DataBind();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+                
+      
 
         }
     }

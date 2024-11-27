@@ -177,6 +177,69 @@ namespace Negocio
             }
         }
 
+       /* public List<ParaRepeter> BusquedaComprados(string nombre, decimal? precio, string categoria, string marca)
+        {
+            // Construir la consulta dinámica
+            var query = "SELECT Articulos.Id,Nombre,precio FROM Articulos inner join Categorias on Articulos.IdCategoria=Categorias.Id inner join Marcas on Articulos.IdMarca=Marcas.Id WHERE 1=1"; // 1=1 facilita agregar condiciones dinámicas
+            var parameters = new List<SqlParameter>();
+
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                query += " AND Nombre LIKE @Nombre";
+                parameters.Add(new SqlParameter("@Nombre", $"%{nombre}%")); // Búsqueda parcial
+            }
+
+            if (precio.HasValue)
+            {
+                query += " AND Precio = @Precio";
+                parameters.Add(new SqlParameter("@Precio", precio.Value));
+            }
+
+            if (!string.IsNullOrEmpty(categoria))
+            {
+                query += " AND Categorias.Descripcion = @Categoria";
+                parameters.Add(new SqlParameter("@Categoria", categoria));
+            }
+
+            if (!string.IsNullOrEmpty(marca))
+            {
+                query += " AND Marcas.Descripcion = @Marca";
+                parameters.Add(new SqlParameter("@Marca", marca));
+            }
+
+            // Ejecutar la consulta
+            using (var connection = new SqlConnection("server=.\\SQLEXPRESS; database =  EcomerceTCPGrupo15A; integrated security = true"))
+            using (var command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+                command.Parameters.AddRange(parameters.ToArray());
+
+                var reader = command.ExecuteReader();
+                var resultados = new List<Articulo>();
+
+                while (reader.Read())
+                {
+                    resultados.Add(new Articulo
+                    {
+                        Id = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Precio = reader.GetDecimal(2),
+
+                    });
+                }
+                ImagenService imagenService = new ImagenService();
+                foreach (Articulo a in resultados)
+                {
+                    List<Imagen> listaimagenesArticulos = imagenService.listarPorIdArticulo(a.Id);
+                    a.Imagenes = listaimagenesArticulos;
+
+                }
+
+                //return resultados;
+            }
+        }
+       */
+
         public List<Articulo> GetArticulos2()
         {
             List<Articulo> ArticulosFinal = new List<Articulo>();
@@ -435,4 +498,6 @@ namespace Negocio
             }
         }
     }
+
+    
 }

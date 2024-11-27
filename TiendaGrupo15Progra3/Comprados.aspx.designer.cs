@@ -15,6 +15,51 @@ namespace TiendaGrupo15Progra3
     {
 
         /// <summary>
+        /// TextFiltroAvanzadoNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextFiltroAvanzadoNombre;
+
+        /// <summary>
+        /// TextFiltroAvanzadoPrecio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextFiltroAvanzadoPrecio;
+
+        /// <summary>
+        /// TextFiltroAvanzadoCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextFiltroAvanzadoCategoria;
+
+        /// <summary>
+        /// TextFiltroAvanzadoMarca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextFiltroAvanzadoMarca;
+
+        /// <summary>
+        /// BtnBusquedaAvanzada control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnBusquedaAvanzada;
+
+        /// <summary>
         /// RepeaterComprado control.
         /// </summary>
         /// <remarks>
