@@ -160,5 +160,29 @@ namespace Negocio
             }
         }
 
+        public void EliminarImagenesArticulo(int id)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("DELETE from IMAGENES where IdArticulo=@IdArticuloImagen");
+                datos.setearParametro("@IdArticuloImagen", id);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

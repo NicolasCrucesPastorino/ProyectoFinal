@@ -56,7 +56,7 @@ namespace TiendaGrupo15Progra3
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-
+            actualizarArticulo();
         }
 
         protected Articulo CompletarArticulo()
@@ -110,6 +110,31 @@ namespace TiendaGrupo15Progra3
             }
 
 
+        }
+        protected void cambiosENcampos()
+        {
+            
+        }
+
+        protected void actualizarArticulo()
+        {
+            try
+            {
+                int idArticulo;
+
+
+                if (int.TryParse(IdArticulo, out idArticulo) && idArticulo != 0)
+                {
+
+                    articuloService.ModificarArticulo(int.Parse(IdArticulo), articulo);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }           
         }
     }
 }

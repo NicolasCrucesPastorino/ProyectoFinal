@@ -497,6 +497,52 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void BajaLogicaArticuloPorId(int IdArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET Alta=0 where Id=@IdArticulo");
+                datos.setearParametro("@IdArticulo", IdArticulo);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al modificar producto: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void ModificarArticulo(int IdArticulo, Articulo articuloModificado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo=@codigo,Nombre=@nombre, Descripcion=@descripcion, Precio=@Precio, Stock=@stock  where Id=@idProducto");
+                datos.setearParametro("@codigo", articuloModificado.CodigoArticulo);
+                datos.setearParametro("@nombre", articuloModificado.Nombre);
+                datos.setearParametro("@Descripcion", articuloModificado.Descripcion);
+                datos.setearParametro("@Precio", articuloModificado.Precio);
+                datos.setearParametro("@Stock", articuloModificado.Stock);
+                //hay que hacer marca y categoria
+                datos.setearParametro("@IdArticulos", IdArticulo);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error al modificar producto: " + ex.Message);
+            }
+            finally { datos.cerrarConexion(); }
+        }
     }
 
     

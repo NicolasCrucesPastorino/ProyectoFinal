@@ -43,7 +43,7 @@ namespace TiendaGrupo15Progra3
 
         protected void IMGeliminarArticulo_Click(object sender, System.Web.UI.ImageClickEventArgs e)
         {
-
+            Response.Redirect("/EliminarArticulo.aspx", false);
         }
     }
 }
