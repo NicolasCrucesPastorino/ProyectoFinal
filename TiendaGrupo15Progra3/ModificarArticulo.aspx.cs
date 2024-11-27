@@ -34,7 +34,7 @@ namespace TiendaGrupo15Progra3
             {
 
 
-                if (articulo.Alta && (articulo.IdUsuario == usuario.idUsuario))
+                if (articulo.Alta==true && (articulo.IdUsuario == usuario.idUsuario))
                 {
                     ListatemporalFiltrada.Add(articulo);
                 }
