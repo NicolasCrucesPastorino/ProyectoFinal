@@ -31,7 +31,7 @@ namespace TiendaGrupo15Progra3
             UsuarioService usuarioService = new UsuarioService();
             Usuario nuevoUsuario = new Usuario();
             bool confirmarContraseniaBool = false;
-            bool existeUsuario=false;
+            bool UsuarioPrimeraVez=false;
 
             
             try
@@ -40,9 +40,9 @@ namespace TiendaGrupo15Progra3
                 {
                     confirmarContraseniaBool = true;
                 }
-                existeUsuario = usuarioService.ExisteUsuario(Username);
+                UsuarioPrimeraVez = usuarioService.NoExisteUsuario(Email);
 
-                if (existeUsuario == false && confirmarContraseniaBool == true)
+                if (UsuarioPrimeraVez == true && confirmarContraseniaBool == true)
                 {
                     nuevoUsuario.nombre = Nombre;
                     nuevoUsuario.apellido = Apellido;
@@ -67,9 +67,10 @@ namespace TiendaGrupo15Progra3
                 else if( confirmarContraseniaBool == false )
                 {
                     fGlobales.MostrarAlerta(this,"Ocurrió un error:Las contraseñas no coinciden");
-                } else if (existeUsuario == true)
+
+                } else if (UsuarioPrimeraVez == false)
                 {
-                    fGlobales.MostrarAlerta(this, "Ocurrió un error:El usuario ya existe");
+                    fGlobales.MostrarAlerta(this, "Ocurrió un error:El mail ya se encuentra registrado, si olvido su contraseña puede recuperarla en Login");
                 }
             }
             catch (Exception ex)
@@ -83,7 +84,7 @@ namespace TiendaGrupo15Progra3
 
         protected void CancelarClickButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Login.aspx");
+            Response.Redirect("/Login.aspx",false);
         }
     }
 }

@@ -67,10 +67,6 @@ namespace Negocio
                 {
                     
                     rol = int.Parse(datos.Lector["idRol"].ToString());
-                   
-                    
-                    
-
 
                 }
                 
@@ -141,14 +137,10 @@ namespace Negocio
             datos.setearParametro("@nombreUsuario", nuevoNombreUsuario);
             datos.ejecutarLectura();
             while (datos.Lector.Read())
-            {
-                   
+            {                  
                     
                         return true;
               
-                
-
-
             }
 
                 return false;
@@ -164,6 +156,39 @@ namespace Negocio
                 datos.cerrarConexion();
             }
           
+        }
+
+        public bool NoExisteUsuario(string email)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+
+                datos.setearConsulta("select correo from USUARIO where correo=@email");
+                datos.setearParametro("@email", email);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+
+                    return false;
+
+                }
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error en Existe Cliente (UsuarioService) Linea 108: " + ex.Message); ;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
         }
 
         public void RegistrarUsuario (Usuario usuario)
