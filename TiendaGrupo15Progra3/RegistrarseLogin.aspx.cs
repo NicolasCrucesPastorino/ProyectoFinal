@@ -82,10 +82,10 @@ namespace TiendaGrupo15Progra3
                     nuevoUsuario.clave = Clave;
                     nuevoUsuario.correo = Email;
                     nuevoUsuario.telefono = Telefono;
-                    nuevoUsuario.rol = 1;
+                    nuevoUsuario.rol = 2;
 
                     usuarioService.RegistrarUsuario(nuevoUsuario);
-                    Session["Rol"] = 1;
+                    Session["Rol"] = 2;
                     string script = "alert('Se ha creado con exito su usuario'); window.location='RegistrarseLogin.aspx';";
                     ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true);
                     Session["Usuario"] = usuarioService.LoginUsuarioYcontraseniaDevuelveUsuario(nuevoUsuario.nombreUsuario, nuevoUsuario.clave);

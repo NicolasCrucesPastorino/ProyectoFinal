@@ -544,6 +544,119 @@ namespace Negocio
             }
             finally { datos.cerrarConexion(); }
         }
+
+        public List<Articulo> BusquedaAvanzadaTusArticulos(int idUsuario, string nombre, decimal? precio, string categoria, string marca)
+        {
+            List<Articulo> ListaFiltrada = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string query = "";
+                if (!string.IsNullOrEmpty(nombre))
+                {
+                    query += " AND a.nombre LIKE @Nombre"; // Búsqueda parcial
+
+
+                }
+
+                if (precio.HasValue)
+                {
+                    query += " AND a.Precio >= @Precio";
+
+                }
+
+                if (!string.IsNullOrEmpty(categoria))
+                {
+                    query += " AND  c.Descripcion LIKE @Categoria";
+
+                }
+
+                if (!string.IsNullOrEmpty(marca))
+                {
+                    query += " AND  m.Descripcion LIKE @Marca";
+
+                }
+
+
+                datos.setearConsulta(@"SELECT
+                                                 
+    a.Nombre,
+    a.precio,
+a.Descripcion,
+    c.Descripcion,    
+    m.Descripcion,
+    
+    a.stock
+   
+FROM Articulos a
+INNER JOIN
+    Categorias c ON c.Id = a.IdCategoria
+INNER JOIN
+    Marcas m ON m.Id = a.IdMarca
+inner Join
+    Usuario u on u.idUsuario=a.IdUsuario
+
+  where  u.idUsuario = @idUsuario And a.Alta=1" + query);
+                datos.setearParametro("@idUsuario", idUsuario);
+                if (!string.IsNullOrEmpty(nombre))
+                {
+                    // Búsqueda parcial
+                    datos.setearParametro("@Nombre", "%" + nombre + "%");
+
+                }
+
+                if (precio.HasValue)
+                {
+
+                    datos.setearParametro("@Precio", precio);
+                }
+
+                if (!string.IsNullOrEmpty(categoria))
+                {
+
+                    datos.setearParametro("@Categoria", "%" + categoria + "%");
+                }
+
+                if (!string.IsNullOrEmpty(marca))
+                {
+
+                    datos.setearParametro("@Marca", "%" + marca + "%");
+                }
+                datos.ejecutarLectura();
+                // Construir la consulta dinámica
+
+
+
+                while (datos.Lector.Read())
+                {
+                    
+                    Articulo articulo = new Articulo();
+
+                    articulo.Nombre = (string)datos.Lector["Nombre"];
+                    articulo.Precio = Convert.ToDecimal(datos.Lector["precio"]);
+                    articulo.Descripcion = (string)datos.Lector["Descripcion"];
+                    articulo.Marca = new Marca();
+                    articulo.Categoria = new Categoria();
+                    articulo.Categoria.Descripcion = (string)datos.Lector["Descripcion"];
+                    articulo.Marca.Descripcion = (string)datos.Lector["Descripcion"];
+                    articulo.Stock = Convert.ToInt32(datos.Lector["stock"]);
+
+                    
+                    ListaFiltrada.Add(articulo);
+                }
+
+
+                return ListaFiltrada;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 
     
