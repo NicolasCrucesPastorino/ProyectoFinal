@@ -47,7 +47,21 @@ namespace TiendaGrupo15Progra3
                 Session["loMandamosLogin"] = true;
                 Response.Redirect("Login.aspx");
             }
+            if (!IsPostBack)
+            {
+                if (Session["Usuario"] != null)
+                {
 
+                    UsuarioIngresaTusDatos = (Usuario)Session["Usuario"];
+                    nombreText.Text = UsuarioIngresaTusDatos.nombre;
+                    apellidoText.Text = UsuarioIngresaTusDatos.apellido;
+                    TextNombreUsuario.Text = UsuarioIngresaTusDatos.nombreUsuario;
+                    TxtClave.Text = UsuarioIngresaTusDatos.clave;
+                    EmailInput.Text = UsuarioIngresaTusDatos.correo;
+                    TxtTelefono.Text = UsuarioIngresaTusDatos.telefono;
+
+                }
+            }
         }
 
         public void AceptarButton_Click(object sender, EventArgs e)
@@ -109,7 +123,7 @@ namespace TiendaGrupo15Progra3
                     string script = "alert('No se encuentra logueado debe loguearse para actualizar perfil.'); window.location='Login.aspx';"; 
                     ScriptManager.RegisterStartupScript(this, GetType(), "showalert", script, true); 
                     return; 
-
+                    
                 }
 
 
@@ -118,9 +132,9 @@ namespace TiendaGrupo15Progra3
                 UsuarioService usuarioService = new UsuarioService();
 
                 usuarioTraidoSession = (Usuario)Session["Usuario"];
-                if (usuarioService.ExisteUsuario(TextNombreUsuario.Text.Trim())==true)
+                if (usuarioService.NoExisteUsuarioSinChequearElmismo(EmailInput.Text.Trim(),usuarioTraidoSession.idUsuario)==false)
                 {
-                    fGlobales.MostrarAlerta(this, "Ese nombre de Usuario ya existe");
+                    fGlobales.MostrarAlerta(this, "Ese mail de Usuario ya existe");
                     return;
 
                 }

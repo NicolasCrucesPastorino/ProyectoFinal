@@ -116,7 +116,7 @@
             
          <div class="form-group">
             <label for="telefonoTxt" class="form-label">Telefono:</label>
-            <asp:TextBox ID="TxtTelefono" CssClass="form-control" placeholder="Telefono" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TxtTelefono" CssClass="form-control" placeholder="Telefono" runat="server" TextMode="Number"></asp:TextBox>
         </div>
         <!-- Checkbox -->
         <div class="form-group">

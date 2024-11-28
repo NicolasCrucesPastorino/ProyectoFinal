@@ -190,6 +190,39 @@ namespace Negocio
             }
 
         }
+        public bool NoExisteUsuarioSinChequearElmismo(string email,int idUsuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+
+                datos.setearConsulta("select correo from USUARIO where correo=@email And idUsuario!=@IdUsuario");
+                datos.setearParametro("@email", email);
+                datos.setearParametro("@IdUsuario", idUsuario);
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+
+                    return false;
+
+                }
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error en Existe Cliente (UsuarioService) Linea 108: " + ex.Message); ;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
 
         public void RegistrarUsuario (Usuario usuario)
         { 
