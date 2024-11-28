@@ -148,8 +148,13 @@ namespace TiendaGrupo15Progra3
 
                     carritoService.EliminarArticulosEnCarritoPorId(articulo.Id, usuario.idUsuario);
                 }
-                fGlobales.MostrarAlerta(this, "Articulos del carrito comprados con exito.");
+
+                
                 CargarCarrito();
+                lblMessage.Text = "Compra exitosa,sera redirigido para ver el estado de su compra";
+                Response.AddHeader("REFRESH", "3;URL=EnCamino.aspx");
+
+              
             }
             else
             {

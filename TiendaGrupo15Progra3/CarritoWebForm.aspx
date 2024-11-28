@@ -124,7 +124,8 @@
         </div>
 
         <div class="text-center">
-            <asp:Button ID="btnCheckout" runat="server" Text="Proceder a Pago" CssClass="btn-checkout" OnClick="ProcederPago" />
+            <asp:Button ID="btnCheckout" runat="server" Text="Proceder a Pago" class="btn btn-success mt-2" OnClick="ProcederPago" />
+             <asp:Label ID="lblMessage" runat="server" CssClass="mt-2"></asp:Label>
         </div>
     </div>
 </asp:Content>
