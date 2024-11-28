@@ -61,6 +61,25 @@ namespace Negocio
             {
                 conexion.Open();
                 comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public int ejecutarAccion2()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text; 
+                conexion.Open(); 
+                int filasAfectadas = comando.ExecuteNonQuery(); 
+                conexion.Close(); 
+                return filasAfectadas;
+
             }
             catch (Exception ex)
             {

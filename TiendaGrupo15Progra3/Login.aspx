@@ -1,10 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TiendaGrupo15Progra3.WebForm2" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    <style>
-        /* Fondo personalizado */
+    <style>      
         .bg-custom {
-            background-image: url('images/Pglog.png');
+            background-image: url('images/fondoAmarillo.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -16,7 +15,6 @@
             z-index: -1;
         }
 
-        /* Centrado de la pagina */
         .center-container {
             display: flex;
             justify-content: center;
@@ -25,7 +23,7 @@
             flex-direction: column;
         }
 
-        /* Contenedor del formulario */
+        
         .form-container {
             background-color: rgba(255, 255, 255, 0.9); 
             padding: 40px;
@@ -36,7 +34,7 @@
             text-align: center;
         }
 
-        /* Estilo de los campos de entrada */
+      
         input[type="text"], input[type="password"] {
             width: 100%;
             padding: 15px;
@@ -47,7 +45,7 @@
             border-radius: 5px;
         }
 
-        /* Estilo de los botones */
+        
         .btn-custom {
             width: 100%;
             padding: 15px;
@@ -60,19 +58,19 @@
             transition: background-color 0.3s;
         }
 
-        /* Efecto hover en el btn */
+       
         .btn-custom:hover {
             background-color: #0056b3;
         }
 
-        /* Estilo de los encabezados */
+       
         .header-custom {
             color: #333;
             font-size: 2rem;
             margin-bottom: 30px;
         }
 
-        /* Estilo para el enlace de recu de contra */
+       
         .forgot-password, .register-link {
             color: #007BFF;
             text-decoration: none;

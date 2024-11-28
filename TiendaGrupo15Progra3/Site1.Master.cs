@@ -44,5 +44,12 @@ namespace TiendaGrupo15Progra3
             }
    
         }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["Rol"] = null;
+            Session["Usuario"] = null;
+            lblCerrarSesion.Text= "Sesion cerrada con exito.";
+        }
     }
 }

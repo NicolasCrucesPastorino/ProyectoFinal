@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditarArticulo.aspx.cs" Inherits="TiendaGrupo15Progra3.EditarArticulo" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
     <style>
             .bg-custom {
             background-image: url('images/fondoAmarillo.png');
@@ -50,20 +50,24 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-    .padding-botom{
-    padding-bottom: 100px;
-}
+        .padding-botom {
+            padding-bottom: 100px;
+        }
+
+    .carousel-control-prev-icon, .carousel-control-next-icon 
+        {
+            background-color: black;  
+        }
    </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-        <div class="main-content padding-botom">
-    <div class="center-container">
-        <div class="form-container">
-            <h1 class="header-custom">Modificar Artículo</h1>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="main-content padding-botom">
+        <div class="center-container">
+            <div class="form-container">
+                <h1 class="header-custom">Modificar Artículo</h1>
 
-            <div class="row">
+                <div class="row">
                 <div class="col">
                     <label for="CodigoArticuloText" class="form-label">Código Artículo:</label>
                     <asp:TextBox ID="CodigoArticuloTxt" CssClass="form-control" placeholder="Código Artículo" runat="server"></asp:TextBox>
@@ -110,25 +114,40 @@
                     </asp:RegularExpressionValidator>
                 </div>
             </div>
-              <div class="col-6">
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
+
+
+                <!-- Contenedor de Imágenes -->
+                <div class="col-md-6">
                     <div class="mb-3">
-                        <label for="txtModificarImagenUrl" class="form-label">Url Imagen</label>
-                        <asp:TextBox runat="server" ID="txtModificarImagenUrl" CssClass="form-control"
-                            AutoPostBack="true" />
+                        <asp:Label ID="LblDropdawn" runat="server" Text="Seleccione la imagen que desea modificar:"></asp:Label>
+                        <asp:DropDownList ID="ddlImagenes" runat="server" CssClass="form-select" AutoPostBack="true" OnSelectedIndexChanged="ddlImagenes_SelectedIndexChanged"></asp:DropDownList>
                     </div>
-                    <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
-                        runat="server" ID="imgDefault" Width="60%" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
-        </div>
-    </div>
-            <div class="form-group">
-                <asp:Button type="submit" ID="btnGuardarCambios" CssClass="btn btn-primary" runat="server" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click" />
+                    <asp:Label ID="lblNuevaImagen" runat="server" Text="Ingrese la nueva Url de la imagen a modificar:"></asp:Label>
+                    <asp:TextBox ID="txtModificarImagenUrl" runat="server" CssClass="form-control mb-3"/>
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <asp:Image ID="imgDefault" runat="server" CssClass="d-block w-100" ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png" />
+                            </div>
+                        </div>                       
+                    </div>
+                    <asp:Button ID="btnModificarImagen" runat="server" CssClass="btn btn-warning mt-2" Text="Modificar Imagen" OnClick="btnModificarImagen_Click" />
+                    <asp:Label ID="lblMessage" runat="server" CssClass="mt-2"></asp:Label>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <asp:Button type="submit" ID="Button1" CssClass="btn btn-primary" runat="server" Text="Guardar Cambios" OnClick="btnGuardarCambios_Click" />
+                    </div>
+                    <h4><asp:Label ID="Label1" runat="server" CssClass="message"></asp:Label></h4>
+                </div>
             </div>
-            <h4><asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label></h4>
         </div>
     </div>
 </asp:Content>
 
+           
+      
+
+
+    

@@ -184,5 +184,40 @@ namespace Negocio
             }
         }
 
+        public bool ModificarImagenporUrl(string urlImagenNueva,string urlImagenvieja,string idArticulo)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl=@urlImagenNueva WHERE ImagenUrl = @urlImagenAnterior AND IdArticulo = @idArticulo");
+                datos.setearParametro("@urlImagenNueva", urlImagenNueva);
+                datos.setearParametro("@urlImagenAnterior",urlImagenvieja);
+                datos.setearParametro("@idArticulo", idArticulo);
+                int filasafectadas=datos.ejecutarAccion2();
+
+                if (filasafectadas > 0)
+                {
+                    return true;
+                }
+                else 
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+
+                datos.cerrarConexion();
+            }
+        }
+
     }
 }

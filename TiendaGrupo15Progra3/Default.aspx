@@ -2,18 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        .bg-custom {
-            background-image: url('images/Pglog.png');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
 
         .button-container {
             position: fixed;
@@ -41,7 +29,7 @@
         }
 
         .form-custom {
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+            background-color: rgba(255, 255, 255, 0.8); 
             padding: 20px;
             border-radius: 5px;
         }
@@ -50,7 +38,7 @@
             color: blue;
         }
         .main-content { 
-            margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
+            margin-top: 100px; 
 
         }
         .paraH2{
@@ -77,7 +65,7 @@
              <% }
                  else
                  { %>   
-        <h2>No completo los datos personales de su perfil.</h2>
+        <h2>Complete su perfil.</h2>
         <%} %>
         </div>
 

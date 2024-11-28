@@ -48,6 +48,7 @@ namespace TiendaGrupo15Progra3
                         if (CompletarArticulo() != null)
                         {
                             PrellenarCamposArticulo();
+                            PrellenarImagenesUrl();
 
                         }
 
@@ -184,10 +185,28 @@ namespace TiendaGrupo15Progra3
 
             ImagenesPorProducto = CompletarImagen();
 
-            foreach (var imagen in ImagenesPorProducto)
-            {
-                txtModificarImagenUrl.Text = imagen.UrlImagen;
+            ddlImagenes.DataSource = ImagenesPorProducto;
+            ddlImagenes.DataTextField = "UrlImagen"; 
+            ddlImagenes.DataValueField = "UrlImagen"; 
+            ddlImagenes.DataBind();
+            if (ImagenesPorProducto.Count > 0) 
+            { 
+              imgDefault.ImageUrl = ImagenesPorProducto[0].UrlImagen; 
+            } 
+            else 
+            { 
+               
+                imgDefault.ImageUrl = "https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"; 
             }
+
+            txtModificarImagenUrl.Text = "";
+        }
+
+        protected void ddlImagenes_SelectedIndexChanged(object sender, EventArgs e)
+        {  //Actualizar la imagen según la selección del dropdown 
+           string selectedImageUrl = ddlImagenes.SelectedValue; 
+           imgDefault.ImageUrl = selectedImageUrl; 
+          txtModificarImagenUrl.Text = selectedImageUrl; 
         }
 
         protected bool cambiosENcampos()
@@ -335,5 +354,45 @@ namespace TiendaGrupo15Progra3
             }
         }
 
+        protected void btnModificarImagen_Click(object sender, EventArgs e)
+        {
+                   
+            string urlImagenAnterior = ddlImagenes.SelectedValue; 
+            string urlImagenNueva = txtModificarImagenUrl.Text; 
+            string idArt = Session["Id"].ToString(); 
+
+            bool modificado = imagenService.ModificarImagenporUrl(urlImagenNueva,urlImagenAnterior, idArt);
+
+            if (modificado)
+            {
+                
+                List<Imagen> imagenes = CompletarImagen();
+
+                ddlImagenes.DataSource = imagenes;
+                ddlImagenes.DataTextField = "UrlImagen";
+                ddlImagenes.DataValueField = "UrlImagen";
+                ddlImagenes.DataBind();
+
+                if (imagenes.Count > 0)
+                {
+                    
+                    imgDefault.ImageUrl = imagenes[0].UrlImagen;
+                }
+                else
+                {
+                    
+                    imgDefault.ImageUrl = "https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png";
+                }
+
+                lblMessage.Text = "Imagen modificada correctamente.";
+            }
+            else
+            {
+                lblMessage.Text = "No se pudo modificar la imagen.";
+            }
+        }
+
     }
-}
+} 
+        
+    
