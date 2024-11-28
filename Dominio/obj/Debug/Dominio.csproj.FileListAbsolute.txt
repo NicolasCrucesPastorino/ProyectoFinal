@@ -148,3 +148,9 @@ C:\Users\Nico\Downloads\ProyectoFinalDiaFinal\ProyectoFinal\Dominio\obj\Debug\Do
 C:\Users\Nico\Downloads\ProyectoFinalDiaFinal\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Nico\Downloads\ProyectoFinalDiaFinal\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
 C:\Users\Nico\Downloads\ProyectoFinalDiaFinal\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalParaSubirDespuesDearregloAgus\ProyectoFinal\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalParaSubirDespuesDearregloAgus\ProyectoFinal\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nico\Downloads\ProyectoFinalParaSubirDespuesDearregloAgus\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nico\Downloads\ProyectoFinalParaSubirDespuesDearregloAgus\ProyectoFinal\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Downloads\ProyectoFinalParaSubirDespuesDearregloAgus\ProyectoFinal\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nico\Downloads\ProyectoFinalParaSubirDespuesDearregloAgus\ProyectoFinal\Dominio\obj\Debug\Dominio.pdb

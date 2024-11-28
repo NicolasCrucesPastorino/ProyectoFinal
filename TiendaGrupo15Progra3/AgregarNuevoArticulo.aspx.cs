@@ -59,6 +59,11 @@ namespace TiendaGrupo15Progra3
                 fGlobales.MostrarAlerta(this, "Todos los campos son obligatorios.");
                 return;
             }
+            if(decimal.Parse(PrecioTxt.Text)<0 || int.Parse(txtStock.Text) < 0)
+            {
+                fGlobales.MostrarAlerta(this, "El precio y el stock deben ser numeros positivos (mayores a cero).");
+                return;
+            }
 
 
             try

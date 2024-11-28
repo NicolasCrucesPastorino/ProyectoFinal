@@ -319,6 +319,12 @@ namespace TiendaGrupo15Progra3
                 lblMessage.Text = "Es obligatorio rellenar todos los campos";
                 return false;
             }
+            if(decimal.Parse(PrecioTxt.Text)<0||int.Parse(txtStock.Text)<0)
+            {
+                lblMessage.Text = "No se pueden agregar precios o stock en negativo";
+                return false;
+            }
+                    
 
             return true;
 
