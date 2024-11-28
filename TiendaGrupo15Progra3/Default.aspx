@@ -45,7 +45,7 @@
             font-size:4rem;
             font-weight:bolder;
             font-family: luminari,fantasy;
-            color:yellow;
+            color:black;
                      
         }
             
@@ -58,7 +58,7 @@
     <div class="main-content container">
         
            
-            <%if (UsuarioDefault.nombre.Length>2 && UsuarioDefault.apellido.Length>2)
+            <%if (UsuarioDefault.nombre.Length > 2 && UsuarioDefault.apellido.Length > 2 && Session["Usuario"] != null)
                 {  %>
 
               <h2 class="paraH2">Bienvenido <%=char.ToUpper(UsuarioDefault.nombre[0]) + UsuarioDefault.nombre.Substring(1)%> <%=char.ToUpper(UsuarioDefault.apellido[0]) + UsuarioDefault.apellido.Substring(1)%>, miembro desde <%=UsuarioDefault.fechaRegistro %></h2>

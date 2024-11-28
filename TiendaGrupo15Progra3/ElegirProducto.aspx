@@ -30,13 +30,7 @@
      <div class="bg-custom"></div>
     
     <h2 class="text-center mb-4">PRODUCTOS</h2>
-    <asp:Label ID="labelElijeTuProductoBuscar" runat="server" Text="Buscar por nombre de producto"></asp:Label>
-    <asp:TextBox ID="TextElijeTuProductoBuscar" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
-    <asp:Button ID="BtnBusquedaComun" runat="server" Text="Buscar por nombre" OnClick="BtnBusquedaComun_Click" />
-    <div>
-    <asp:Label ID="labelElijeTuProductoBuscarLabelCheckBox" runat="server" Text="Filtro Avanzado"></asp:Label>
-    <asp:CheckBox ID="CheckBoxElijeTuProductoBuscar" runat="server" AutoPostBack="true" Checked="false" OnCheckedChanged="CheckBoxElijeTuProductoBuscar_CheckedChanged" />
-    </div>
+   
     <div>
         <asp:TextBox ID="TextFiltroAvanzadoNombre" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
         <asp:TextBox ID="TextFiltroAvanzadoPrecio" placeholder="Ingrese Precio" runat="server" textmode="Number"></asp:TextBox>

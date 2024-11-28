@@ -112,7 +112,7 @@
     <asp:TextBox ID="TextFiltroAvanzadoCategoria" placeholder="Ingrese Categoria" runat="server"></asp:TextBox>
 <asp:TextBox ID="TextFiltroAvanzadoMarca" placeholder="Ingrese Marca" runat="server"></asp:TextBox>
      <asp:Button ID="BtnBusquedaAvanzada" runat="server" Text="Busqueda avanzada" OnClick="BtnBusquedaAvanzada_Click" />
-  
+    <asp:Button ID="BtnRefrescar" runat="server" Text="Limpiar busqueda" OnClick="BtnRefrescar_Click" />
  </div>
 <table class="cart-table">
     <thead class="paraTabla">

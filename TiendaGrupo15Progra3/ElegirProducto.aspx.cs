@@ -49,14 +49,6 @@ namespace TiendaGrupo15Progra3
                 DropDownListFiltroAvanzadoCategoria.DataBind();
 
 
-                if (CheckBoxElijeTuProductoBuscar.Checked == true)
-                {
-                    FiltradoAvanzado = true;
-                }
-                else
-                {
-                    FiltradoAvanzado = false;
-                }
                 
             }
             Productos = articuloService.GetArticulos();
@@ -79,13 +71,7 @@ namespace TiendaGrupo15Progra3
             //Session["Articulo"] = 
         }
 
-        protected void CheckBoxElijeTuProductoBuscar_CheckedChanged(object sender, EventArgs e)
-        {
-            FiltradoAvanzado = !FiltradoAvanzado;
-            TextElijeTuProductoBuscar.Enabled = FiltradoAvanzado;
-            BtnBusquedaComun.Enabled = FiltradoAvanzado;
-            
-        }
+       
 
         protected void BtnBusquedaAvanzada_Click(object sender, EventArgs e)
         {
@@ -123,14 +109,7 @@ namespace TiendaGrupo15Progra3
             
         }
 
-        protected void BtnBusquedaComun_Click(object sender, EventArgs e)
-        {
-            ArticuloService articuloBusqueda = new ArticuloService();
-            string busquedaString =TextElijeTuProductoBuscar.Text.Trim();
-            List<Articulo> articuloLista = new List<Articulo>();
-            articuloLista = articuloBusqueda.GetArticulosBusquedaNombre(busquedaString);
-            Productos = articuloLista;
-        }
+       
     }
 }
 public partial class ElegirProducto : System.Web.UI.Page

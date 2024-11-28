@@ -103,8 +103,19 @@
 
  <div class="main-content">
 
+   
 <div class="container">
  <h2>Las publicaciones que tenes activas son:</h2>
+                 <div>
+     <asp:TextBox ID="TextFiltroAvanzadoNombre" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
+      <asp:TextBox ID="TextFiltroAvanzadoPrecio" placeholder="Ingrese Precio" runat="server" textmode="Number"></asp:TextBox>
+    <asp:TextBox ID="TextFiltroAvanzadoCategoria" placeholder="Ingrese Categoria" runat="server"></asp:TextBox>
+<asp:TextBox ID="TextFiltroAvanzadoMarca" placeholder="Ingrese Marca" runat="server"></asp:TextBox>
+     <asp:Button ID="BtnBusquedaAvanzada" runat="server" Text="Busqueda avanzada" OnClick="BtnBusquedaAvanzada_Click" />
+     <asp:Button ID="BtnRefrescar" runat="server" Text="Limpiar busqueda" OnClick="BtnRefrescar_Click" />
+  
+ </div>
+
     <h4><asp:Label ID="lblMessage" runat="server" CssClass="message"></asp:Label></h4>
 <table class="cart-table">
     <thead class="paraTabla">
