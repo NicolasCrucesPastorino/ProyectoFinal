@@ -85,6 +85,15 @@
     <div class="container">
     <h2>Tus Productos Vendidos</h2>
         <h2>Total Ganado en ventas : $<%=Math.Round( TotalVendido,2 )%></h2>
+                 <div>
+     <asp:TextBox ID="TextFiltroAvanzadoNombre" placeholder="Ingrese Nombre" runat="server"></asp:TextBox>
+     <asp:Label ID="LabelPrecio" runat="server" Text="Desde :"></asp:Label>
+     <asp:TextBox ID="TextFiltroAvanzadoPrecio" placeholder="Ingrese Precio" runat="server" textmode="Number"></asp:TextBox>
+    <asp:TextBox ID="TextFiltroAvanzadoCategoria" placeholder="Ingrese Categoria" runat="server"></asp:TextBox>
+<asp:TextBox ID="TextFiltroAvanzadoMarca" placeholder="Ingrese Marca" runat="server"></asp:TextBox>
+     <asp:Button ID="BtnBusquedaAvanzada" runat="server" Text="Busqueda avanzada" OnClick="BtnBusquedaAvanzada_Click" />
+     <asp:Button ID="BtnRefrescar" runat="server" Text="Limpiar busqueda" OnClick="BtnRefrescar_Click" />
+ </div>
     <table class="cart-table">
         <thead class="paraTabla">
             <tr>

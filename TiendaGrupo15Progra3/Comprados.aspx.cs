@@ -148,5 +148,10 @@ namespace TiendaGrupo15Progra3
       
 
         }
+
+        protected void BtnRefrescar_Click(object sender, EventArgs e)
+        {
+            Response.AddHeader("REFRESH", "0;URL=Comprados.aspx");
+        }
     }
 }
